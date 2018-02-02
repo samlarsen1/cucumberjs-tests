@@ -1,0 +1,3172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="0d32122b-8761-4b38-973e-9f033bc775d0" activeEnvironment="Default" name="webgate.training.ec.europa" resourceRoot="${projectDir}" soapui-version="5.4.0-EB" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="d8837edf-3b97-4dfd-aad4-862e6b803043" wsaVersion="NONE" name="CertificateSearch" type="wsdl" bindingName="{traceswsns}CertificateSearchWebServicePort" soapVersion="1_1" anonymous="optional" definition="https://webgate.training.ec.europa.eu/sanco/traces_ws/searchCertificate?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://webgate.training.ec.europa.eu/sanco/traces_ws/searchCertificate?WSDL"><con:part><con:url>https://webgate.training.ec.europa.eu/sanco/traces_ws/searchCertificate?WSDL</con:url><con:content><![CDATA[<definitions targetNamespace="traceswsns" xmlns:wsr="http://www.openuri.org/2002/10/soap/reliability/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap12enc="http://www.w3.org/2003/05/soap-encoding" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tns="traceswsns" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:conv="http://www.openuri.org/2002/04/wsdl/conversation/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <types>
+    <xs:schema attributeFormDefault="qualified" targetNamespace="traceswsns" elementFormDefault="qualified" xmlns="traceswsns" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="CertificateRequest" type="CertificateRequest">
+        <xs:annotation>
+          <xs:documentation>Message sent to the server to request a search for certificates.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:complexType name="CertificateRequest">
+        <xs:annotation>
+          <xs:documentation>Message sent to the server to request a search for certificates.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="XMLSchemaVersion" type="XMLSchemaVersion"></xs:element>
+          <xs:element name="UserIdentification" type="UserAuthenticationString"></xs:element>
+          <xs:element name="UserPassword" type="UserAuthenticationString"></xs:element>
+          <xs:element name="SendingDate" type="Timestamp"></xs:element>
+          <xs:element name="Request" type="Request"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="CertificateRequestResult" type="CertificateRequestResult">
+        <xs:annotation>
+          <xs:documentation>Message returned by the server as answer to a search for certificates request.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:complexType name="CertificateRequestResult">
+        <xs:annotation>
+          <xs:documentation>Message returned by the server as answer to a search for certificates request.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="XMLSchemaVersion" type="XMLSchemaVersion"></xs:element>
+          <xs:element name="SendingDate" type="Timestamp"></xs:element>
+          <xs:element name="OperationCode" type="xs:int"></xs:element>
+          <xs:element name="RequestIdentifier" type="RequestIdentifier" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Request">
+        <xs:annotation>
+          <xs:documentation>This element describes the request sent by the Member State system</xs:documentation>
+        </xs:annotation>
+        <xs:choice>
+          <xs:element name="SearchCriterionCVEDAnimal" type="SearchCriterionCVEDAnimal"></xs:element>
+          <xs:element name="SearchCriterionCVEDAnimalProduct" type="SearchCriterionCVEDAnimalProduct"></xs:element>
+          <xs:element name="SearchCriterionIntraTrade" type="SearchCriterionIntraTrade"></xs:element>
+          <xs:element name="SearchCriterionDoCom" type="SearchCriterionDoCom"></xs:element>
+          <xs:element name="SearchCriterionCED" type="SearchCriterionCED"></xs:element>
+          <xs:element name="SearchCriterionCHEDPP" type="SearchCriterionCHEDPP"></xs:element>
+        </xs:choice>
+      </xs:complexType>
+      <xs:complexType name="SearchCriterionCVEDAnimal">
+        <xs:annotation>
+          <xs:documentation>This element describes the search criterion to retrieve CVED for Animals certificates</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Status" type="CertificateStatus" minOccurs="0"></xs:element>
+          <xs:element name="ReferenceNumber" type="ReferenceNumber" minOccurs="0"></xs:element>
+          <xs:element name="ArrivalAtBIPBetween" type="TimeFrame" minOccurs="0"></xs:element>
+          <xs:element name="ModifiedBetween" type="TimeFrame" minOccurs="0"></xs:element>
+          <xs:element name="CommodityCode" type="CommodityCode" minOccurs="0"></xs:element>
+          <xs:element name="CustomsDocumentReference" type="CustomsDocumentReference" minOccurs="0"></xs:element>
+          <xs:element name="CountryOfOrigin" type="CountryISOCode" minOccurs="0"></xs:element>
+          <xs:element name="CountryOfDestination" type="CountryISOCodeList" minOccurs="0"></xs:element>
+          <xs:element name="ExcludedCountryOfDestination" type="CountryISOCodeList" minOccurs="0"></xs:element>
+          <xs:element name="CertificateIdTreshold" type="xs:long" minOccurs="0"></xs:element>
+          <xs:element name="FetchAmount" type="xs:int" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SearchCriterionCVEDAnimalProduct">
+        <xs:annotation>
+          <xs:documentation>This element describes the search criterion to retrieve CVED for Animal Products certificates</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Status" type="CertificateStatus" minOccurs="0"></xs:element>
+          <xs:element name="ReferenceNumber" type="ReferenceNumber" minOccurs="0"></xs:element>
+          <xs:element name="ArrivalAtBIPBetween" type="TimeFrame" minOccurs="0"></xs:element>
+          <xs:element name="ModifiedBetween" type="TimeFrame" minOccurs="0"></xs:element>
+          <xs:element name="NatureOfProduct" type="CommodityCode" minOccurs="0"></xs:element>
+          <xs:element name="CustomsDocumentReference" type="CustomsDocumentReference" minOccurs="0"></xs:element>
+          <xs:element name="CountryOfOrigin" type="CountryISOCode" minOccurs="0"></xs:element>
+          <xs:element name="CountryOfDestination" type="CountryISOCodeList" minOccurs="0"></xs:element>
+          <xs:element name="ExcludedCountryOfDestination" type="CountryISOCodeList" minOccurs="0"></xs:element>
+          <xs:element name="CertificateIdTreshold" type="xs:long" minOccurs="0"></xs:element>
+          <xs:element name="FetchAmount" type="xs:int" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SearchCriterionIntraTrade">
+        <xs:annotation>
+          <xs:documentation>This element describes the search criterion to retrieve Intra Trade certificates</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Status" type="CertificateStatus" minOccurs="0"></xs:element>
+          <xs:element name="ReferenceNumber" type="ReferenceNumber" minOccurs="0"></xs:element>
+          <xs:element name="DepartureBetween" type="TimeFrame" minOccurs="0"></xs:element>
+          <xs:element name="ModifiedBetween" type="TimeFrame" minOccurs="0"></xs:element>
+          <xs:element name="DeclaredBetween" type="TimeFrame" minOccurs="0"></xs:element>
+          <xs:element name="CommodityCode" type="CommodityCode" minOccurs="0"></xs:element>
+          <xs:element name="CountryOfOrigin" type="CountryISOCode" minOccurs="0"></xs:element>
+          <xs:element name="CountryOfDestination" type="CountryISOCode" minOccurs="0"></xs:element>
+          <xs:element name="CertificateIdTreshold" type="xs:long" minOccurs="0"></xs:element>
+          <xs:element name="FetchAmount" type="xs:int" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SearchCriterionDoCom">
+        <xs:annotation>
+          <xs:documentation>This element describes the search criterion to retrieve DoCom certificates</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Status" type="CertificateStatus" minOccurs="0"></xs:element>
+          <xs:element name="ReferenceNumber" type="ReferenceNumber" minOccurs="0"></xs:element>
+          <xs:element name="DepartureBetween" type="TimeFrame" minOccurs="0"></xs:element>
+          <xs:element name="ModifiedBetween" type="TimeFrame" minOccurs="0"></xs:element>
+          <xs:element name="DeclaredBetween" type="TimeFrame" minOccurs="0"></xs:element>
+          <xs:element name="CommodityCode" type="CommodityCode" minOccurs="0"></xs:element>
+          <xs:element name="CountryOfOrigin" type="CountryISOCode" minOccurs="0"></xs:element>
+          <xs:element name="CountryOfDestination" type="CountryISOCode" minOccurs="0"></xs:element>
+          <xs:element name="CertificateIdTreshold" type="xs:long" minOccurs="0"></xs:element>
+          <xs:element name="FetchAmount" type="xs:int" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SearchCriterionCED">
+        <xs:annotation>
+          <xs:documentation>This element describes the search criterion to retrieve CED certificates</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Status" type="CertificateStatus" minOccurs="0"></xs:element>
+          <xs:element name="ReferenceNumber" type="ReferenceNumber" minOccurs="0"></xs:element>
+          <xs:element name="ArrivalAtDPEBetween" type="TimeFrame" minOccurs="0"></xs:element>
+          <xs:element name="ModifiedBetween" type="TimeFrame" minOccurs="0"></xs:element>
+          <xs:element name="NatureOfProduct" type="CommodityCode" minOccurs="0"></xs:element>
+          <xs:element name="CustomsDocumentReference" type="CustomsDocumentReference" minOccurs="0"></xs:element>
+          <xs:element name="CountryOfOrigin" type="CountryISOCode" minOccurs="0"></xs:element>
+          <xs:element name="CountryOfDestination" type="CountryISOCode" minOccurs="0"></xs:element>
+          <xs:element name="CertificateIdTreshold" type="xs:long" minOccurs="0"></xs:element>
+          <xs:element name="FetchAmount" type="xs:int" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SearchCriterionCHEDPP">
+        <xs:annotation>
+          <xs:documentation>This element describes the search criterion to retrieve CHEDPP certificates</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Status" type="CertificateStatus" minOccurs="0"></xs:element>
+          <xs:element name="ReferenceNumber" type="ReferenceNumber" minOccurs="0"></xs:element>
+          <xs:element name="ArrivalAtDPEBetween" type="TimeFrame" minOccurs="0"></xs:element>
+          <xs:element name="ModifiedBetween" type="TimeFrame" minOccurs="0"></xs:element>
+          <xs:element name="NatureOfProduct" type="CommodityCode" minOccurs="0"></xs:element>
+          <xs:element name="CustomsDocumentReference" type="CustomsDocumentReference" minOccurs="0"></xs:element>
+          <xs:element name="CountryOfOrigin" type="CountryISOCode" minOccurs="0"></xs:element>
+          <xs:element name="CountryOfDestination" type="CountryISOCode" minOccurs="0"></xs:element>
+          <xs:element name="CertificateIdTreshold" type="xs:long" minOccurs="0"></xs:element>
+          <xs:element name="FetchAmount" type="xs:int" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="EOName">
+        <xs:annotation>
+          <xs:documentation>Name of the Economic Operator</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"></xs:minLength>
+          <xs:maxLength value="255"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="CertificateStatus">
+        <xs:annotation>
+          <xs:documentation>Status of a Certificate: new, rejected, valid, ...</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="new"></xs:enumeration>
+          <xs:enumeration value="rejected"></xs:enumeration>
+          <xs:enumeration value="pre-validated"></xs:enumeration>
+          <xs:enumeration value="valid"></xs:enumeration>
+          <xs:enumeration value="cancelled"></xs:enumeration>
+          <xs:enumeration value="replaced"></xs:enumeration>
+          <xs:enumeration value="animo"></xs:enumeration>
+          <xs:enumeration value="inprogress"></xs:enumeration>
+          <xs:enumeration value="recalled"></xs:enumeration>
+          <xs:enumeration value="deleted"></xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="CountryISOCode">
+        <xs:annotation>
+          <xs:documentation>Country ISO code format in 2 positions: BE, FR, NL,...</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[A-Z][A-Z]"></xs:pattern>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ReferenceNumber">
+        <xs:annotation>
+          <xs:documentation>Unique identifier of a certificate</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"></xs:minLength>
+          <xs:maxLength value="90"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="MeansType">
+        <xs:annotation>
+          <xs:documentation>Means of transport, means types</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="rail"></xs:enumeration>
+          <xs:enumeration value="plane"></xs:enumeration>
+          <xs:enumeration value="ship"></xs:enumeration>
+          <xs:enumeration value="road"></xs:enumeration>
+          <xs:enumeration value="other"></xs:enumeration>
+          <xs:enumeration value="c_ship_road"></xs:enumeration>
+          <xs:enumeration value="c_ship_rail"></xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="Identification">
+        <xs:annotation>
+          <xs:documentation>Identification of the means of transport</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"></xs:minLength>
+          <xs:maxLength value="32"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="Document">
+        <xs:annotation>
+          <xs:documentation>Additional document when the means of transport is a ship or an airplane</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"></xs:minLength>
+          <xs:maxLength value="32"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="CommodityCode">
+        <xs:annotation>
+          <xs:documentation>Commodity code</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"></xs:minLength>
+          <xs:maxLength value="20"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="XMLSchemaVersion">
+        <xs:annotation>
+          <xs:documentation>Version of the XML Schema used to validate the XML file. Currently "2.0".</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"></xs:minLength>
+          <xs:maxLength value="32"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="UserAuthenticationString">
+        <xs:annotation>
+          <xs:documentation>String object that may hold a user name or a user password</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="5"></xs:minLength>
+          <xs:maxLength value="80"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="Timestamp">
+        <xs:annotation>
+          <xs:documentation>Timestamp format</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="\d{4}-\d{2}-\d{2} \d{2}:\d{2}"></xs:pattern>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="RequestIdentifier">
+        <xs:annotation>
+          <xs:documentation>Identifier associated by the server to the request sent by the Member State. Must be passed for each web
+							service call concerning this request.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"></xs:minLength>
+          <xs:maxLength value="32"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="TimeFrame">
+        <xs:annotation>
+          <xs:documentation>Time frame defined by a Start date and an End date, Composed by date and time</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="StartDate" type="Timestamp"></xs:element>
+          <xs:element name="EndDate" type="Timestamp"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="CustomsDocumentReference">
+        <xs:annotation>
+          <xs:documentation>Customs document reference</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"></xs:minLength>
+          <xs:maxLength value="32"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="CountryISOCodeList">
+        <xs:annotation>
+          <xs:documentation>List of comma separated country ISO codes: "AD,AT,AU"</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="([A-Z][A-Z])+,*"></xs:pattern>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+  </types>
+  <message name="searchCertificate">
+    <part element="partns:CertificateRequest" name="certificateSearchCriterion" xmlns:partns="traceswsns"></part>
+  </message>
+  <message name="searchCertificateResponse">
+    <part element="partns:CertificateRequestResult" name="result" xmlns:partns="traceswsns"></part>
+  </message>
+  <portType name="CertificateSearchWebServicePort">
+    <operation name="searchCertificate">
+      <input message="tns:searchCertificate"></input>
+      <output message="tns:searchCertificateResponse"></output>
+    </operation>
+  </portType>
+  <binding name="CertificateSearchWebServicePort" type="tns:CertificateSearchWebServicePort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="searchCertificate">
+      <soap:operation style="document" soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="CertificateSearchWebService">
+    <port name="CertificateSearchWebServicePort" binding="tns:CertificateSearchWebServicePort">
+      <soap:address location="https://webgate.training.ec.europa.eu/sanco/traces_ws/searchCertificate"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://webgate.training.ec.europa.eu/sanco/traces_ws/searchCertificate</con:endpoint></con:endpoints><con:operation id="4cd5edd2-2233-4738-b29c-ca3dbd86a67d" isOneWay="false" action="" name="searchCertificate" bindingOperationName="searchCertificate" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="3621e43d-8aa5-4482-a456-e4775ece95ff" name="Search Request All"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://webgate.training.ec.europa.eu/sanco/traces_ws/searchCertificate</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:trac="traceswsns">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <trac:CertificateRequest>
+         <trac:XMLSchemaVersion>${#Project#xmlversion}</trac:XMLSchemaVersion>
+         <trac:UserIdentification>${#Project#username}</trac:UserIdentification>
+         <trac:UserPassword>${#Project#password}</trac:UserPassword>
+         <trac:SendingDate>${#Project#sendingDate}</trac:SendingDate>
+         <trac:Request>
+            <!--You have a CHOICE of the next 6 items at this level-->
+            <trac:SearchCriterionCVEDAnimal>
+               <!--Optional:-->
+               <trac:Status>?</trac:Status>
+               <!--Optional:-->
+               <trac:ReferenceNumber>?</trac:ReferenceNumber>
+               <!--Optional:-->
+               <trac:ArrivalAtBIPBetween>
+                  <trac:StartDate>?</trac:StartDate>
+                  <trac:EndDate>?</trac:EndDate>
+               </trac:ArrivalAtBIPBetween>
+               <!--Optional:-->
+               <trac:ModifiedBetween>
+                  <trac:StartDate>?</trac:StartDate>
+                  <trac:EndDate>?</trac:EndDate>
+               </trac:ModifiedBetween>
+               <!--Optional:-->
+               <trac:CommodityCode>?</trac:CommodityCode>
+               <!--Optional:-->
+               <trac:CustomsDocumentReference>?</trac:CustomsDocumentReference>
+               <!--Optional:-->
+               <trac:CountryOfOrigin>?</trac:CountryOfOrigin>
+               <!--Optional:-->
+               <trac:CountryOfDestination>?</trac:CountryOfDestination>
+               <!--Optional:-->
+               <trac:ExcludedCountryOfDestination>?</trac:ExcludedCountryOfDestination>
+               <!--Optional:-->
+               <trac:CertificateIdTreshold>?</trac:CertificateIdTreshold>
+               <!--Optional:-->
+               <trac:FetchAmount>?</trac:FetchAmount>
+            </trac:SearchCriterionCVEDAnimal>
+            <trac:SearchCriterionCVEDAnimalProduct>
+               <!--Optional:-->
+               <trac:Status>?</trac:Status>
+               <!--Optional:-->
+               <trac:ReferenceNumber>?</trac:ReferenceNumber>
+               <!--Optional:-->
+               <trac:ArrivalAtBIPBetween>
+                  <trac:StartDate>?</trac:StartDate>
+                  <trac:EndDate>?</trac:EndDate>
+               </trac:ArrivalAtBIPBetween>
+               <!--Optional:-->
+               <trac:ModifiedBetween>
+                  <trac:StartDate>?</trac:StartDate>
+                  <trac:EndDate>?</trac:EndDate>
+               </trac:ModifiedBetween>
+               <!--Optional:-->
+               <trac:NatureOfProduct>?</trac:NatureOfProduct>
+               <!--Optional:-->
+               <trac:CustomsDocumentReference>?</trac:CustomsDocumentReference>
+               <!--Optional:-->
+               <trac:CountryOfOrigin>?</trac:CountryOfOrigin>
+               <!--Optional:-->
+               <trac:CountryOfDestination>?</trac:CountryOfDestination>
+               <!--Optional:-->
+               <trac:ExcludedCountryOfDestination>?</trac:ExcludedCountryOfDestination>
+               <!--Optional:-->
+               <trac:CertificateIdTreshold>?</trac:CertificateIdTreshold>
+               <!--Optional:-->
+               <trac:FetchAmount>?</trac:FetchAmount>
+            </trac:SearchCriterionCVEDAnimalProduct>
+            <trac:SearchCriterionIntraTrade>
+               <!--Optional:-->
+               <trac:Status>?</trac:Status>
+               <!--Optional:-->
+               <trac:ReferenceNumber>?</trac:ReferenceNumber>
+               <!--Optional:-->
+               <trac:DepartureBetween>
+                  <trac:StartDate>?</trac:StartDate>
+                  <trac:EndDate>?</trac:EndDate>
+               </trac:DepartureBetween>
+               <!--Optional:-->
+               <trac:ModifiedBetween>
+                  <trac:StartDate>?</trac:StartDate>
+                  <trac:EndDate>?</trac:EndDate>
+               </trac:ModifiedBetween>
+               <!--Optional:-->
+               <trac:DeclaredBetween>
+                  <trac:StartDate>?</trac:StartDate>
+                  <trac:EndDate>?</trac:EndDate>
+               </trac:DeclaredBetween>
+               <!--Optional:-->
+               <trac:CommodityCode>?</trac:CommodityCode>
+               <!--Optional:-->
+               <trac:CountryOfOrigin>?</trac:CountryOfOrigin>
+               <!--Optional:-->
+               <trac:CountryOfDestination>?</trac:CountryOfDestination>
+               <!--Optional:-->
+               <trac:CertificateIdTreshold>?</trac:CertificateIdTreshold>
+               <!--Optional:-->
+               <trac:FetchAmount>?</trac:FetchAmount>
+            </trac:SearchCriterionIntraTrade>
+            <trac:SearchCriterionDoCom>
+               <!--Optional:-->
+               <trac:Status>?</trac:Status>
+               <!--Optional:-->
+               <trac:ReferenceNumber>?</trac:ReferenceNumber>
+               <!--Optional:-->
+               <trac:DepartureBetween>
+                  <trac:StartDate>?</trac:StartDate>
+                  <trac:EndDate>?</trac:EndDate>
+               </trac:DepartureBetween>
+               <!--Optional:-->
+               <trac:ModifiedBetween>
+                  <trac:StartDate>?</trac:StartDate>
+                  <trac:EndDate>?</trac:EndDate>
+               </trac:ModifiedBetween>
+               <!--Optional:-->
+               <trac:DeclaredBetween>
+                  <trac:StartDate>?</trac:StartDate>
+                  <trac:EndDate>?</trac:EndDate>
+               </trac:DeclaredBetween>
+               <!--Optional:-->
+               <trac:CommodityCode>?</trac:CommodityCode>
+               <!--Optional:-->
+               <trac:CountryOfOrigin>?</trac:CountryOfOrigin>
+               <!--Optional:-->
+               <trac:CountryOfDestination>?</trac:CountryOfDestination>
+               <!--Optional:-->
+               <trac:CertificateIdTreshold>?</trac:CertificateIdTreshold>
+               <!--Optional:-->
+               <trac:FetchAmount>?</trac:FetchAmount>
+            </trac:SearchCriterionDoCom>
+            <trac:SearchCriterionCED>
+               <!--Optional:-->
+               <trac:Status>?</trac:Status>
+               <!--Optional:-->
+               <trac:ReferenceNumber>?</trac:ReferenceNumber>
+               <!--Optional:-->
+               <trac:ArrivalAtDPEBetween>
+                  <trac:StartDate>?</trac:StartDate>
+                  <trac:EndDate>?</trac:EndDate>
+               </trac:ArrivalAtDPEBetween>
+               <!--Optional:-->
+               <trac:ModifiedBetween>
+                  <trac:StartDate>?</trac:StartDate>
+                  <trac:EndDate>?</trac:EndDate>
+               </trac:ModifiedBetween>
+               <!--Optional:-->
+               <trac:NatureOfProduct>?</trac:NatureOfProduct>
+               <!--Optional:-->
+               <trac:CustomsDocumentReference>?</trac:CustomsDocumentReference>
+               <!--Optional:-->
+               <trac:CountryOfOrigin>?</trac:CountryOfOrigin>
+               <!--Optional:-->
+               <trac:CountryOfDestination>?</trac:CountryOfDestination>
+               <!--Optional:-->
+               <trac:CertificateIdTreshold>?</trac:CertificateIdTreshold>
+               <!--Optional:-->
+               <trac:FetchAmount>?</trac:FetchAmount>
+            </trac:SearchCriterionCED>
+            <trac:SearchCriterionCHEDPP>
+               <!--Optional:-->
+               <trac:Status>?</trac:Status>
+               <!--Optional:-->
+               <trac:ReferenceNumber>?</trac:ReferenceNumber>
+               <!--Optional:-->
+               <trac:ArrivalAtDPEBetween>
+                  <trac:StartDate>?</trac:StartDate>
+                  <trac:EndDate>?</trac:EndDate>
+               </trac:ArrivalAtDPEBetween>
+               <!--Optional:-->
+               <trac:ModifiedBetween>
+                  <trac:StartDate>?</trac:StartDate>
+                  <trac:EndDate>?</trac:EndDate>
+               </trac:ModifiedBetween>
+               <!--Optional:-->
+               <trac:NatureOfProduct>?</trac:NatureOfProduct>
+               <!--Optional:-->
+               <trac:CustomsDocumentReference>?</trac:CustomsDocumentReference>
+               <!--Optional:-->
+               <trac:CountryOfOrigin>?</trac:CountryOfOrigin>
+               <!--Optional:-->
+               <trac:CountryOfDestination>?</trac:CountryOfDestination>
+               <!--Optional:-->
+               <trac:CertificateIdTreshold>?</trac:CertificateIdTreshold>
+               <!--Optional:-->
+               <trac:FetchAmount>?</trac:FetchAmount>
+            </trac:SearchCriterionCHEDPP>
+         </trac:Request>
+      </trac:CertificateRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>BIP.GB@traces-cbt.net </con:username><con:password>BIP.GB</con:password><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="traceswsns/CertificateSearchWebServicePort/searchCertificateRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call id="f65c0b76-6b62-490e-9da9-167611de56c6" name="Search Request CED"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://webgate.training.ec.europa.eu/sanco/traces_ws/searchCertificate</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:trac="traceswsns">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <trac:CertificateRequest>
+         <trac:XMLSchemaVersion>${#Project#xmlversion}</trac:XMLSchemaVersion>
+         <trac:UserIdentification>${#Project#username}</trac:UserIdentification>
+         <trac:UserPassword>${#Project#password}</trac:UserPassword>
+         <trac:SendingDate>${#Project#sendingDate}</trac:SendingDate>
+         <trac:Request>
+            <!--You have a CHOICE of the next 6 items at this level-->
+            <trac:SearchCriterionCVEDAnimal>
+               <trac:ModifiedBetween>
+                  <trac:StartDate>2017-10-01 12:23</trac:StartDate>
+                  <trac:EndDate>2017-01-17 10:23</trac:EndDate>
+               </trac:ModifiedBetween>
+               <trac:CountryOfDestination>GB</trac:CountryOfDestination>
+               <trac:FetchAmount>100</trac:FetchAmount>
+            </trac:SearchCriterionCVEDAnimal>
+         </trac:Request>
+      </trac:CertificateRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>BIP.GB@traces-cbt.net </con:username><con:password>BIP.GB</con:password><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="traceswsns/CertificateSearchWebServicePort/searchCertificateRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="08455f37-0fc3-4f0b-a971-ecca6ca38bca" wsaVersion="NONE" name="CertificateSearchResultPoll" type="wsdl" bindingName="{traceswsns}CertificateSearchResultPollWebServicePort" soapVersion="1_1" anonymous="optional" definition="https://webgate.training.ec.europa.eu/sanco/traces_ws/pollSearchCertificateResult?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://webgate.training.ec.europa.eu/sanco/traces_ws/pollSearchCertificateResult?WSDL"><con:part><con:url>https://webgate.training.ec.europa.eu/sanco/traces_ws/pollSearchCertificateResult?WSDL</con:url><con:content><![CDATA[<definitions targetNamespace="traceswsns" xmlns:wsr="http://www.openuri.org/2002/10/soap/reliability/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap12enc="http://www.w3.org/2003/05/soap-encoding" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tns="traceswsns" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:conv="http://www.openuri.org/2002/04/wsdl/conversation/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <types>
+    <xs:schema attributeFormDefault="qualified" targetNamespace="traceswsns" elementFormDefault="qualified" xmlns="traceswsns" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="CertificatePoll" type="CertificatePoll">
+        <xs:annotation>
+          <xs:documentation>Message sent to the server to poll for a search result.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:complexType name="CertificatePoll">
+        <xs:annotation>
+          <xs:documentation>Message sent to the server to poll for a search result.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="XMLSchemaVersion" type="XMLSchemaVersion"></xs:element>
+          <xs:element name="UserIdentification" type="UserAuthenticationString"></xs:element>
+          <xs:element name="UserPassword" type="UserAuthenticationString"></xs:element>
+          <xs:element name="SendingDate" type="Timestamp"></xs:element>
+          <xs:element name="RequestIdentifier" type="RequestIdentifier"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="CertificatePollResult" type="CertificatePollResult">
+        <xs:annotation>
+          <xs:documentation>Message returned by the server as answer to a poll request.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:complexType name="CertificatePollResult">
+        <xs:annotation>
+          <xs:documentation>Message returned by the server as answer to a poll request.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="XMLSchemaVersion" type="XMLSchemaVersion"></xs:element>
+          <xs:element name="SendingDate" type="Timestamp"></xs:element>
+          <xs:element name="OperationCode" type="xs:int"></xs:element>
+          <xs:element name="RequestIdentifier" type="RequestIdentifier"></xs:element>
+          <xs:element name="Certificates" type="Certificates" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Certificates">
+        <xs:annotation>
+          <xs:documentation>This element describes the result generated from the request</xs:documentation>
+        </xs:annotation>
+        <xs:choice>
+          <xs:element maxOccurs="unbounded" name="CVEDProduct" type="CVEDProduct" minOccurs="0"></xs:element>
+          <xs:element maxOccurs="unbounded" name="CVEDAnimal" type="CVEDAnimal" minOccurs="0"></xs:element>
+          <xs:element maxOccurs="unbounded" name="IntraTrade" type="IntraTrade" minOccurs="0"></xs:element>
+          <xs:element maxOccurs="unbounded" name="DoCom" type="DoCom" minOccurs="0"></xs:element>
+          <xs:element maxOccurs="unbounded" name="CED" type="CED" minOccurs="0"></xs:element>
+          <xs:element maxOccurs="unbounded" name="CHEDPP" type="CHEDPP" minOccurs="0"></xs:element>
+        </xs:choice>
+      </xs:complexType>
+      <xs:simpleType name="CertificateStatus">
+        <xs:annotation>
+          <xs:documentation>Status of a Certificate: new, rejected, valid, ...</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="new"></xs:enumeration>
+          <xs:enumeration value="rejected"></xs:enumeration>
+          <xs:enumeration value="pre-validated"></xs:enumeration>
+          <xs:enumeration value="valid"></xs:enumeration>
+          <xs:enumeration value="cancelled"></xs:enumeration>
+          <xs:enumeration value="replaced"></xs:enumeration>
+          <xs:enumeration value="animo"></xs:enumeration>
+          <xs:enumeration value="inprogress"></xs:enumeration>
+          <xs:enumeration value="recalled"></xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="CVEDProduct">
+        <xs:annotation>
+          <xs:documentation>The CVED for Animal Products is split in 3 sections: Consignment, Decision and Control</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="LastChangeDate" type="Timestamp"></xs:element>
+          <xs:element name="Consignment" type="CVEDProductConsignment"></xs:element>
+          <xs:element name="Decision" type="CVEDProductDecision" minOccurs="0"></xs:element>
+          <xs:element name="Control" type="CVEDProductControl" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CVEDAnimal">
+        <xs:annotation>
+          <xs:documentation>The CVED for Animals is split in three sections: Consignment, Decision and Control</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="LastChangeDate" type="Timestamp"></xs:element>
+          <xs:element name="Consignment" type="CVEDAnimalConsignment"></xs:element>
+          <xs:element name="Decision" type="CVEDAnimalDecision" minOccurs="0"></xs:element>
+          <xs:element name="Control" type="CVEDAnimalControl" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="IntraTrade">
+        <xs:annotation>
+          <xs:documentation>The Intra Trade is split in three sections: Consignment, Decision and Control</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="LastChangeDate" type="Timestamp"></xs:element>
+          <xs:element name="Consignment" type="IntraTradeConsignment"></xs:element>
+          <xs:element name="Decision" type="IntraTradeDecision" minOccurs="0"></xs:element>
+          <xs:element name="ListOfControls" type="IntraTradeListOfControls" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DoCom">
+        <xs:annotation>
+          <xs:documentation>The Do Com is split in three sections: Consignment, Decision and Control</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="LastChangeDate" type="Timestamp"></xs:element>
+          <xs:element name="Consignment" type="DoComConsignment"></xs:element>
+          <xs:element name="Decision" type="DoComDecision" minOccurs="0"></xs:element>
+          <xs:element name="ListOfControls" type="DoComListOfControls" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CVEDProductConsignment">
+        <xs:annotation>
+          <xs:documentation>This Consignment section describes the details of the consignment presented</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Id" type="xs:long"></xs:element>
+          <xs:element name="Status" type="CertificateStatus"></xs:element>
+          <xs:element name="ConsignorExporter" type="EconomicOperator"></xs:element>
+          <xs:element name="CVEDReferenceNumber" type="ReferenceNumber"></xs:element>
+          <xs:element name="CVEDVersionNumber" type="nonNegativeInteger" minOccurs="0"></xs:element>
+          <xs:element name="BorderInspectionPost" type="CompetentAuthorityAnimoCode"></xs:element>
+          <xs:element name="Consignee" type="EconomicOperator" minOccurs="0"></xs:element>
+          <xs:element name="PersonResponsibleForLoad" type="EconomicOperator"></xs:element>
+          <xs:element name="Importer" type="EconomicOperator" minOccurs="0"></xs:element>
+          <xs:element name="CountryOfOrigin" type="CountryISOCode" minOccurs="0"></xs:element>
+          <xs:element name="CountryFromWhereConsigned" type="CountryISOCode"></xs:element>
+          <xs:element name="DeliveryAddress" type="EconomicOperator" minOccurs="0"></xs:element>
+          <xs:element name="ArrivalAtBip" type="Timestamp" minOccurs="0"></xs:element>
+          <xs:element name="VeterinaryDocument" type="VeterinaryDocument" minOccurs="0"></xs:element>
+          <xs:element name="EstablishmentsOfOrigin" type="ListOfEstablishmentsOfOrigin" minOccurs="0"></xs:element>
+          <xs:element name="MeansOfTransport" type="MeansOfTransport" minOccurs="0"></xs:element>
+          <xs:element name="Temperature" type="Temperature" minOccurs="0"></xs:element>
+          <xs:element name="NumberOfPackages" type="nonNegativeInteger"></xs:element>
+          <xs:element name="CommodityComplements" type="CommodityComplements" minOccurs="0"></xs:element>
+          <xs:element name="GrossWeight" type="nonNegativeDecimal"></xs:element>
+          <xs:element name="NetWeight" type="nonNegativeDecimal"></xs:element>
+          <xs:element name="IdentificationOfAnimals" type="IdentificationOfAnimals"></xs:element>
+          <xs:element name="SealsContainers" type="ListOfSealsContainers" minOccurs="0"></xs:element>
+          <xs:choice>
+            <xs:element name="TranshipmentTo" type="TranshipmentTo"></xs:element>
+            <xs:element name="TransitToThirdCountry" type="TransitToThirdCountry"></xs:element>
+            <xs:element name="ForReImport" type="ForReImport"></xs:element>
+            <xs:element name="ForInternalMarket" type="ForInternalMarket"></xs:element>
+            <xs:element name="ForNonConformingConsignments" type="ForNonConformingConsignments"></xs:element>
+          </xs:choice>
+          <xs:element name="ConformsToEURequirements" type="SatisfactoryCheck"></xs:element>
+          <xs:element name="PlaceAndDateOfDeclaration" type="DateOfDeclaration"></xs:element>
+          <xs:element name="LocalReferenceNumber" type="ReferenceNumber" minOccurs="0"></xs:element>
+          <xs:element name="MeansOfTransportAfterBorder" type="MeansOfTransport" minOccurs="0"></xs:element>
+          <xs:element name="Departure" type="Timestamp" minOccurs="0"></xs:element>
+          <xs:element name="Transporter" type="EconomicOperator" minOccurs="0"></xs:element>
+          <xs:element name="ReplacingReferenceNumber" type="ReferenceNumber" minOccurs="0"></xs:element>
+          <xs:element name="ReplacedReferenceNumber" type="ReferenceNumber" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CVEDProductDecision">
+        <xs:annotation>
+          <xs:documentation>This section describes the decision made on consignment by the competent authority</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="PreviousCVED" type="ReferenceNumber" minOccurs="0"></xs:element>
+          <xs:element name="DocumentaryCheck" type="SatisfactoryCheck"></xs:element>
+          <xs:element name="IdentityCheck" type="CVEDProductIdentityCheck" minOccurs="0"></xs:element>
+          <xs:element name="PhysicalCheck" type="PhysicalCheck" minOccurs="0"></xs:element>
+          <xs:element name="LaboratoryTests" type="LaboratoryTests" minOccurs="0"></xs:element>
+          <xs:choice>
+            <xs:element name="Acceptable" type="Acceptable"></xs:element>
+            <xs:element name="NotAcceptable" type="CVEDProductNotAcceptable"></xs:element>
+          </xs:choice>
+          <xs:element name="ConsignmentsResealed" type="ConsignmentsResealed" minOccurs="0"></xs:element>
+          <xs:element name="OfficialVeterinarian" type="OfficialVeterinarian"></xs:element>
+          <xs:element name="CustomsDocumentReference" type="CustomsDocumentReference" minOccurs="0"></xs:element>
+          <xs:element name="SubsequentCVEDs" type="SubsequentCVEDs" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CVEDProductControl">
+        <xs:annotation>
+          <xs:documentation>This Control section describes the control made on the consignment</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Location" type="Location"></xs:element>
+          <xs:element name="ConformityFlag" type="xs:boolean"></xs:element>
+          <xs:element name="OfficialVeterinarian" type="OfficialVeterinarian"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CVEDAnimalConsignment">
+        <xs:annotation>
+          <xs:documentation>This Consignement section describes the details of the consignment presented</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Id" type="xs:long"></xs:element>
+          <xs:element name="Status" type="CertificateStatus"></xs:element>
+          <xs:element name="ConsignorExporter" type="EconomicOperator"></xs:element>
+          <xs:element name="CVEDReferenceNumber" type="ReferenceNumber"></xs:element>
+          <xs:element name="CVEDVersionNumber" type="nonNegativeInteger" minOccurs="0"></xs:element>
+          <xs:element name="BorderInspectionPost" type="CompetentAuthorityAnimoCode"></xs:element>
+          <xs:element name="Consignee" type="EconomicOperator" minOccurs="0"></xs:element>
+          <xs:element name="PersonResponsible" type="EconomicOperator"></xs:element>
+          <xs:element name="CountryOfOrigin" type="CountryISOCode"></xs:element>
+          <xs:element name="RegionOfOrigin" type="RegionCode" minOccurs="0"></xs:element>
+          <xs:element name="Importer" type="EconomicOperator" minOccurs="0"></xs:element>
+          <xs:element name="PlaceOfDestination" type="EconomicOperator" minOccurs="0"></xs:element>
+          <xs:element name="ArrivalAtBip" type="Timestamp"></xs:element>
+          <xs:element name="VeterinaryDocument" type="VeterinaryDocument" minOccurs="0"></xs:element>
+          <xs:element name="AccompanyingDocuments" type="ListOfAccompanyingDocuments" minOccurs="0"></xs:element>
+          <xs:element name="MeansOfTransport" type="MeansOfTransport" minOccurs="0"></xs:element>
+          <xs:element name="CommodityComplements" type="CommodityComplements" minOccurs="0"></xs:element>
+          <xs:element name="IncludeNonAblactedAnimals" type="xs:boolean"></xs:element>
+          <xs:element name="NumberOfAnimals" type="nonNegativeInteger"></xs:element>
+          <xs:element name="NumberOfPackages" type="nonNegativeInteger"></xs:element>
+          <xs:element name="IdentificationOfAnimals" type="IdentificationOfAnimals"></xs:element>
+          <xs:element name="AnimalCertifiedAs" type="AnimalCertifiedAsCVED"></xs:element>
+          <xs:element name="SealsContainers" type="ListOfSealsContainers" minOccurs="0"></xs:element>
+          <xs:choice>
+            <xs:element name="TranshipmentTo" type="TranshipmentTo"></xs:element>
+            <xs:element name="TransitToThirdCountry" type="TransitToThirdCountry"></xs:element>
+            <xs:element name="ImportOrAdmission" type="ImportOrAdmission"></xs:element>
+          </xs:choice>
+          <xs:element name="TransitInMemberStates" type="ListOfMemberStates" minOccurs="0"></xs:element>
+          <xs:element name="MeansOfTransportAfterBorder" type="MeansOfTransport" minOccurs="0"></xs:element>
+          <xs:element name="Transporter" type="EconomicOperator"></xs:element>
+          <xs:element name="StagingTransferPoints" type="ListOfStagingTransferPoints" minOccurs="0"></xs:element>
+          <xs:element name="Departure" type="Timestamp" minOccurs="0"></xs:element>
+          <xs:element name="EstimatedJourneyTime" type="EstimatedJourneyTime" minOccurs="0"></xs:element>
+          <xs:element name="ResponsibleTransportJourney" type="ResponsibleTransportJourney" minOccurs="0"></xs:element>
+          <xs:element name="PlaceAndDateOfDeclaration" type="DateOfDeclaration"></xs:element>
+          <xs:element name="LocalReferenceNumber" type="ReferenceNumber" minOccurs="0"></xs:element>
+          <xs:element name="ReplacingReferenceNumber" type="ReferenceNumber" minOccurs="0"></xs:element>
+          <xs:element name="ReplacedReferenceNumber" type="ReferenceNumber" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CVEDAnimalDecision">
+        <xs:annotation>
+          <xs:documentation>This Decision section describes the decision made on consignment by the competent authority. IdentityCheck,
+							PhysicalCheck, WelfareCheck not mandatory when DocumentaryCheck not satisfactory.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="DocumentaryCheck" type="DocumentaryCheck"></xs:element>
+          <xs:element name="IdentityCheck" type="SatisfactoryDerogationCheck" minOccurs="0"></xs:element>
+          <xs:element name="PhysicalCheck" type="CVEDAnimalPhysicalCheck" minOccurs="0"></xs:element>
+          <xs:element name="LaboratoryTests" type="LaboratoryTests" minOccurs="0"></xs:element>
+          <xs:element name="WelfareCheck" type="SatisfactoryDerogationCheck" minOccurs="0"></xs:element>
+          <xs:element name="ImpactOfTheTransportOnAnimals" type="ImpactOfTheTransportOnAnimals"></xs:element>
+          <xs:choice>
+            <xs:element name="Acceptable" type="CVEDAnimalAcceptable"></xs:element>
+            <xs:element name="NotAcceptable" type="CVEDAnimalNotAcceptable"></xs:element>
+          </xs:choice>
+          <xs:element name="ConsignmentsResealed" type="ConsignmentsResealed" minOccurs="0"></xs:element>
+          <xs:element name="OfficialVeterinarian" type="OfficialVeterinarian"></xs:element>
+          <xs:element name="CustomsDocumentReference" type="CustomsDocumentReference" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CVEDAnimalControl">
+        <xs:annotation>
+          <xs:documentation>The control describes a single control made on the Intratrade consignment. XML Elements of checks that have not
+							been executed are not present.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="DetailsOnReExport" type="DetailsOnReExport"></xs:element>
+          <xs:element name="FeedbackInformation" type="FeedbackInformation"></xs:element>
+          <xs:element name="OfficialVetAtControlledDestination" type="OfficialVetAtControlledDestination"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="IntraTradeConsignment">
+        <xs:annotation>
+          <xs:documentation>This Consignement section describes the details of the consignment presented</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Id" type="xs:long"></xs:element>
+          <xs:element name="Status" type="CertificateStatus"></xs:element>
+          <xs:element name="Consignor" type="EconomicOperator"></xs:element>
+          <xs:element name="CertificateReferenceNumber" type="ReferenceNumber"></xs:element>
+          <xs:element name="CertificateVersionNumber" type="nonNegativeInteger" minOccurs="0"></xs:element>
+          <xs:element name="CentralCompetentAuthority" type="CompetentAuthorityAnimoCode"></xs:element>
+          <xs:element name="LocalCompetentAuthority" type="CompetentAuthorityAnimoCode"></xs:element>
+          <xs:element name="DestinationLocalCompetentAuthority" type="CompetentAuthorityAnimoCode"></xs:element>
+          <xs:element name="Consignee" type="EconomicOperator" minOccurs="0"></xs:element>
+          <xs:element name="RelatedOriginalCertificates" type="RelatedOriginalCertificates" minOccurs="0"></xs:element>
+          <xs:element name="RelatedCitesCertificates" type="RelatedCitesCertificates" minOccurs="0"></xs:element>
+          <xs:element name="RelatedIntraTradeCertificates" type="RelatedIntraTradeCertificates" minOccurs="0"></xs:element>
+          <xs:element name="RelatedCVEDProductCertificates" type="RelatedCVEDProductCertificates" minOccurs="0"></xs:element>
+          <xs:element name="Dealer" type="EconomicOperator" minOccurs="0"></xs:element>
+          <xs:element name="CountryOfOrigin" type="CountryISOCode"></xs:element>
+          <xs:element name="RegionOfOrigin" type="RegionCode" minOccurs="0"></xs:element>
+          <xs:element name="CountryOfDestination" type="CountryISOCode" minOccurs="0"></xs:element>
+          <xs:element name="RegionOfDestination" type="RegionCode" minOccurs="0"></xs:element>
+          <xs:element name="PlaceOfOriginHarvest" type="EconomicOperator"></xs:element>
+          <xs:element name="PlaceOfDestination" type="EconomicOperator" minOccurs="0"></xs:element>
+          <xs:element name="PlaceOfLoading" type="EconomicOperator" minOccurs="0"></xs:element>
+          <xs:element name="DepartureDateTime" type="Timestamp" minOccurs="0"></xs:element>
+          <xs:element name="MeansOfTransport" type="MeansOfTransport" minOccurs="0"></xs:element>
+          <xs:element name="Transporter" type="EconomicOperator" minOccurs="0"></xs:element>
+          <xs:element name="CommodityComplements" type="CommodityComplements" minOccurs="0"></xs:element>
+          <xs:element name="IncludeNonAblactedAnimals" type="xs:boolean"></xs:element>
+          <xs:element name="IdentificationOfAnimals" type="IdentificationOfAnimals"></xs:element>
+          <xs:element name="NumberOfAnimalsGrossWeight" type="nonNegativeDecimal"></xs:element>
+          <xs:element name="Temperature" type="Temperature" minOccurs="0"></xs:element>
+          <xs:element name="Packages" type="Packages" minOccurs="0"></xs:element>
+          <xs:element name="SealsContainers" type="ListOfSealsContainers" minOccurs="0"></xs:element>
+          <xs:element name="AnimalCertifiedAs" type="AnimalCertifiedAsIntratrade" minOccurs="0"></xs:element>
+          <xs:element name="TransitInThirdCountry" type="ThirdCountry" minOccurs="0"></xs:element>
+          <xs:element name="TransitInMemberStates" type="ListOfMemberStates" minOccurs="0"></xs:element>
+          <xs:element name="Export" type="Export" minOccurs="0"></xs:element>
+          <xs:element name="EstimatedJourneyTime" type="EstimatedJourneyTime" minOccurs="0"></xs:element>
+          <xs:element name="ResponsibleTransportJourney" type="ResponsibleTransportJourney" minOccurs="0"></xs:element>
+          <xs:element name="StagingTransferPoints" type="ListOfStagingTransferPoints" minOccurs="0"></xs:element>
+          <xs:element name="PlaceAndDateOfDeclaration" type="DateOfDeclaration"></xs:element>
+          <xs:element name="CustomsNumber" type="ReferenceNumber" minOccurs="0"></xs:element>
+          <xs:element name="ReplacingReferenceNumber" type="ReferenceNumber" minOccurs="0"></xs:element>
+          <xs:element name="ReplacedReferenceNumber" type="ReferenceNumber" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DoComConsignment">
+        <xs:annotation>
+          <xs:documentation>This Consignement section describes the details of the consignment presented</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Id" type="xs:long"></xs:element>
+          <xs:element name="Status" type="CertificateStatus"></xs:element>
+          <xs:element name="Consignor" type="EconomicOperator"></xs:element>
+          <xs:element name="CertificateReferenceNumber" type="ReferenceNumber"></xs:element>
+          <xs:element name="CertificateVersionNumber" type="nonNegativeInteger" minOccurs="0"></xs:element>
+          <xs:element name="CentralCompetentAuthority" type="CompetentAuthorityAnimoCode"></xs:element>
+          <xs:element name="LocalCompetentAuthority" type="CompetentAuthorityAnimoCode"></xs:element>
+          <xs:element name="DestinationLocalCompetentAuthority" type="CompetentAuthorityAnimoCode"></xs:element>
+          <xs:element name="Consignee" type="EconomicOperator" minOccurs="0"></xs:element>
+          <xs:element name="RelatedOriginalCertificates" type="RelatedOriginalCertificates" minOccurs="0"></xs:element>
+          <xs:element name="RelatedCitesCertificates" type="RelatedCitesCertificates" minOccurs="0"></xs:element>
+          <xs:element name="RelatedIntraTradeCertificates" type="RelatedIntraTradeCertificates" minOccurs="0"></xs:element>
+          <xs:element name="RelatedCVEDProductCertificates" type="RelatedCVEDProductCertificates" minOccurs="0"></xs:element>
+          <xs:element name="Dealer" type="EconomicOperator" minOccurs="0"></xs:element>
+          <xs:element name="CountryOfOrigin" type="CountryISOCode"></xs:element>
+          <xs:element name="RegionOfOrigin" type="RegionCode" minOccurs="0"></xs:element>
+          <xs:element name="CountryOfDestination" type="CountryISOCode" minOccurs="0"></xs:element>
+          <xs:element name="RegionOfDestination" type="RegionCode" minOccurs="0"></xs:element>
+          <xs:element name="PlaceOfOriginHarvest" type="EconomicOperator"></xs:element>
+          <xs:element name="PlaceOfDestination" type="EconomicOperator" minOccurs="0"></xs:element>
+          <xs:element name="PlaceOfLoading" type="EconomicOperator" minOccurs="0"></xs:element>
+          <xs:element name="DepartureDateTime" type="Timestamp" minOccurs="0"></xs:element>
+          <xs:element name="MeansOfTransport" type="MeansOfTransport" minOccurs="0"></xs:element>
+          <xs:element name="Transporter" type="EconomicOperator" minOccurs="0"></xs:element>
+          <xs:element name="CommodityComplements" type="CommodityComplements" minOccurs="0"></xs:element>
+          <xs:element name="IncludeNonAblactedAnimals" type="xs:boolean"></xs:element>
+          <xs:element name="IdentificationOfAnimals" type="IdentificationOfAnimals"></xs:element>
+          <xs:element name="NumberOfAnimalsGrossWeight" type="nonNegativeDecimal"></xs:element>
+          <xs:element name="Temperature" type="Temperature" minOccurs="0"></xs:element>
+          <xs:element name="Packages" type="Packages" minOccurs="0"></xs:element>
+          <xs:element name="SealsContainers" type="ListOfSealsContainers" minOccurs="0"></xs:element>
+          <xs:element name="AnimalCertifiedAs" type="AnimalCertifiedAsIntratrade" minOccurs="0"></xs:element>
+          <xs:element name="TransitInThirdCountry" type="ThirdCountry" minOccurs="0"></xs:element>
+          <xs:element name="TransitInMemberStates" type="ListOfMemberStates" minOccurs="0"></xs:element>
+          <xs:element name="Export" type="Export" minOccurs="0"></xs:element>
+          <xs:element name="EstimatedJourneyTime" type="EstimatedJourneyTime" minOccurs="0"></xs:element>
+          <xs:element name="ResponsibleTransportJourney" type="ResponsibleTransportJourney" minOccurs="0"></xs:element>
+          <xs:element name="StagingTransferPoints" type="ListOfStagingTransferPoints" minOccurs="0"></xs:element>
+          <xs:element name="PlaceAndDateOfDeclaration" type="DateOfDeclaration"></xs:element>
+          <xs:element name="CustomsNumber" type="ReferenceNumber" minOccurs="0"></xs:element>
+          <xs:element name="ReplacingReferenceNumber" type="ReferenceNumber" minOccurs="0"></xs:element>
+          <xs:element name="ReplacedReferenceNumber" type="ReferenceNumber" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="IntraTradeDecision">
+        <xs:annotation>
+          <xs:documentation>This Decision section describes the decision made on the consignment by the competent authority. This document
+							is composed by 2 parts: the identification of signatory and a list of values associated with a logical name. This is required since
+							the content of the decision varies in function of the commodity. It is not possible to cover all possible form types with pre-defined
+							field names.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="IntratradeDecisionOfficialVeterinarian" type="IntratradeDecisionOfficialVeterinarian"></xs:element>
+          <xs:element name="IntratradeDecisionParameters" type="IntratradeDecisionParameters"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DoComDecision">
+        <xs:annotation>
+          <xs:documentation>This Decision section describes the decision made on the consignment by the competent authority. This document
+							is composed by 2 parts: the identification of signatory and a list of values associated with a logical name. This is required since
+							the content of the decision varies in function of the commodity. It is not possible to cover all possible form types with pre-defined
+							field names.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="DoComSignatory" type="DoComSignatory"></xs:element>
+          <xs:element name="DoComDecisionParameters" type="DoComDecisionParameters"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DoComSignatory">
+        <xs:annotation>
+          <xs:documentation>Signature of the Decision.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Name" type="Name"></xs:element>
+          <xs:element name="PlaceOfSignature" type="CityName"></xs:element>
+          <xs:element name="SignatureDate" type="Timestamp"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DoComDecisionParameters">
+        <xs:annotation>
+          <xs:documentation>List of key/data values holding variable parameters of docom decision forms.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="DecisionParameter" type="KeyDataPair" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="IntraTradeListOfControls">
+        <xs:annotation>
+          <xs:documentation>List of controls for Intra Trade Certificates</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="Control" type="IntraTradeControl"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="IntraTradeControl">
+        <xs:annotation>
+          <xs:documentation>This Control section describes the control made on the consignment</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="DateOfControl" type="Date"></xs:element>
+          <xs:element name="DocumentaryCheck" type="DocumentaryCheck" minOccurs="0"></xs:element>
+          <xs:element name="IdentityCheck" type="SatisfactoryCheck" minOccurs="0"></xs:element>
+          <xs:element name="PhysicalCheck" type="IntraTradePhysicalCheck" minOccurs="0"></xs:element>
+          <xs:element name="LaboratoryTests" type="LaboratoryTests" minOccurs="0"></xs:element>
+          <xs:element name="WelfareCheck" type="SatisfactoryCheck" minOccurs="0"></xs:element>
+          <xs:element name="Infringement" type="Infringements"></xs:element>
+          <xs:element name="ImpactOfTheTransportOnAnimals" type="ImpactOfTheTransportOnAnimals"></xs:element>
+          <xs:element name="ActionFollowingQuarantine" type="ActionFollowingQuarantine" minOccurs="0"></xs:element>
+          <xs:element name="OfficialVeterinarian" type="OfficialVeterinarian"></xs:element>
+          <xs:element name="PlaceOfControl" type="PlaceOfControl"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DoComListOfControls">
+        <xs:annotation>
+          <xs:documentation>List of controls for Intra Trade Certificates</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="Control" type="DoComControl"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DoComControl">
+        <xs:annotation>
+          <xs:documentation>This Control section describes the control made on the consignment</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="DateOfControl" type="Date"></xs:element>
+          <xs:element name="DocumentaryCheck" type="DocumentaryCheck" minOccurs="0"></xs:element>
+          <xs:element name="IdentityCheck" type="SatisfactoryCheck" minOccurs="0"></xs:element>
+          <xs:element name="PhysicalCheck" type="IntraTradePhysicalCheck" minOccurs="0"></xs:element>
+          <xs:element name="LaboratoryTests" type="LaboratoryTests" minOccurs="0"></xs:element>
+          <xs:element name="WelfareCheck" type="SatisfactoryCheck" minOccurs="0"></xs:element>
+          <xs:element name="Infringement" type="Infringements"></xs:element>
+          <xs:element name="ImpactOfTheTransportOnAnimals" type="ImpactOfTheTransportOnAnimals"></xs:element>
+          <xs:element name="ActionFollowingQuarantine" type="ActionFollowingQuarantine" minOccurs="0"></xs:element>
+          <xs:element name="OfficialVeterinarian" type="OfficialVeterinarian"></xs:element>
+          <xs:element name="PlaceOfControl" type="PlaceOfControl"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="EconomicOperator">
+        <xs:annotation>
+          <xs:documentation>The Economic Operator is an actor of the system: Consignor, Consignee, etc. The TracesID represents the internal
+							ID of the business, delivered purely for information.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Status" type="EOStatus"></xs:element>
+          <xs:element name="Name" type="EOName"></xs:element>
+          <xs:element name="Address" type="Address"></xs:element>
+          <xs:element name="Type" type="EOType" minOccurs="0"></xs:element>
+          <xs:element name="ApprovalNumber" type="ApprovalNumber" minOccurs="0"></xs:element>
+          <xs:element name="GeneralNumber" type="GeneralNumber" minOccurs="0"></xs:element>
+          <xs:element name="TracesId" type="nonNegativeInteger"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="EOStatus">
+        <xs:annotation>
+          <xs:documentation>Status of the Economic Operator : valid, pre-valid ...</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="new"></xs:enumeration>
+          <xs:enumeration value="valid"></xs:enumeration>
+          <xs:enumeration value="pre-valid"></xs:enumeration>
+          <xs:enumeration value="deleted"></xs:enumeration>
+          <xs:enumeration value="suspended"></xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="EOName">
+        <xs:annotation>
+          <xs:documentation>Name of the Economic Operator</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"></xs:minLength>
+          <xs:maxLength value="255"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="EOType">
+        <xs:annotation>
+          <xs:documentation>Type of the Economic Operator: holding, assembly centre, etc. In some cases this field is delivered for
+							information only, in some cases it appears in the printed certificate (ex: to select a option in case I.12 on the IntraTrade
+							certificate)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="aquaculture"></xs:enumeration>
+          <xs:enumeration value="semen"></xs:enumeration>
+          <xs:enumeration value="holding"></xs:enumeration>
+          <xs:enumeration value="embryoteam"></xs:enumeration>
+          <xs:enumeration value="storagecentre"></xs:enumeration>
+          <xs:enumeration value="collectcentre"></xs:enumeration>
+          <xs:enumeration value="abattoir"></xs:enumeration>
+          <xs:enumeration value="collecting"></xs:enumeration>
+          <xs:enumeration value="processingplant"></xs:enumeration>
+          <xs:enumeration value="dealerspremise"></xs:enumeration>
+          <xs:enumeration value="approvedbody"></xs:enumeration>
+          <xs:enumeration value="staging"></xs:enumeration>
+          <xs:enumeration value="shipsupplier"></xs:enumeration>
+          <xs:enumeration value="warehouse"></xs:enumeration>
+          <xs:enumeration value="priv_transport"></xs:enumeration>
+          <xs:enumeration value="com_transport"></xs:enumeration>
+          <xs:enumeration value="responsible"></xs:enumeration>
+          <xs:enumeration value="dealer"></xs:enumeration>
+          <xs:enumeration value="bov_semen"></xs:enumeration>
+          <xs:enumeration value="porc_semen"></xs:enumeration>
+          <xs:enumeration value="equ_semen"></xs:enumeration>
+          <xs:enumeration value="ov_semen"></xs:enumeration>
+          <xs:enumeration value="other_semen"></xs:enumeration>
+          <xs:enumeration value="bov_embryo"></xs:enumeration>
+          <xs:enumeration value="porc_embryo"></xs:enumeration>
+          <xs:enumeration value="ov_embryo"></xs:enumeration>
+          <xs:enumeration value="equ_embryo"></xs:enumeration>
+          <xs:enumeration value="other_embryo"></xs:enumeration>
+          <xs:enumeration value="bov_hld"></xs:enumeration>
+          <xs:enumeration value="ov_hld"></xs:enumeration>
+          <xs:enumeration value="porc_hld"></xs:enumeration>
+          <xs:enumeration value="poultry_farm"></xs:enumeration>
+          <xs:enumeration value="aqua_hld"></xs:enumeration>
+          <xs:enumeration value="other"></xs:enumeration>
+          <xs:enumeration value="assemblycenter"></xs:enumeration>
+          <xs:enumeration value="quarantine"></xs:enumeration>
+          <xs:enumeration value="etablish"></xs:enumeration>
+          <xs:enumeration value="importer"></xs:enumeration>
+          <xs:enumeration value="exporter"></xs:enumeration>
+          <xs:enumeration value="trader"></xs:enumeration>
+          <xs:enumeration value="establish_ah"></xs:enumeration>
+          <xs:enumeration value="establish_sh"></xs:enumeration>
+          <xs:enumeration value="establish_cp"></xs:enumeration>
+          <xs:enumeration value="establish_cs"></xs:enumeration>
+          <xs:enumeration value="establish_dc"></xs:enumeration>
+          <xs:enumeration value="establish_ect"></xs:enumeration>
+          <xs:enumeration value="establish_ghe"></xs:enumeration>
+          <xs:enumeration value="establish_ffpp"></xs:enumeration>
+          <xs:enumeration value="establish_fiv"></xs:enumeration>
+          <xs:enumeration value="establish_lep"></xs:enumeration>
+          <xs:enumeration value="establish_mm"></xs:enumeration>
+          <xs:enumeration value="establish_mp"></xs:enumeration>
+          <xs:enumeration value="establish_msm"></xs:enumeration>
+          <xs:enumeration value="establish_pc"></xs:enumeration>
+          <xs:enumeration value="establish_pp"></xs:enumeration>
+          <xs:enumeration value="establish_wr"></xs:enumeration>
+          <xs:enumeration value="establish_ssc"></xs:enumeration>
+          <xs:enumeration value="establish_wm"></xs:enumeration>
+          <xs:enumeration value="establish_z"></xs:enumeration>
+          <xs:enumeration value="establish_fv"></xs:enumeration>
+          <xs:enumeration value="establish_zv"></xs:enumeration>
+          <xs:enumeration value="establish_epc"></xs:enumeration>
+          <xs:enumeration value="establish_cc"></xs:enumeration>
+          <xs:enumeration value="establish_pfe"></xs:enumeration>
+          <xs:enumeration value="establish_fse"></xs:enumeration>
+          <xs:enumeration value="establish_ip"></xs:enumeration>
+          <xs:enumeration value="establish_scc"></xs:enumeration>
+          <xs:enumeration value="nonappr_estab"></xs:enumeration>
+          <xs:enumeration value="port"></xs:enumeration>
+          <xs:enumeration value="establish_cat_1"></xs:enumeration>
+          <xs:enumeration value="establish_cat_2"></xs:enumeration>
+          <xs:enumeration value="establish_cat_3"></xs:enumeration>
+          <xs:enumeration value="establish_aqhld"></xs:enumeration>
+          <xs:enumeration value="establish_bhld"></xs:enumeration>
+          <xs:enumeration value="establish_biogp"></xs:enumeration>
+          <xs:enumeration value="establish_coip"></xs:enumeration>
+          <xs:enumeration value="establish_colc"></xs:enumeration>
+          <xs:enumeration value="establish_coll"></xs:enumeration>
+          <xs:enumeration value="establish_comp"></xs:enumeration>
+          <xs:enumeration value="establish_gatrp"></xs:enumeration>
+          <xs:enumeration value="establish_incp"></xs:enumeration>
+          <xs:enumeration value="establish_oalkhp"></xs:enumeration>
+          <xs:enumeration value="establish_obiodp"></xs:enumeration>
+          <xs:enumeration value="establish_obrgap"></xs:enumeration>
+          <xs:enumeration value="establish_ohphbp"></xs:enumeration>
+          <xs:enumeration value="establish_ohphtp"></xs:enumeration>
+          <xs:enumeration value="establish_olcp"></xs:enumeration>
+          <xs:enumeration value="establish_other"></xs:enumeration>
+          <xs:enumeration value="establish_othld"></xs:enumeration>
+          <xs:enumeration value="establish_ovhld"></xs:enumeration>
+          <xs:enumeration value="establish_petpp"></xs:enumeration>
+          <xs:enumeration value="establish_petpr"></xs:enumeration>
+          <xs:enumeration value="establish_phar"></xs:enumeration>
+          <xs:enumeration value="establish_phld"></xs:enumeration>
+          <xs:enumeration value="establish_procp"></xs:enumeration>
+          <xs:enumeration value="establish_rw"></xs:enumeration>
+          <xs:enumeration value="establish_storp"></xs:enumeration>
+          <xs:enumeration value="establish_tan"></xs:enumeration>
+          <xs:enumeration value="establish_techp"></xs:enumeration>
+          <xs:enumeration value="establish_techsu"></xs:enumeration>
+          <xs:enumeration value="establish_trans"></xs:enumeration>
+          <xs:enumeration value="establish_ucosm"></xs:enumeration>
+          <xs:enumeration value="establish_udog"></xs:enumeration>
+          <xs:enumeration value="establish_ufert"></xs:enumeration>
+          <xs:enumeration value="establish_ufur"></xs:enumeration>
+          <xs:enumeration value="establish_uinse"></xs:enumeration>
+          <xs:enumeration value="establish_unec"></xs:enumeration>
+          <xs:enumeration value="establish_urbp"></xs:enumeration>
+          <xs:enumeration value="establish_uwild"></xs:enumeration>
+          <xs:enumeration value="establish_uzoo"></xs:enumeration>
+          <xs:enumeration value="establish_ab"></xs:enumeration>
+          <xs:enumeration value="establish_ac"></xs:enumeration>
+          <xs:enumeration value="establish_d"></xs:enumeration>
+          <xs:enumeration value="establish_pf"></xs:enumeration>
+          <xs:enumeration value="establish_q"></xs:enumeration>
+          <xs:enumeration value="establish_s"></xs:enumeration>
+          <xs:enumeration value="notset"></xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ApprovalNumber">
+        <xs:annotation>
+          <xs:documentation>Approval Number which identifies an Economic Operator unambiguously per type of organisation per country. In
+							some cases provided for information only, in some cases it appears on the printed certificate (ex: case I.17 on intratrade
+							certificates).</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"></xs:minLength>
+          <xs:maxLength value="100"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="GeneralNumber">
+        <xs:annotation>
+          <xs:documentation>Optional Business General Number, often named Aggregation Code, which identifies an Economic Operator.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"></xs:minLength>
+          <xs:maxLength value="100"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="Address">
+        <xs:annotation>
+          <xs:documentation>An address includes the Street, the City and the Country ISO code</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Street" type="Street" minOccurs="0"></xs:element>
+          <xs:element name="City" type="City"></xs:element>
+          <xs:element name="CountryISOCode" type="CountryISOCode"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="Street">
+        <xs:annotation>
+          <xs:documentation>Name of the street including the street number and the P.O. Box</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"></xs:minLength>
+          <xs:maxLength value="255"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="City">
+        <xs:annotation>
+          <xs:documentation>A City is composed of a Postal Code and a City Name</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="PostalCode" type="PostalCode" minOccurs="0"></xs:element>
+          <xs:element name="Name" type="CityName"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="PostalCode">
+        <xs:annotation>
+          <xs:documentation>Postal code corresponding to a city</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"></xs:minLength>
+          <xs:maxLength value="255"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="CityName">
+        <xs:annotation>
+          <xs:documentation>Name ot a city in the language it has been specified (City names are not translated)</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"></xs:minLength>
+          <xs:maxLength value="255"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="TransferLocation">
+        <xs:annotation>
+          <xs:documentation>Location of transfer point</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"></xs:minLength>
+          <xs:maxLength value="255"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="CountryISOCode">
+        <xs:annotation>
+          <xs:documentation>Country ISO code format in 2 positions: BE, FR, NL,...</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[A-Z][A-Z]"></xs:pattern>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="RelatedOriginalCertificates">
+        <xs:annotation>
+          <xs:documentation>List of related original certificates</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="ReferenceNumber" type="ReferenceNumber"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="ReferenceNumber">
+        <xs:annotation>
+          <xs:documentation>Unique identifier of a certificate</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"></xs:minLength>
+          <xs:maxLength value="90"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="RelatedIntraTradeCertificates">
+        <xs:annotation>
+          <xs:documentation>List of related IntraTrade certificates</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="ReferenceNumber" type="ReferenceNumber"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RelatedCVEDProductCertificates">
+        <xs:annotation>
+          <xs:documentation>List of related CVED Product certificates</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="ReferenceNumber" type="ReferenceNumber"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RelatedCitesCertificates">
+        <xs:annotation>
+          <xs:documentation>List of related CITES certificates</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="CitesReferenceNumber" type="CitesReferenceNumber"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="CitesReferenceNumber">
+        <xs:annotation>
+          <xs:documentation>Unique identifier of a CITES certificate</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"></xs:minLength>
+          <xs:maxLength value="30"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="CompetentAuthorityAnimoCode">
+        <xs:annotation>
+          <xs:documentation>Competent Authority Animo code</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"></xs:minLength>
+          <xs:maxLength value="15"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="RegionCode">
+        <xs:annotation>
+          <xs:documentation>Code of a region</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"></xs:minLength>
+          <xs:maxLength value="10"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="VeterinaryDocument">
+        <xs:annotation>
+          <xs:documentation>Veterinary document</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Number" type="VeterinaryDocumentNumber"></xs:element>
+          <xs:element name="DateOfIssue" type="Date" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="VeterinaryDocumentNumber">
+        <xs:annotation>
+          <xs:documentation>Veterinary document number</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"></xs:minLength>
+          <xs:maxLength value="255"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="ListOfAccompanyingDocuments">
+        <xs:annotation>
+          <xs:documentation>List of accompanying documents</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="AccompanyingDocument" type="AccompanyingDocument"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="AccompanyingDocument">
+        <xs:annotation>
+          <xs:documentation>Accompanying Document</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"></xs:minLength>
+          <xs:maxLength value="32"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="ListOfEstablishmentsOfOrigin">
+        <xs:annotation>
+          <xs:documentation>List of Establishments of Origin</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="EstablishmentOfOrigin" type="EstablishmentOfOrigin"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="EstablishmentOfOrigin">
+        <xs:annotation>
+          <xs:documentation>Establishment of Origin</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Name" type="EstablishmentName"></xs:element>
+          <xs:element name="Type" type="EOType" minOccurs="0"></xs:element>
+          <xs:element name="ApprovalNumber" type="ApprovalNumber" minOccurs="0"></xs:element>
+          <xs:element name="CountryISOCode" type="CountryISOCode"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="EstablishmentName">
+        <xs:annotation>
+          <xs:documentation>Name of the establishment of origin</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"></xs:minLength>
+          <xs:maxLength value="255"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="MeansOfTransport">
+        <xs:annotation>
+          <xs:documentation>Means of transport is composed of a type, identification and document reference</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Means" type="MeansType"></xs:element>
+          <xs:element name="Identification" type="Identification" minOccurs="0"></xs:element>
+          <xs:element name="Document" type="Document" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="MeansType">
+        <xs:annotation>
+          <xs:documentation>Means of transport, means types</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="rail"></xs:enumeration>
+          <xs:enumeration value="plane"></xs:enumeration>
+          <xs:enumeration value="ship"></xs:enumeration>
+          <xs:enumeration value="road"></xs:enumeration>
+          <xs:enumeration value="other"></xs:enumeration>
+          <xs:enumeration value="c_ship_road"></xs:enumeration>
+          <xs:enumeration value="c_ship_rail"></xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="Identification">
+        <xs:annotation>
+          <xs:documentation>Identification of the means of transport</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"></xs:minLength>
+          <xs:maxLength value="50"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="Document">
+        <xs:annotation>
+          <xs:documentation>Additional document when the means of transport is a ship or an airplane</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"></xs:minLength>
+          <xs:maxLength value="32"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="Packages">
+        <xs:annotation>
+          <xs:documentation>Packages</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="NumberOfPackages" type="nonNegativeInteger"></xs:element>
+          <xs:element name="TypeOfPackaging" type="TypeOfPackaging" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="TypeOfPackaging">
+        <xs:annotation>
+          <xs:documentation>Type of packaging</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"></xs:minLength>
+          <xs:maxLength value="20"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="Temperature">
+        <xs:annotation>
+          <xs:documentation>Temperature</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="chilled"></xs:enumeration>
+          <xs:enumeration value="frozen"></xs:enumeration>
+          <xs:enumeration value="ambient"></xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="CommodityCode">
+        <xs:annotation>
+          <xs:documentation>Commodity code</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"></xs:minLength>
+          <xs:maxLength value="20"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="CommodityComplement">
+        <xs:annotation>
+          <xs:documentation>Groups information related to a CN Code Complement</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="CommodityCode" type="CommodityCode"></xs:element>
+          <xs:element name="ComplementID" type="nonNegativeInteger"></xs:element>
+          <xs:element name="SpeciesType" type="ComplementSpeciesType" minOccurs="0"></xs:element>
+          <xs:element name="SpeciesClass" type="ComplementSpeciesClass" minOccurs="0"></xs:element>
+          <xs:element name="SpeciesFamily" type="ComplementSpeciesFamily" minOccurs="0"></xs:element>
+          <xs:element name="SpeciesModel" type="ComplementSpeciesModel" minOccurs="0"></xs:element>
+          <xs:element maxOccurs="unbounded" name="Species" type="ComplementSpecies" minOccurs="0"></xs:element>
+          <xs:element name="SubTotalNetWeight" type="nonNegativeDecimal" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CommodityComplements">
+        <xs:annotation>
+          <xs:documentation>List of CN Code Complements of a certificate.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="CommodityComplement" type="CommodityComplement" minOccurs="1"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="ComplementSpeciesType">
+        <xs:annotation>
+          <xs:documentation>Reference Data ID of a species type. Location in the species classification hierarchy: top node.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"></xs:minLength>
+          <xs:maxLength value="15"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ComplementSpeciesClass">
+        <xs:annotation>
+          <xs:documentation>Latin name of a species class. Location in the species classification hierarchy: beneath the type, above the
+							family.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"></xs:minLength>
+          <xs:maxLength value="80"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ComplementSpeciesFamily">
+        <xs:annotation>
+          <xs:documentation>Latin name of a species family. Location in the species classification hierarchy: beneath the class, above the
+							model.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"></xs:minLength>
+          <xs:maxLength value="80"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ComplementSpeciesModel">
+        <xs:annotation>
+          <xs:documentation>Identification of a species (intratrade certificate) model. Location in the species classification
+							hierarchy: beneath the family, above the list of species. Applies only to intratrade certificates, not for CVED certificates.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"></xs:minLength>
+          <xs:maxLength value="50"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="ComplementSpecies">
+        <xs:annotation>
+          <xs:documentation>Groups information about one single species, generally part of the CN code complement. Location in the species
+							classification hierarchy: bottom node, beneath the model.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="SpeciesID" type="nonNegativeInteger"></xs:element>
+          <xs:element name="SpeciesNomination" type="ComplementSpeciesNomination"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="ComplementSpeciesNomination">
+        <xs:annotation>
+          <xs:documentation>Latin name of a species.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"></xs:minLength>
+          <xs:maxLength value="100"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="AnimalCertifiedAsCVED">
+        <xs:annotation>
+          <xs:documentation>Animals certified as: fattening, registered, ...</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="Quarantine"></xs:enumeration>
+          <xs:enumeration value="Fattening"></xs:enumeration>
+          <xs:enumeration value="Registered"></xs:enumeration>
+          <xs:enumeration value="Slaughter"></xs:enumeration>
+          <xs:enumeration value="ApprovedBodies"></xs:enumeration>
+          <xs:enumeration value="Relaying"></xs:enumeration>
+          <xs:enumeration value="Pets"></xs:enumeration>
+          <xs:enumeration value="Other"></xs:enumeration>
+          <xs:enumeration value="Breeding"></xs:enumeration>
+          <xs:enumeration value="CircusExhibition"></xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="AnimalCertifiedAsIntratrade">
+        <xs:annotation>
+          <xs:documentation>Animals certified as: breeding, fattening, competition, ...</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="Breeding"></xs:enumeration>
+          <xs:enumeration value="Fattening"></xs:enumeration>
+          <xs:enumeration value="Slaughter"></xs:enumeration>
+          <xs:enumeration value="Transhumance"></xs:enumeration>
+          <xs:enumeration value="ApprovedBodies"></xs:enumeration>
+          <xs:enumeration value="RegisteredHorses"></xs:enumeration>
+          <xs:enumeration value="Storage"></xs:enumeration>
+          <xs:enumeration value="Pets"></xs:enumeration>
+          <xs:enumeration value="Other"></xs:enumeration>
+          <xs:enumeration value="ArtificialReproduction"></xs:enumeration>
+          <xs:enumeration value="HumaneConsumption"></xs:enumeration>
+          <xs:enumeration value="TechnicalUse"></xs:enumeration>
+          <xs:enumeration value="AnimalFeedingstuff"></xs:enumeration>
+          <xs:enumeration value="PharmaceuticalUse"></xs:enumeration>
+          <xs:enumeration value="Circus"></xs:enumeration>
+          <xs:enumeration value="Relaying"></xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="ListOfSealsContainers">
+        <xs:annotation>
+          <xs:documentation>List of combinations: Seal number / Container number</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="SealContainer" type="SealContainer"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="SealContainer">
+        <xs:annotation>
+          <xs:documentation>Single combination of Seal number and Container number</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="SealNumber" type="SealNumber" minOccurs="0"></xs:element>
+          <xs:element name="ContainerNumber" type="ContainerNumber" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="SealNumber">
+        <xs:annotation>
+          <xs:documentation>Seal number</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"></xs:minLength>
+          <xs:maxLength value="32"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ContainerNumber">
+        <xs:annotation>
+          <xs:documentation>Container number</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"></xs:minLength>
+          <xs:maxLength value="32"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="TranshipmentTo">
+        <xs:annotation>
+          <xs:documentation>Used when a consignment is not to be imported at this BIP but is to travel onward. Is either a BIP or a 3th
+							country.</xs:documentation>
+        </xs:annotation>
+        <xs:choice>
+          <xs:element name="BIP" type="CompetentAuthorityAnimoCode"></xs:element>
+          <xs:element name="ThirdCountry" type="CountryISOCode"></xs:element>
+        </xs:choice>
+      </xs:complexType>
+      <xs:complexType name="TransitToThirdCountry">
+        <xs:annotation>
+          <xs:documentation>The consignment is in transit to a third country. Country and exit BIP must be specified.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="ThirdCountry" type="CountryISOCode"></xs:element>
+          <xs:element name="ExitBIP" type="CompetentAuthorityAnimoCode"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ImportOrAdmission">
+        <xs:annotation>
+          <xs:documentation>The consingment is intended for import or admission. The Exit Date and Exit Point are only applicable for
+							temporary admission of horses.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="ImportOrAdmissionType" type="ImportOrAdmissionType"></xs:element>
+          <xs:element name="ExitDate" type="Date" minOccurs="0"></xs:element>
+          <xs:element name="ExitPoint" type="CompetentAuthorityAnimoCode" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="ImportOrAdmissionType">
+        <xs:annotation>
+          <xs:documentation>Type of import or admission: definitive import, re-entry, ...</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="import"></xs:enumeration>
+          <xs:enumeration value="re-entry"></xs:enumeration>
+          <xs:enumeration value="temporary"></xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="ListOfMemberStates">
+        <xs:annotation>
+          <xs:documentation>List of Member States</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="MemberStateISOCode" type="CountryISOCode"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ListOfStagingTransferPoints">
+        <xs:annotation>
+          <xs:documentation>List of staging or transfer points</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="StagingTransferPoint" type="StagingTransferPoint"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="StagingTransferPoint">
+        <xs:annotation>
+          <xs:documentation>Staging or transfer point</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Name" type="Name" minOccurs="0"></xs:element>
+          <xs:element name="Address" type="Address" minOccurs="0"></xs:element>
+          <xs:element name="Location" type="TransferLocation" minOccurs="0"></xs:element>
+          <xs:element name="DateTime" type="Timestamp"></xs:element>
+          <xs:element name="Type" type="StagingTransferPointType"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="StagingTransferPointType">
+        <xs:annotation>
+          <xs:documentation>Transfer point types</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="SP"></xs:enumeration>
+          <xs:enumeration value="TP"></xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="EstimatedJourneyTime">
+        <xs:annotation>
+          <xs:documentation>Estimated journey time</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="JourneyTime" type="nonNegativeDecimal"></xs:element>
+          <xs:element name="TimeScale" type="TimeScale"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="TimeScale">
+        <xs:annotation>
+          <xs:documentation>Time scale for the estimated journey time</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="hours"></xs:enumeration>
+          <xs:enumeration value="days"></xs:enumeration>
+          <xs:enumeration value="minutes"></xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ResponsibleTransportJourney">
+        <xs:annotation>
+          <xs:documentation>Name of the responsible of the consignment during the travelling</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"></xs:minLength>
+          <xs:maxLength value="32"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="ForReImport">
+        <xs:annotation>
+          <xs:documentation>For re-import</xs:documentation>
+        </xs:annotation>
+      </xs:complexType>
+      <xs:simpleType name="ForInternalMarket">
+        <xs:annotation>
+          <xs:documentation>For internal market</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="HumanConsumption"></xs:enumeration>
+          <xs:enumeration value="AnimalFeedingstuff"></xs:enumeration>
+          <xs:enumeration value="PharmaceuticalUse"></xs:enumeration>
+          <xs:enumeration value="TechnicalUse"></xs:enumeration>
+          <xs:enumeration value="Other"></xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="ForNonConformingConsignments">
+        <xs:annotation>
+          <xs:documentation>For NON-Conforming consignments</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="NonConformingConsignmentValue" type="NonConformingConsignmentValue"></xs:element>
+          <xs:element name="Identification" type="RegisteredNumber"></xs:element>
+          <xs:element name="Port" type="Port" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="RegisteredNumber">
+        <xs:annotation>
+          <xs:documentation>Registered number for the non-conforming consignments</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"></xs:minLength>
+          <xs:maxLength value="20"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="Port">
+        <xs:annotation>
+          <xs:documentation>Port name when it is a ship for non-conforming consignments</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"></xs:minLength>
+          <xs:maxLength value="20"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="NonConformingConsignmentValue">
+        <xs:annotation>
+          <xs:documentation>NON-Conforming consignments value</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="CustomWarehouse"></xs:enumeration>
+          <xs:enumeration value="FreeZoneOrFreeWarehouse"></xs:enumeration>
+          <xs:enumeration value="ShipSupplier"></xs:enumeration>
+          <xs:enumeration value="Ship"></xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="DateOfDeclaration">
+        <xs:annotation>
+          <xs:documentation>Person filling the details of the consignment presented</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="FirstName" type="Name"></xs:element>
+          <xs:element name="LastName" type="Name"></xs:element>
+          <xs:element name="eMail" type="ContactInformationText" minOccurs="0"></xs:element>
+          <xs:element name="Phone" type="ContactInformationText" minOccurs="0"></xs:element>
+          <xs:element name="Fax" type="ContactInformationText" minOccurs="0"></xs:element>
+          <xs:element name="SignatureDate" type="Timestamp"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DocumentaryCheck">
+        <xs:annotation>
+          <xs:documentation>Documentary check.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="EUStandard" type="SatisfactoryCheck" minOccurs="0"></xs:element>
+          <xs:element maxOccurs="unbounded" name="AdditionalGuarantees" type="AdditionalGuarantee" minOccurs="0"></xs:element>
+          <xs:element name="NationalRequirements" type="SatisfactoryCheck" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AdditionalGuarantee">
+        <xs:annotation>
+          <xs:documentation>Additional guarantee</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Guarantee" type="LaboratoryTest"></xs:element>
+          <xs:element name="SatisfactoryCheck" type="SatisfactoryCheck"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="Guarantee">
+        <xs:annotation>
+          <xs:documentation>Guarantee</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"></xs:minLength>
+          <xs:maxLength value="15"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="CVEDProductIdentityCheck">
+        <xs:annotation>
+          <xs:documentation>Identity Check concerning CVED for Animal Products. Not mandatory when documentary check not satisfactory.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="IdentityCheckType" type="IdentityCheckType" minOccurs="0"></xs:element>
+          <xs:element name="SatisfactoryCheck" type="SatisfactoryCheck" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="IdentityCheckType">
+        <xs:annotation>
+          <xs:documentation>Identity check type</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="sealcheck"></xs:enumeration>
+          <xs:enumeration value="fullidentitycheck"></xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="PhysicalCheck">
+        <xs:annotation>
+          <xs:documentation>Physical check concerning CVED for Animal Products. A physical check can be either carried out or not. When
+							it is carried out, the possible values are Satisfactory or Not satisfactory. When it is not carried out, the possible values are
+							Reduced checks regime or Other. Not mandatory when documentary check not satisfactory.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="PhysicalCheck" type="SatisfactoryNotdoneCheck" minOccurs="0"></xs:element>
+          <xs:element name="PhysicalCheckNotDone" type="PhysicalCheckNotDone" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="PhysicalCheckNotDone">
+        <xs:annotation>
+          <xs:documentation>Options when the physical check is not done</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="reducedchecksregime"></xs:enumeration>
+          <xs:enumeration value="other"></xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="CVEDAnimalPhysicalCheck">
+        <xs:annotation>
+          <xs:documentation>Concerning the Physical Check, there is either a derogation or the Physical Check must be carried out with
+							a Boolean result. Not mandatory when documentary check not satisfactory.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="PhysicalCheck" type="SatisfactoryDerogationCheck" minOccurs="0"></xs:element>
+          <xs:element name="TotalAnimalsChecked" type="nonNegativeDecimal" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="LaboratoryTests">
+        <xs:annotation>
+          <xs:documentation>Laboratory tests, TestedFor is either notset or disease</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="TestDate" type="Date"></xs:element>
+          <xs:element name="Motivation" type="LaboratoryTestMotivation"></xs:element>
+          <xs:element maxOccurs="unbounded" name="TestedFor" type="SingleLaboratoryTest"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="LaboratoryTestsCED">
+        <xs:annotation>
+          <xs:documentation>Laboratory tests, TestedFor is either notset or disease</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="TestDate" type="Date"></xs:element>
+          <xs:element name="Motivation" type="LaboratoryTestMotivation" minOccurs="0"></xs:element>
+          <xs:element maxOccurs="unbounded" name="TestedFor" type="SingleLaboratoryTest"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="LaboratoryTestMotivation">
+        <xs:annotation>
+          <xs:documentation>Motivation of the laboratory test: random or suspicion</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="random"></xs:enumeration>
+          <xs:enumeration value="suspicion"></xs:enumeration>
+          <xs:enumeration value="reinforced"></xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="SingleLaboratoryTest">
+        <xs:annotation>
+          <xs:documentation>Laboratory test on a specific disease or residue</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="DiseaseResidue" type="LaboratoryTest"></xs:element>
+          <xs:element name="Result" type="LaboratoryTestResult"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="LaboratoryTest">
+        <xs:annotation>
+          <xs:documentation>Laboratory test. Name is available only in english</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="TracesId" type="nonNegativeInteger"></xs:element>
+          <xs:element name="Name" type="DiseaseResidue"></xs:element>
+          <xs:element name="SpeciesId" type="nonNegativeInteger" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="DiseaseResidue">
+        <xs:annotation>
+          <xs:documentation>Disease or residue being tested</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"></xs:minLength>
+          <xs:maxLength value="255"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="LaboratoryTestResult">
+        <xs:annotation>
+          <xs:documentation>Result of a laboratory test</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="pending"></xs:enumeration>
+          <xs:enumeration value="satisfactory"></xs:enumeration>
+          <xs:enumeration value="notsatisfactory"></xs:enumeration>
+          <xs:enumeration value="notset"></xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="ImpactOfTheTransportOnAnimals">
+        <xs:annotation>
+          <xs:documentation>Impact of the transport on animals: number of dead animals, unfit animals and birth or abortion. Can be
+							expressed as a number or as a percentage.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="NumberOfDeadAnimals" type="NumberOfAnimals" minOccurs="0"></xs:element>
+          <xs:element name="NumberOfUnfitAnimals" type="NumberOfAnimals" minOccurs="0"></xs:element>
+          <xs:element name="NumberOfBirthOrAbortion" type="nonNegativeInteger" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="NumberOfAnimals">
+        <xs:annotation>
+          <xs:documentation>Number of animals with its unit</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Number" type="nonNegativeDecimal"></xs:element>
+          <xs:element name="Unit" type="Unit"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="Unit">
+        <xs:annotation>
+          <xs:documentation>Unit of the number of animals</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="percent"></xs:enumeration>
+          <xs:enumeration value="number"></xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="Acceptable">
+        <xs:annotation>
+          <xs:documentation>The consignment is acceptable</xs:documentation>
+        </xs:annotation>
+        <xs:choice>
+          <xs:element name="AcceptableForTranshipment" type="AcceptableForTranshipment"></xs:element>
+          <xs:element name="AcceptableForTransitProcedure" type="AcceptableForTransitProcedure"></xs:element>
+          <xs:element name="AcceptableForInternalMarket" type="ForInternalMarket"></xs:element>
+          <xs:element name="AcceptableIfChannelled" type="AcceptableIfChannelled"></xs:element>
+          <xs:element name="AcceptableForSpecificWarehouseProcedure" type="AcceptableForSpecificWarehouseProcedure"></xs:element>
+        </xs:choice>
+      </xs:complexType>
+      <xs:complexType name="CVEDAnimalAcceptable">
+        <xs:annotation>
+          <xs:documentation>The CVED for Animal consignment is acceptable</xs:documentation>
+        </xs:annotation>
+        <xs:choice>
+          <xs:element name="AcceptableForTranshipment" type="AcceptableForTranshipment"></xs:element>
+          <xs:element name="AcceptableForTransitProcedure" type="AcceptableForTransitProcedure"></xs:element>
+          <xs:element name="AcceptableForDefinitiveImport" type="AcceptableForDefinitiveImport">
+            <xs:annotation>
+              <xs:documentation>When the consignment is acceptable for definitive import, the details of the controlled destination must be
+									given.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="AcceptableForTemporaryAdmission" type="AcceptableForTemporaryAdmission">
+            <xs:annotation>
+              <xs:documentation>When the consignment is acceptable for temporary admission, the details of the controlled destination must be
+									given.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+      <xs:complexType name="AcceptableForTranshipment">
+        <xs:annotation>
+          <xs:documentation>The consignment is acceptable for transhipment</xs:documentation>
+        </xs:annotation>
+      </xs:complexType>
+      <xs:complexType name="AcceptableForTransitProcedure">
+        <xs:annotation>
+          <xs:documentation>The consignment is acceptable for transit procedure</xs:documentation>
+        </xs:annotation>
+      </xs:complexType>
+      <xs:complexType name="AcceptableIfChannelled">
+        <xs:annotation>
+          <xs:documentation>Acceptable if channelled</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="AcceptableIfChannelledOption" type="AcceptableIfChannelledOption"></xs:element>
+          <xs:element name="DetailsOfControlledDestinations" type="EconomicOperator" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="AcceptableIfChannelledOption">
+        <xs:annotation>
+          <xs:documentation>Acceptable if channelled</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="article8"></xs:enumeration>
+          <xs:enumeration value="article15"></xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="AcceptableForSpecificWarehouseProcedure">
+        <xs:annotation>
+          <xs:documentation>The consignment is accpetable for specific Warehouse Procedure</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="AcceptableForSpecificWarehouseProcedureOption" type="NonConformingConsignmentValue"></xs:element>
+          <xs:element name="DetailsOfControlledDestinations" type="EconomicOperator" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AcceptableForDefinitiveImport">
+        <xs:annotation>
+          <xs:documentation>The consignment is acceptable for definitive import</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="AcceptDefinitiveImport" type="AcceptDefinitiveImport" minOccurs="0"></xs:element>
+          <xs:element name="DetailsOfControlledDestinations" type="EconomicOperator" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="AcceptDefinitiveImport">
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="slaughter"></xs:enumeration>
+          <xs:enumeration value="approvedbodies"></xs:enumeration>
+          <xs:enumeration value="quarantine"></xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="AcceptableForTemporaryAdmission">
+        <xs:annotation>
+          <xs:documentation>The consignment is acceptable for temporary admission</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Deadline" type="Date"></xs:element>
+          <xs:element name="DetailsOfControlledDestinations" type="EconomicOperator" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="NotAcceptable">
+        <xs:annotation>
+          <xs:documentation>Not acceptable</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="NotAcceptableOption" type="NotAcceptableOption"></xs:element>
+          <xs:element maxOccurs="unbounded" name="ReasonForRefusal" type="ReasonForRefusal"></xs:element>
+          <xs:element name="DetailsOfControlledDestinations" type="EconomicOperator" minOccurs="0"></xs:element>
+          <xs:element name="RefusalCountry" type="RefusalCountry" minOccurs="0"></xs:element>
+          <xs:element name="RefusalEstablishment" type="RefusalEstablishment" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="NotAcceptableOption">
+        <xs:annotation>
+          <xs:documentation>Not acceptable option</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="NotAcceptableAction" type="NotAcceptableAction" minOccurs="0"></xs:element>
+          <xs:element name="ByDate" type="Date" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="NotAcceptableAction">
+        <xs:annotation>
+          <xs:documentation>Not acceptable action</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="reexport"></xs:enumeration>
+          <xs:enumeration value="destruction"></xs:enumeration>
+          <xs:enumeration value="transformation"></xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ReasonForRefusal">
+        <xs:annotation>
+          <xs:documentation>Reason for refusal</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="AbsenceInvalidCertificate"></xs:enumeration>
+          <xs:enumeration value="NonApprovedCountry"></xs:enumeration>
+          <xs:enumeration value="NonApprovedEstablishment"></xs:enumeration>
+          <xs:enumeration value="ProhibitedProduct"></xs:enumeration>
+          <xs:enumeration value="IdMismatchWithDocuments"></xs:enumeration>
+          <xs:enumeration value="IdHealthMarkError"></xs:enumeration>
+          <xs:enumeration value="PhysicalHygieneFailure"></xs:enumeration>
+          <xs:enumeration value="ChemicalContamination"></xs:enumeration>
+          <xs:enumeration value="MicrobiologicalContamination"></xs:enumeration>
+          <xs:enumeration value="Other"></xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="CVEDProductNotAcceptable">
+        <xs:annotation>
+          <xs:documentation>Not acceptable</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="NotAcceptableOption" type="NotAcceptableOption" minOccurs="0"></xs:element>
+          <xs:element maxOccurs="unbounded" name="ReasonForRefusal" type="ReasonForRefusal"></xs:element>
+          <xs:element name="DetailsOfControlledDestinations" type="EconomicOperator" minOccurs="0"></xs:element>
+          <xs:element name="RefusalCountry" type="RefusalCountry" minOccurs="0"></xs:element>
+          <xs:element name="RefusalEstablishment" type="RefusalEstablishment" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CVEDAnimalNotAcceptable">
+        <xs:annotation>
+          <xs:documentation>The CVED for Animal consignment is not acceptable</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="NotAcceptableAction" type="CVEDAnimalNotAcceptableAction" minOccurs="0"></xs:element>
+          <xs:element maxOccurs="unbounded" name="ReasonForRefusal" type="CVEDAnimalReasonForRefusal"></xs:element>
+          <xs:element name="DetailsOfControlledDestinations" type="EconomicOperator" minOccurs="0"></xs:element>
+          <xs:element name="RefusalCountry" type="RefusalCountry" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="CVEDAnimalNotAcceptableAction">
+        <xs:annotation>
+          <xs:documentation>Action to take place when the CVED for Animals is not acceptable: re-export, slaughter, ...</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="reexport"></xs:enumeration>
+          <xs:enumeration value="slaughter"></xs:enumeration>
+          <xs:enumeration value="euthanasia"></xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="CVEDAnimalReasonForRefusal">
+        <xs:annotation>
+          <xs:documentation>Reason for refusal when the consignment has been declared not acceptable: Absence/Invalid certificate, Non
+							approved country, ...</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="MisMatchwithDocuments"></xs:enumeration>
+          <xs:enumeration value="NonApprovedCountry"></xs:enumeration>
+          <xs:enumeration value="NonApprovedRegion"></xs:enumeration>
+          <xs:enumeration value="ProhibitedSpecies"></xs:enumeration>
+          <xs:enumeration value="AbsenceAdditionalGuarantees"></xs:enumeration>
+          <xs:enumeration value="SafeguardClause"></xs:enumeration>
+          <xs:enumeration value="DiseasedOrSuspectAnimals"></xs:enumeration>
+          <xs:enumeration value="NonSatisfactoryTests"></xs:enumeration>
+          <xs:enumeration value="UnfitForTravel"></xs:enumeration>
+          <xs:enumeration value="AbsenceNationalRequirements"></xs:enumeration>
+          <xs:enumeration value="InfringementIntTranspReg"></xs:enumeration>
+          <xs:enumeration value="NonLegalIdentification"></xs:enumeration>
+          <xs:enumeration value="AbsenceOrInvalidCertificate"></xs:enumeration>
+          <xs:enumeration value="Other"></xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="DetailsOnReExport">
+        <xs:annotation>
+          <xs:documentation>Details on re-export. Mandatory for some purposes.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="MeansOfTransport" type="MeansOfTransport" minOccurs="0"></xs:element>
+          <xs:element name="CountryOfDestination" type="CountryISOCode" minOccurs="0"></xs:element>
+          <xs:element name="Date" type="Date" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="FeedbackInformation">
+        <xs:annotation>
+          <xs:documentation>Feedback information</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="AuthorityType" type="AuthorityType"></xs:element>
+          <xs:element name="ArrivalFlag" type="xs:boolean"></xs:element>
+          <xs:element name="ConformityFlag" type="xs:boolean"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="AuthorityType">
+        <xs:annotation>
+          <xs:documentation>Competent authority making the control at destination: Exit BIP, Final destination BIP, LVU, Local Competent Authority Unit</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="exitbip"></xs:enumeration>
+          <xs:enumeration value="finalbip"></xs:enumeration>
+          <xs:enumeration value="localvetunit"></xs:enumeration>
+          <xs:enumeration value="inspunit"></xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="OfficialVetAtControlledDestination">
+        <xs:annotation>
+          <xs:documentation>Official veterinarian at the controlled destination</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="FirstName" type="Name"></xs:element>
+          <xs:element name="LastName" type="Name"></xs:element>
+          <xs:element name="eMail" type="ContactInformationText" minOccurs="0"></xs:element>
+          <xs:element name="Phone" type="ContactInformationText" minOccurs="0"></xs:element>
+          <xs:element name="Fax" type="ContactInformationText" minOccurs="0"></xs:element>
+          <xs:element name="Address" type="Address"></xs:element>
+          <xs:element name="AnimoUnitNumber" type="CompetentAuthorityAnimoCode"></xs:element>
+          <xs:element name="Date" type="Timestamp"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ConsignmentsResealed">
+        <xs:annotation>
+          <xs:documentation>List of ConsignmentResealed elements.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="ConsignmentResealed" type="ConsignmentResealed" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="ConsignmentResealed">
+        <xs:annotation>
+          <xs:documentation>Consignment Resealed</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"></xs:minLength>
+          <xs:maxLength value="32"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="OfficialVeterinarian">
+        <xs:annotation>
+          <xs:documentation>Official veterinarian at the controlled destination</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Id" type="xs:long" minOccurs="0"></xs:element>
+          <xs:element name="FirstName" type="Name"></xs:element>
+          <xs:element name="LastName" type="Name"></xs:element>
+          <xs:element name="eMail" type="ContactInformationText" minOccurs="0"></xs:element>
+          <xs:element name="Phone" type="ContactInformationText" minOccurs="0"></xs:element>
+          <xs:element name="Fax" type="ContactInformationText" minOccurs="0"></xs:element>
+          <xs:element name="SignatureDate" type="Timestamp"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="CustomsDocumentReference">
+        <xs:annotation>
+          <xs:documentation>Customs document reference</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"></xs:minLength>
+          <xs:maxLength value="32"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="SubsequentCVED">
+        <xs:annotation>
+          <xs:documentation>Subsequent CVED reference number</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"></xs:minLength>
+          <xs:maxLength value="255"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="SubsequentCVEDs">
+        <xs:annotation>
+          <xs:documentation>List of Subsequent CVED elements.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="SubsequentCVED" type="SubsequentCVED" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="IntratradeDecisionParameters">
+        <xs:annotation>
+          <xs:documentation>List of key/data values holding variable parameters of intratrade decision forms.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="DecisionParameter" type="KeyDataPair" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="IdentificationOfAnimals">
+        <xs:annotation>
+          <xs:documentation>Commodity code depending information about identification of animals, which is a list of sets each
+							representing a row of values on the screen. A set is composed of a collection of key/data value pairs.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="IdentificationParameterSet" type="IdentificationParameterSet" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="IdentificationParameterSet">
+        <xs:annotation>
+          <xs:documentation>A single collection of Identification of animals key/data pairs, representing a row of values on the screen.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="IdentificationParameter" type="KeyDataPair" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="KeyDataPair">
+        <xs:annotation>
+          <xs:documentation>One single key/data value pair</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Key" type="xs:string"></xs:element>
+          <xs:element name="Data" type="xs:string"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="IntratradeDecisionOfficialVeterinarian">
+        <xs:annotation>
+          <xs:documentation>Unit identification of intratrade decision signatory</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Id" type="xs:long" minOccurs="0"></xs:element>
+          <xs:element name="FirstName" type="Name"></xs:element>
+          <xs:element name="LastName" type="Name"></xs:element>
+          <xs:element name="eMail" type="ContactInformationText" minOccurs="0"></xs:element>
+          <xs:element name="Phone" type="ContactInformationText" minOccurs="0"></xs:element>
+          <xs:element name="Fax" type="ContactInformationText" minOccurs="0"></xs:element>
+          <xs:element name="CompetentAuthority" type="CompetentAuthorityAnimoCode" minOccurs="0"></xs:element>
+          <xs:element name="SignatureDate" type="Timestamp"></xs:element>
+          <xs:element name="RelatedLVU" type="CompetentAuthorityAnimoCode"></xs:element>
+          <xs:element name="Capacity" type="OfficialVeterinarianCapacity"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="OfficialVeterinarianCapacity">
+        <xs:annotation>
+          <xs:documentation>Function of an official veterinarian</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="OfficialInspector"></xs:enumeration>
+          <xs:enumeration value="VeterinaryInspector"></xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="Location">
+        <xs:annotation>
+          <xs:documentation>Location of the control</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="exitbip"></xs:enumeration>
+          <xs:enumeration value="finalbip"></xs:enumeration>
+          <xs:enumeration value="localvetunit"></xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="SatisfactoryCheck">
+        <xs:annotation>
+          <xs:documentation>Satisfactory check</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="satisfactory"></xs:enumeration>
+          <xs:enumeration value="notsatisfactory"></xs:enumeration>
+          <xs:enumeration value="notset"></xs:enumeration>
+          <xs:enumeration value="notdone"></xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="SatisfactoryDerogationCheck">
+        <xs:annotation>
+          <xs:documentation>Satisfactory check with derogation option</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="satisfactory"></xs:enumeration>
+          <xs:enumeration value="notsatisfactory"></xs:enumeration>
+          <xs:enumeration value="derogation"></xs:enumeration>
+          <xs:enumeration value="notset"></xs:enumeration>
+          <xs:enumeration value="notdone"></xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="SatisfactoryNotdoneCheck">
+        <xs:annotation>
+          <xs:documentation>Satisfactory check with derogation option</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="satisfactory"></xs:enumeration>
+          <xs:enumeration value="notsatisfactory"></xs:enumeration>
+          <xs:enumeration value="notdone"></xs:enumeration>
+          <xs:enumeration value="notset"></xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="Name">
+        <xs:annotation>
+          <xs:documentation>Name of an Economic Operator or a person in general</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"></xs:minLength>
+          <xs:maxLength value="255"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ContactInformationText">
+        <xs:annotation>
+          <xs:documentation>email, phone or fax number</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"></xs:minLength>
+          <xs:maxLength value="255"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="Date">
+        <xs:annotation>
+          <xs:documentation>Date format</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:date">
+          <xs:pattern value="\d{4}-\d{2}-\d{2}"></xs:pattern>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="Timestamp">
+        <xs:annotation>
+          <xs:documentation>Timestamp format</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:pattern value="\d{4}-\d{2}-\d{2} \d{2}:\d{2}"></xs:pattern>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="nonNegativeDecimal">
+        <xs:annotation>
+          <xs:documentation>Non negative decimal format</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:decimal"></xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="nonNegativeInteger">
+        <xs:annotation>
+          <xs:documentation>Non negative integer format</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:int">
+          <xs:minInclusive value="0"></xs:minInclusive>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="ThirdCountry">
+        <xs:annotation>
+          <xs:documentation>Third Country</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="ThirdCountryISOCode" type="CountryISOCode"></xs:element>
+          <xs:element name="ExitPoint" type="CompetentAuthorityAnimoCode"></xs:element>
+          <xs:element name="EntryPoint" type="CompetentAuthorityAnimoCode"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Export">
+        <xs:annotation>
+          <xs:documentation>Export to a third country. The exit point represents the BIP or the Customs Office where the consignment will
+							leave the EC for the 3rd country.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="ThirdCountry" type="CountryISOCode"></xs:element>
+          <xs:element name="ExitPoint" type="CompetentAuthorityAnimoCode"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="IntraTradePhysicalCheck">
+        <xs:annotation>
+          <xs:documentation>The competent authority can decide to apply some physical checks or not. When the competent authority decides to
+							make the tests, he/she will also specify the total number of animals checked. When no check has been made, the element is not
+							present.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="PhysicalCheck" type="SatisfactoryCheck"></xs:element>
+          <xs:element name="TotalAnimalsChecked" type="nonNegativeDecimal"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Infringements">
+        <xs:annotation>
+          <xs:documentation>It is possible to detect several infringements to the welfare regulation and/or several infringements to the
+							animal health legislation. Corrective actions can only be applied when there is an infringement detected.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="InfringementToWelfareRegulation" type="InfringementToWelfareRegulation" minOccurs="0"></xs:element>
+          <xs:element maxOccurs="unbounded" name="InfringementToAnimalHealthLegislation" type="InfringementToAnimalHealthLegislation" minOccurs="0"></xs:element>
+          <xs:element name="CorrectiveAction" type="CorrectiveAction"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="InfringementToWelfareRegulation">
+        <xs:annotation>
+          <xs:documentation>Infringement to welfare regulation</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="Infringement" type="InfringementToWelfareRegulationType" minOccurs="0"></xs:element>
+          <xs:element name="AverageSpace" type="nonNegativeDecimal" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="InfringementToAnimalHealthLegislation">
+        <xs:annotation>
+          <xs:documentation>Reason for refusal when the consignment has been declared not acceptable: Absence/Invalid certificate, Non
+							approved country, ...</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="AbsenceOrInvalidCertificate"></xs:enumeration>
+          <xs:enumeration value="MisMatchwithDocuments"></xs:enumeration>
+          <xs:enumeration value="NonAuthorisedMemberstate"></xs:enumeration>
+          <xs:enumeration value="NonApprovedRegionOrZone"></xs:enumeration>
+          <xs:enumeration value="ProhibitedSpecies"></xs:enumeration>
+          <xs:enumeration value="AbsenceAdditionalGuarantees"></xs:enumeration>
+          <xs:enumeration value="NonApprovedHolding"></xs:enumeration>
+          <xs:enumeration value="DiseasedOrSuspectAnimals"></xs:enumeration>
+          <xs:enumeration value="NonSatisfactoryTests"></xs:enumeration>
+          <xs:enumeration value="AbsenceOrNonLegalIdentification"></xs:enumeration>
+          <xs:enumeration value="AbsenceNationalRequirements"></xs:enumeration>
+          <xs:enumeration value="AddressOfDestinationInvalid"></xs:enumeration>
+          <xs:enumeration value="Other"></xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="InfringementToWelfareRegulationType">
+        <xs:annotation>
+          <xs:documentation>List of infringement to welfare regulation</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="TransporterAuthorisationInvalid"></xs:enumeration>
+          <xs:enumeration value="NonComplianceOfTheMeansOfTransport"></xs:enumeration>
+          <xs:enumeration value="ExceededDensity"></xs:enumeration>
+          <xs:enumeration value="TravelTimesExceeded"></xs:enumeration>
+          <xs:enumeration value="WateringAndFeedingNotFulfilled"></xs:enumeration>
+          <xs:enumeration value="MishandlingOrNegligenceToTheAnimals"></xs:enumeration>
+          <xs:enumeration value="SupplMeasuresLongJourney"></xs:enumeration>
+          <xs:enumeration value="DriverProficiency"></xs:enumeration>
+          <xs:enumeration value="RegisteredData"></xs:enumeration>
+          <xs:enumeration value="Other"></xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="CorrectiveAction">
+        <xs:annotation>
+          <xs:documentation>Corrective actions can optionally be selected but only when there is an infringement to welfare regulation
+							or an infringement to animal health legislation.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="CorrectiveAction" type="CorrectiveActionType" minOccurs="0"></xs:element>
+          <xs:element name="Identification" type="CorrectiveActionIdentification" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="CorrectiveActionIdentification">
+        <xs:annotation>
+          <xs:documentation>Corrective action identification</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"></xs:minLength>
+          <xs:maxLength value="96"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="CorrectiveActionType">
+        <xs:annotation>
+          <xs:documentation>Corrective action</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="DelayedDeparture"></xs:enumeration>
+          <xs:enumeration value="TransferProcedure"></xs:enumeration>
+          <xs:enumeration value="ReturnOfConsignment"></xs:enumeration>
+          <xs:enumeration value="HumanelyKilling"></xs:enumeration>
+          <xs:enumeration value="DestructionOfCarcassesOrProducts"></xs:enumeration>
+          <xs:enumeration value="UseOfProduct"></xs:enumeration>
+          <xs:enumeration value="TreatOfProducts"></xs:enumeration>
+          <xs:enumeration value="Quarantine"></xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="ActionFollowingQuarantine">
+        <xs:annotation>
+          <xs:documentation>Action following quarantine</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="humankilling"></xs:enumeration>
+          <xs:enumeration value="release"></xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="PlaceOfControl">
+        <xs:annotation>
+          <xs:documentation>Place of control</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="airport"></xs:enumeration>
+          <xs:enumeration value="enroute"></xs:enumeration>
+          <xs:enumeration value="approvedbody"></xs:enumeration>
+          <xs:enumeration value="holding"></xs:enumeration>
+          <xs:enumeration value="assemblycenter"></xs:enumeration>
+          <xs:enumeration value="exitpoint"></xs:enumeration>
+          <xs:enumeration value="port"></xs:enumeration>
+          <xs:enumeration value="etablish"></xs:enumeration>
+          <xs:enumeration value="other"></xs:enumeration>
+          <xs:enumeration value="semen"></xs:enumeration>
+          <xs:enumeration value="dealerspremise"></xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="RequestIdentifier">
+        <xs:annotation>
+          <xs:documentation>Identifier associated to the request by the Member State</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"></xs:minLength>
+          <xs:maxLength value="32"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="XMLSchemaVersion">
+        <xs:annotation>
+          <xs:documentation>Version of the XML Schema used to validate the XML file</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"></xs:minLength>
+          <xs:maxLength value="32"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="UserAuthenticationString">
+        <xs:annotation>
+          <xs:documentation>String object that may hold a user name or a user password</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="5"></xs:minLength>
+          <xs:maxLength value="80"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="TimeFrame">
+        <xs:annotation>
+          <xs:documentation>Time frame defined by a Start date and an End date, Composed by date and time</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="StartDate" type="Timestamp"></xs:element>
+          <xs:element name="EndDate" type="Timestamp"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="RefusalCountry">
+        <xs:annotation>
+          <xs:documentation>Country code of the non approval country</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="0"></xs:minLength>
+          <xs:maxLength value="2"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="RefusalEstablishment">
+        <xs:annotation>
+          <xs:documentation>Name of the non approval establishment</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="0"></xs:minLength>
+          <xs:maxLength value="255"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="CED">
+        <xs:annotation>
+          <xs:documentation>The CED is split in 3 sections: Consignment, Decision and Control</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="LastChangeDate" type="Timestamp"></xs:element>
+          <xs:element name="Consignment" type="CEDConsignment"></xs:element>
+          <xs:element name="Decision" type="CEDDecision" minOccurs="0"></xs:element>
+          <xs:element name="Control" type="CEDControl" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CEDConsignment">
+        <xs:annotation>
+          <xs:documentation>This Consignment section describes the details of the consignment presented</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Id" type="xs:long"></xs:element>
+          <xs:element name="Status" type="CertificateStatus"></xs:element>
+          <xs:element name="ConsignorExporter" type="EconomicOperator"></xs:element>
+          <xs:element name="CEDReferenceNumber" type="ReferenceNumber"></xs:element>
+          <xs:element name="CEDVersionNumber" type="nonNegativeInteger" minOccurs="0"></xs:element>
+          <xs:element name="DesignatedPointOfEntry" type="CompetentAuthorityAnimoCode"></xs:element>
+          <xs:element name="Consignee" type="EconomicOperator" minOccurs="0"></xs:element>
+          <xs:element name="PersonResponsibleForLoad" type="EconomicOperator"></xs:element>
+          <xs:element name="Importer" type="EconomicOperator" minOccurs="0"></xs:element>
+          <xs:element name="CountryOfOrigin" type="CountryISOCode" minOccurs="0"></xs:element>
+          <xs:element name="CountryFromWhereConsigned" type="CountryISOCode"></xs:element>
+          <xs:element name="DeliveryAddress" type="EconomicOperator" minOccurs="0"></xs:element>
+          <xs:element name="ArrivalAtDpe" type="Timestamp" minOccurs="0"></xs:element>
+          <xs:element name="Document" type="VeterinaryDocument" minOccurs="0"></xs:element>
+          <xs:element name="MeansOfTransport" type="MeansOfTransport" minOccurs="0"></xs:element>
+          <xs:element name="Temperature" type="Temperature" minOccurs="0"></xs:element>
+          <xs:element name="NumberOfPackages" type="nonNegativeInteger"></xs:element>
+          <xs:element name="CommodityComplements" type="CommodityComplements" minOccurs="0"></xs:element>
+          <xs:element name="GrossWeight" type="nonNegativeDecimal"></xs:element>
+          <xs:element name="NetWeight" type="nonNegativeDecimal"></xs:element>
+          <xs:element name="IdentificationOfCommodity" type="IdentificationOfAnimals"></xs:element>
+          <xs:element name="SealsContainers" type="ListOfSealsContainers" minOccurs="0"></xs:element>
+          <xs:element name="CommodityIntendedFor" type="CommodityIntendedFor" minOccurs="0"></xs:element>
+          <xs:choice>
+            <xs:element name="ForImport" type="ForImport"></xs:element>
+            <xs:element name="ForTransferTo" type="ForTransferTo"></xs:element>
+          </xs:choice>
+          <xs:element name="PlaceAndDateOfDeclaration" type="DateOfDeclaration"></xs:element>
+          <xs:element name="LocalReferenceNumber" type="ReferenceNumber" minOccurs="0"></xs:element>
+          <xs:element name="MeansOfTransportToControlPoint" type="MeansOfTransport" minOccurs="0"></xs:element>
+          <xs:element name="Departure" type="Timestamp" minOccurs="0"></xs:element>
+          <xs:element name="Transporter" type="EconomicOperator" minOccurs="0"></xs:element>
+          <xs:element name="ReplacingReferenceNumber" type="ReferenceNumber" minOccurs="0"></xs:element>
+          <xs:element name="ReplacedReferenceNumber" type="ReferenceNumber" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CEDDecision">
+        <xs:annotation>
+          <xs:documentation>This section describes the decision made on consignment by the competent authority</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="PreviousCED" type="ReferenceNumber" minOccurs="0"></xs:element>
+          <xs:element name="DocumentaryCheck" type="SatisfactoryCheck"></xs:element>
+          <xs:element name="IdentityCheck" type="SatisfactoryCheck" minOccurs="0"></xs:element>
+          <xs:element name="PhysicalCheck" type="SatisfactoryCheck" minOccurs="0"></xs:element>
+          <xs:element name="LaboratoryTests" type="LaboratoryTestsCED" minOccurs="0"></xs:element>
+          <xs:choice>
+            <xs:element name="Acceptable" type="CEDAcceptable"></xs:element>
+            <xs:element name="NotAcceptable" type="CEDNotAcceptable"></xs:element>
+          </xs:choice>
+          <xs:element name="OnwardTransportation" type="xs:string" minOccurs="0"></xs:element>
+          <xs:element name="ConsignmentsResealed" type="ConsignmentsResealed" minOccurs="0"></xs:element>
+          <xs:element name="OfficialInspector" type="OfficialVeterinarian"></xs:element>
+          <xs:element name="CustomsDocumentReference" type="CustomsDocumentReference" minOccurs="0"></xs:element>
+          <xs:element name="SubsequentCEDs" type="SubsequentCVEDs" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CEDControl">
+        <xs:annotation>
+          <xs:documentation>The control describes a single control made on the consignment.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="DetailsOnReExport" type="DetailsOnReExport"></xs:element>
+          <xs:element name="FeedbackInformation" type="FeedbackInformation"></xs:element>
+          <xs:element name="OfficialInspector" type="OfficialVeterinarian"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="CommodityIntendedFor">
+        <xs:annotation>
+          <xs:documentation>Commodity intended for: feeding stuff, ...</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="human"></xs:enumeration>
+          <xs:enumeration value="feedingstuff"></xs:enumeration>
+          <xs:enumeration value="further"></xs:enumeration>
+          <xs:enumeration value="other"></xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="ForImport">
+        <xs:annotation>
+          <xs:documentation>For import</xs:documentation>
+        </xs:annotation>
+      </xs:complexType>
+      <xs:complexType name="ForTransferTo">
+        <xs:annotation>
+          <xs:documentation>For transfer to</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="DPE" type="CompetentAuthorityAnimoCode"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="SubsequentCED">
+        <xs:annotation>
+          <xs:documentation>Subsequent CED reference number</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"></xs:minLength>
+          <xs:maxLength value="255"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="SubsequentCEDs">
+        <xs:annotation>
+          <xs:documentation>List of Subsequent CED elements.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="SubsequentCED" type="SubsequentCED" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CEDAcceptable">
+        <xs:annotation>
+          <xs:documentation>The consignment is acceptable</xs:documentation>
+        </xs:annotation>
+        <xs:choice>
+          <xs:element name="AcceptableForTranshipment" type="AcceptableForTranshipment"></xs:element>
+          <xs:element name="AcceptableForFreeCirculation" type="ForFreeCirculation"></xs:element>
+        </xs:choice>
+      </xs:complexType>
+      <xs:simpleType name="ForFreeCirculation">
+        <xs:annotation>
+          <xs:documentation>For free circulation</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="FeedingStuff"></xs:enumeration>
+          <xs:enumeration value="FurtherProcess"></xs:enumeration>
+          <xs:enumeration value="HumanConsumption"></xs:enumeration>
+          <xs:enumeration value="Other"></xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="CEDNotAcceptable">
+        <xs:annotation>
+          <xs:documentation>Not acceptable</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="NotAcceptableOption" type="CEDNotAcceptableOption" minOccurs="0"></xs:element>
+          <xs:element maxOccurs="unbounded" name="ReasonForRefusal" type="CEDReasonForRefusal"></xs:element>
+          <xs:element name="DetailsOfControlledDestinations" type="EconomicOperator" minOccurs="0"></xs:element>
+          <xs:element name="RefusalCountry" type="RefusalCountry" minOccurs="0"></xs:element>
+          <xs:element name="RefusalEstablishment" type="RefusalEstablishment" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CEDNotAcceptableOption">
+        <xs:annotation>
+          <xs:documentation>Not acceptable option</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="NotAcceptableAction" type="CEDNotAcceptableAction"></xs:element>
+          <xs:element name="ByDate" type="Date" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="CEDNotAcceptableAction">
+        <xs:annotation>
+          <xs:documentation>Not acceptable action</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="redispatching"></xs:enumeration>
+          <xs:enumeration value="destruction"></xs:enumeration>
+          <xs:enumeration value="transformation"></xs:enumeration>
+          <xs:enumeration value="other"></xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="CEDReasonForRefusal">
+        <xs:annotation>
+          <xs:documentation>Reason for refusal</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="AbsenceInvalidCertificate"></xs:enumeration>
+          <xs:enumeration value="IdMismatchWithDocuments"></xs:enumeration>
+          <xs:enumeration value="PhysicalHygieneFailure"></xs:enumeration>
+          <xs:enumeration value="ChemicalContamination"></xs:enumeration>
+          <xs:enumeration value="MicrobiologicalContamination"></xs:enumeration>
+          <xs:enumeration value="Other"></xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="CHEDPP">
+        <xs:annotation>
+          <xs:documentation>The CHEDPP is split in 3 sections: Consignment, Decision and Control</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="LastChangeDate" type="Timestamp"></xs:element>
+          <xs:element name="Consignment" type="CHEDPPConsignment"></xs:element>
+          <xs:element name="Decision" type="CHEDPPDecision" minOccurs="0"></xs:element>
+          <xs:element name="Control" type="CHEDPPControl" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CHEDPPConsignment">
+        <xs:annotation>
+          <xs:documentation>This Consignment section describes the details of the consignment presented</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Id" type="xs:long"></xs:element>
+          <xs:element name="Status" type="CertificateStatus"></xs:element>
+          <xs:element name="ConsignorExporter" type="EconomicOperator"></xs:element>
+          <xs:element name="CHEDPPReferenceNumber" type="ReferenceNumber"></xs:element>
+          <xs:element name="CHEDPPVersionNumber" type="nonNegativeInteger" minOccurs="0"></xs:element>
+          <xs:element name="DesignatedPointOfEntry" type="CompetentAuthorityAnimoCode"></xs:element>
+          <xs:element name="Consignee" type="EconomicOperator" minOccurs="0"></xs:element>
+          <xs:element name="PersonResponsibleForLoad" type="EconomicOperator"></xs:element>
+          <xs:element name="CountryOfOrigin" type="CountryISOCode" minOccurs="0"></xs:element>
+          <xs:element name="DeliveryAddress" type="EconomicOperator" minOccurs="0"></xs:element>
+          <xs:element name="ArrivalAtDpe" type="Timestamp" minOccurs="0"></xs:element>
+          <xs:element name="Document" type="HealthDocument" minOccurs="0"></xs:element>
+          <xs:element name="MeansOfTransport" type="MeansOfTransport" minOccurs="0"></xs:element>
+          <xs:element name="NumberOfPackages" type="nonNegativeInteger"></xs:element>
+          <xs:element name="CommodityComplements" type="CommodityComplements" minOccurs="0"></xs:element>
+          <xs:element name="NetWeight" type="nonNegativeDecimal"></xs:element>
+          <xs:element name="IdentificationOfCommodity" type="IdentificationOfAnimals"></xs:element>
+          <xs:element name="SealsContainers" type="ListOfSealsContainers" minOccurs="0"></xs:element>
+          <xs:element name="CommodityIntendedFor" type="CommodityIntendedFor" minOccurs="0"></xs:element>
+          <xs:choice>
+            <xs:element name="ForFreeCirculation" type="ForFree"></xs:element>
+            <xs:element name="ForTransferTo" type="ForTransferTo"></xs:element>
+          </xs:choice>
+          <xs:element name="PlaceAndDateOfDeclaration" type="DateOfDeclaration"></xs:element>
+          <xs:element name="LocalReferenceNumber" type="ReferenceNumber" minOccurs="0"></xs:element>
+          <xs:element name="ReplacingReferenceNumber" type="ReferenceNumber" minOccurs="0"></xs:element>
+          <xs:element name="ReplacedReferenceNumber" type="ReferenceNumber" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CHEDPPDecision">
+        <xs:annotation>
+          <xs:documentation>This section describes the decision made on consignment by the competent authority</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="PreviousCHEDPP" type="ReferenceNumber" minOccurs="0"></xs:element>
+          <xs:element name="DocumentaryCheck" type="SatisfactoryCheck"></xs:element>
+          <xs:element name="IdentityCheck" type="SatisfactoryCheck" minOccurs="0"></xs:element>
+          <xs:element name="PhysicalCheck" type="SatisfactoryCheck" minOccurs="0"></xs:element>
+          <xs:element name="LaboratoryTests" type="LaboratoryTests" minOccurs="0"></xs:element>
+          <xs:choice>
+            <xs:element name="Acceptable" type="CHEDPPAcceptable"></xs:element>
+            <xs:element name="NotAcceptable" type="CHEDPPNotAcceptable"></xs:element>
+          </xs:choice>
+          <xs:element name="ConsignmentsResealed" type="ConsignmentsResealed" minOccurs="0"></xs:element>
+          <xs:element name="OfficialInspector" type="OfficialVeterinarian"></xs:element>
+          <xs:element name="CustomsDocumentReference" type="CustomsDocumentReference" minOccurs="0"></xs:element>
+          <xs:element name="SubsequentCHEDPPs" type="SubsequentCHEDPPs" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CHEDPPControl">
+        <xs:annotation>
+          <xs:documentation>The control describes a single control made on the consignment.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="DetailsOnReExport" type="DetailsOnReExport"></xs:element>
+          <xs:element name="FeedbackInformation" type="FeedbackInformation"></xs:element>
+          <xs:element name="OfficialInspectorChedPP" type="OfficialInspector"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="HealthDocument">
+        <xs:annotation>
+          <xs:documentation>Health document</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Number" type="VeterinaryDocumentNumber"></xs:element>
+          <xs:element name="DateOfIssue" type="Date" minOccurs="0"></xs:element>
+          <xs:element name="PlaceOfIssue" type="Street" minOccurs="0"></xs:element>
+          <xs:element name="CountryOfIssue" type="CountryISOCode" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="SubsequentCHEDPP">
+        <xs:annotation>
+          <xs:documentation>Subsequent CHEDPP reference number</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:minLength value="1"></xs:minLength>
+          <xs:maxLength value="255"></xs:maxLength>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="SubsequentCHEDPPs">
+        <xs:annotation>
+          <xs:documentation>List of Subsequent CHEDPP elements.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="SubsequentCHEDPP" type="SubsequentCHEDPP" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ForFree">
+        <xs:annotation>
+          <xs:documentation>For free circulation</xs:documentation>
+        </xs:annotation>
+      </xs:complexType>
+      <xs:complexType name="CHEDPPAcceptable">
+        <xs:annotation>
+          <xs:documentation>The consignment is acceptable</xs:documentation>
+        </xs:annotation>
+        <xs:choice>
+          <xs:element name="AcceptableForTranshipment" type="AcceptableForTranshipment"></xs:element>
+          <xs:element name="AcceptableForFreeCirculation" type="ForFreeCirculation"></xs:element>
+        </xs:choice>
+      </xs:complexType>
+      <xs:complexType name="CHEDPPNotAcceptable">
+        <xs:annotation>
+          <xs:documentation>Not acceptable</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="NotAcceptableActions" type="CHEDPPNotAcceptableAction" minOccurs="0"></xs:element>
+          <xs:element maxOccurs="unbounded" name="ReasonForRefusal" type="CHEDPPReasonForRefusal"></xs:element>
+          <xs:element name="DetailsOfControlledDestinations" type="EconomicOperator" minOccurs="0"></xs:element>
+          <xs:element name="RefusalCountry" type="RefusalCountry" minOccurs="0"></xs:element>
+          <xs:element name="RefusalEstablishment" type="RefusalEstablishment" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CHEDPPNotAcceptableAction">
+        <xs:annotation>
+          <xs:documentation>Not acceptable action</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="NotAcceptableAction" type="CHEDPPNotAcceptableMeasureTaken"></xs:element>
+          <xs:element name="ByDate" type="Date" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CHEDPPNotAcceptableMeasureTaken">
+        <xs:annotation>
+          <xs:documentation>Not Acceptable Measure Taken</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="Measure" type="CHEDPPMeasure" minOccurs="0"></xs:element>
+          <xs:element name="Extent" type="CHEDPPMeasureExtent" minOccurs="0"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="CHEDPPMeasure">
+        <xs:annotation>
+          <xs:documentation>Not Acceptable Measure</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="!!"></xs:enumeration>
+          <xs:enumeration value="??"></xs:enumeration>
+          <xs:enumeration value="07"></xs:enumeration>
+          <xs:enumeration value="09"></xs:enumeration>
+          <xs:enumeration value="02"></xs:enumeration>
+          <xs:enumeration value="03"></xs:enumeration>
+          <xs:enumeration value="16"></xs:enumeration>
+          <xs:enumeration value="14"></xs:enumeration>
+          <xs:enumeration value="10"></xs:enumeration>
+          <xs:enumeration value="13"></xs:enumeration>
+          <xs:enumeration value="05"></xs:enumeration>
+          <xs:enumeration value="15"></xs:enumeration>
+          <xs:enumeration value="08"></xs:enumeration>
+          <xs:enumeration value="04"></xs:enumeration>
+          <xs:enumeration value="01"></xs:enumeration>
+          <xs:enumeration value="11"></xs:enumeration>
+          <xs:enumeration value="06"></xs:enumeration>
+          <xs:enumeration value="12"></xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="CHEDPPMeasureExtent">
+        <xs:annotation>
+          <xs:documentation>Extent of the Not Acceptable Measure</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="!"></xs:enumeration>
+          <xs:enumeration value="?"></xs:enumeration>
+          <xs:enumeration value="2"></xs:enumeration>
+          <xs:enumeration value="4"></xs:enumeration>
+          <xs:enumeration value="3"></xs:enumeration>
+          <xs:enumeration value="1"></xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="CHEDPPReasonForRefusal">
+        <xs:annotation>
+          <xs:documentation>Reason for refusal</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="!"></xs:enumeration>
+          <xs:enumeration value="?"></xs:enumeration>
+          <xs:enumeration value="009"></xs:enumeration>
+          <xs:enumeration value="010"></xs:enumeration>
+          <xs:enumeration value="011"></xs:enumeration>
+          <xs:enumeration value="012"></xs:enumeration>
+          <xs:enumeration value="013"></xs:enumeration>
+          <xs:enumeration value="014"></xs:enumeration>
+          <xs:enumeration value="015"></xs:enumeration>
+          <xs:enumeration value="016"></xs:enumeration>
+          <xs:enumeration value="017"></xs:enumeration>
+          <xs:enumeration value="018"></xs:enumeration>
+          <xs:enumeration value="025"></xs:enumeration>
+          <xs:enumeration value="019"></xs:enumeration>
+          <xs:enumeration value="020"></xs:enumeration>
+          <xs:enumeration value="082"></xs:enumeration>
+          <xs:enumeration value="!01"></xs:enumeration>
+          <xs:enumeration value="021"></xs:enumeration>
+          <xs:enumeration value="022"></xs:enumeration>
+          <xs:enumeration value="023"></xs:enumeration>
+          <xs:enumeration value="024"></xs:enumeration>
+          <xs:enumeration value="!02"></xs:enumeration>
+          <xs:enumeration value="030"></xs:enumeration>
+          <xs:enumeration value="040"></xs:enumeration>
+          <xs:enumeration value="050"></xs:enumeration>
+          <xs:enumeration value="060"></xs:enumeration>
+          <xs:enumeration value="070"></xs:enumeration>
+          <xs:enumeration value="080"></xs:enumeration>
+          <xs:enumeration value="081"></xs:enumeration>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:complexType name="OfficialInspector">
+        <xs:annotation>
+          <xs:documentation>Official veterinarian at the controlled destination</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+          <xs:element name="FirstName" type="Name"></xs:element>
+          <xs:element name="LastName" type="Name"></xs:element>
+          <xs:element name="eMail" type="ContactInformationText" minOccurs="0"></xs:element>
+          <xs:element name="Phone" type="ContactInformationText" minOccurs="0"></xs:element>
+          <xs:element name="Fax" type="ContactInformationText" minOccurs="0"></xs:element>
+          <xs:element name="Address" type="Address"></xs:element>
+          <xs:element name="UnitNumber" type="CompetentAuthorityAnimoCode"></xs:element>
+          <xs:element name="Date" type="Timestamp"></xs:element>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </types>
+  <message name="searchCertificate">
+    <part element="partns:CertificatePoll" name="certificateSearchPollRequest" xmlns:partns="traceswsns"></part>
+  </message>
+  <message name="searchCertificateResponse">
+    <part element="partns:CertificatePollResult" name="result" xmlns:partns="traceswsns"></part>
+  </message>
+  <portType name="CertificateSearchResultPollWebServicePort">
+    <operation name="searchCertificate">
+      <input message="tns:searchCertificate"></input>
+      <output message="tns:searchCertificateResponse"></output>
+    </operation>
+  </portType>
+  <binding name="CertificateSearchResultPollWebServicePort" type="tns:CertificateSearchResultPollWebServicePort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="searchCertificate">
+      <soap:operation style="document" soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="CertificateSearchResultPollWebService">
+    <port name="CertificateSearchResultPollWebServicePort" binding="tns:CertificateSearchResultPollWebServicePort">
+      <soap:address location="https://webgate.training.ec.europa.eu/sanco/traces_ws/pollSearchCertificateResult"/>
+    </port>
+  </service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://webgate.training.ec.europa.eu/sanco/traces_ws/pollSearchCertificateResult</con:endpoint></con:endpoints><con:operation id="fb205c96-2e38-40ac-b4cb-4cb909fce11b" isOneWay="false" action="" name="searchCertificate" bindingOperationName="searchCertificate" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="1a310758-cc3d-4aa4-9cc0-d2b869c4d61d" name="Poll Request"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://webgate.training.ec.europa.eu/sanco/traces_ws/pollSearchCertificateResult</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:trac="traceswsns">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <trac:CertificatePoll>
+         <trac:XMLSchemaVersion>${#Project#xmlversion}</trac:XMLSchemaVersion>
+         <trac:UserIdentification>${#Project#username}</trac:UserIdentification>
+         <trac:UserPassword>${#Project#password}</trac:UserPassword>
+         <trac:SendingDate>${#Project#sendingDate}</trac:SendingDate>
+         <trac:RequestIdentifier>8</trac:RequestIdentifier>
+      </trac:CertificatePoll>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>${username}</con:username><con:password/><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="traceswsns/CertificateSearchResultPollWebServicePort/searchCertificateRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="63321e5f-d8a5-42d0-bb3a-d4add5d7711c" name="CertificateSearchWebServicePort TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="919e64af-9731-4ff0-babc-c8aef9223514" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="searchCertificate TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="d69c8d28-4751-4926-a3aa-83efaed3fe91" name="searchCertificateCED"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CertificateSearch</con:interface><con:operation>searchCertificate</con:operation><con:request name="searchCertificateCED" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="bde2f123-9d4f-4251-a305-6165e320c9b8"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://webgate.training.ec.europa.eu/sanco/traces_ws/searchCertificate</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:trac="traceswsns">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <trac:CertificateRequest>
+         <trac:XMLSchemaVersion>${#Project#xmlversion}</trac:XMLSchemaVersion>
+         <trac:UserIdentification>${#Project#username}</trac:UserIdentification>
+         <trac:UserPassword>${#Project#password}</trac:UserPassword>
+         <trac:SendingDate>${#Project#sendingDate}</trac:SendingDate>
+         <trac:Request>
+            <!--You have a CHOICE of the next 6 items at this level-->
+            <trac:SearchCriterionCED>
+               <trac:ModifiedBetween>
+                  <trac:StartDate>2012-01-01 12:23</trac:StartDate>
+                  <trac:EndDate>2017-01-17 10:23</trac:EndDate>
+               </trac:ModifiedBetween>
+               <trac:CountryOfDestination>GB</trac:CountryOfDestination>
+               <trac:FetchAmount>10</trac:FetchAmount>
+            </trac:SearchCriterionCED>
+         </trac:Request>
+      </trac:CertificateRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Fault Assertion" id="62ec3c87-aabc-4393-bf8f-cc094b09de97" name="Not SOAP Fault"/><con:credentials><con:username>BIP.GB@traces-cbt.net </con:username><con:password>BIP.GB</con:password><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="traceswsns/CertificateSearchWebServicePort/searchCertificateRequest"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="ParseSearchCertificate" id="06e729bc-e46b-4f57-9220-cdfef1c9e50b"><con:settings/><con:config><script>String requestName = "searchCertificateCED"
+String operationName = "Search Certificates"
+def groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+def holder = groovyUtils.getXmlHolder(requestName+"#response") 
+int code
+
+try{
+  	code = holder.getNodeValue("//*:OperationCode") as Integer
+	testRunner.testCase.testSuite.setPropertyValue( "operationCode", code.toString() )
+	if(code > 0){ 
+		throw new Exception("Invalid OperationCode response") 
+	}
+	long requestIdentifier = holder.getNodeValue("//*:RequestIdentifier") as Long
+	testRunner.testCase.testSuite.setPropertyValue( "requestIdentifier", requestIdentifier.toString() )
+	log.info operationName + ": OperationCode response: " + code.toString()
+	log.info operationName + ": RequestIdentifier response: " + requestIdentifier.toString()
+}catch(err){
+	log.error operationName + ": OperationCode response: " + code.toString()
+	throw Exception(operationName + ": Non-zero error code returned",err)
+}
+</script></con:config></con:testStep><con:testStep type="request" id="8ec6aa46-7bdd-4c0a-943a-624c88cd7bef" name="searchCertificatePoll"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CertificateSearchResultPoll</con:interface><con:operation>searchCertificate</con:operation><con:request name="searchCertificatePoll" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="ba160f03-ee11-4f20-bb00-21b5e5ea7f34"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://webgate.training.ec.europa.eu/sanco/traces_ws/pollSearchCertificateResult</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:trac="traceswsns">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <trac:CertificatePoll>
+         <trac:XMLSchemaVersion>${#Project#xmlversion}</trac:XMLSchemaVersion>
+         <trac:UserIdentification>${#Project#username}</trac:UserIdentification>
+         <trac:UserPassword>${#Project#password}</trac:UserPassword>
+         <trac:SendingDate>${#Project#sendingDate}</trac:SendingDate>
+         <trac:RequestIdentifier>${#TestSuite#requestIdentifier}</trac:RequestIdentifier>
+      </trac:CertificatePoll>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>${username}</con:username><con:password/><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="traceswsns/CertificateSearchResultPollWebServicePort/searchCertificateRequest"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="ParsePollCertificate" id="899a2f52-b3ea-4dde-b60e-cbfb275defdc"><con:settings/><con:config><script>String requestName = "searchCertificatePoll"
+String operationName = "Parse Certificates"
+int pollWait = 2000
+def groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+def holder = groovyUtils.getXmlHolder(requestName+"#response") 
+int code
+
+try{
+  	code = holder.getNodeValue("//*:OperationCode") as Integer
+	testRunner.testCase.testSuite.setPropertyValue( "operationCode", code.toString() )
+	log.info operationName + ": OperationCode response: " + code.toString()
+	if(code == 10){
+		//  unsuccessful response OperationCode == 10 - result not ready
+		int loopIndex = testRunner.testCase.getPropertyValue( "loopIndex" ) as Integer
+		if( loopIndex == null ){
+			testRunner.testCase.setPropertyValue( "loopIndex",  '1' )
+		}else{
+			testRunner.testCase.setPropertyValue( "loopIndex", ++loopIndex.toString() )
+		}
+		if( loopIndex &lt; 10 ){
+			log.info operationName + ": Polling again in " + pollWait.toString() + " milliseconds"
+			testRunner.gotoStepByName( requestName )
+			sleep(pollWait)
+		}else{
+			testRunner.testCase.setPropertyValue( "loopIndex", '1' )
+			throw new Exception("Failed to get successful response") 
+		}
+	}else if(code > 0){ 
+		//  unsuccessful reponse
+		throw new Exception("Invalid OperationCode response") 
+	}else{
+		//  successful response OperationCode == 0
+		log.info operationName + ": Certificates found"
+	}
+}catch(err){
+	log.error " " + operationName + ": OperationCode response: " + code.toString()
+	log.error " " + operationName + " Exception - " + err.getMessage()
+}
+</script></con:config></con:testStep><con:properties><con:property><con:name>loopIndex</con:name><con:value>5</con:value></con:property></con:properties></con:testCase><con:properties><con:property><con:name>operationCode</con:name><con:value>0</con:value></con:property><con:property><con:name>requestIdentifier</con:name><con:value>1512398710733</con:value></con:property></con:properties></con:testSuite><con:properties><con:property><con:name>username</con:name><con:value>BIP.GB@traces-cbt.net</con:value></con:property><con:property><con:name>password</con:name><con:value>BIP.GB</con:value></con:property><con:property><con:name>xmlversion</con:name><con:value>2.0</con:value></con:property><con:property><con:name>sendingDate</con:name><con:value>${=import java.text.SimpleDateFormat; new SimpleDateFormat("YYYY-MM-DD HH:mm").format(new Date()-6);}</con:value></con:property></con:properties><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

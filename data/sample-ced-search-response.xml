@@ -1,0 +1,11 @@
+<env:Envelope xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<env:Header/>
+<env:Body>
+<CertificateRequestResult xmlns="traceswsns">
+<XMLSchemaVersion>2.0</XMLSchemaVersion>
+<SendingDate>2017-12-07 10:55</SendingDate>
+<OperationCode>0</OperationCode>
+<RequestIdentifier>1512640543315</RequestIdentifier>
+</CertificateRequestResult>
+</env:Body>
+</env:Envelope>

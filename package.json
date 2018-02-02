@@ -1,0 +1,26 @@
+{
+  "name": "nodejs-cucumber-soap-test-example",
+  "version": "0.0.1",
+  "description": "Minimal project to show how to test SOAP apis with cucumberjs & BDDs",
+  "scripts": {
+    "test": "cucumber.js ./features -r ./features/step_definitions --format=json:report.json",
+    "eslint": "eslint **/*.js --ignore-pattern node_modules/"
+  },
+  "dependencies": {
+    "babel-eslint": "^8.2.1",
+    "chai": "^4.1.2",
+    "cucumber": "^3.2.1",
+    "eslint": "^4.16.0",
+    "eslint-loader": "^1.9.0",
+    "fs": "0.0.1-security",
+    "path": "^0.12.7",
+    "sequence": "^3.0.0",
+    "sync-request": "^4.1.0",
+    "system-sleep": "^1.3.6"
+  },
+  "main": ".eslintrc.js",
+  "devDependencies": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,1522 @@
+<env:Envelope xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <env:Header/>
+   <env:Body>
+      <CertificatePollResult xmlns="traceswsns">
+         <XMLSchemaVersion>2.0</XMLSchemaVersion>
+         <SendingDate>2017-12-07 10:55</SendingDate>
+         <OperationCode>0</OperationCode>
+         <RequestIdentifier>1512640543315</RequestIdentifier>
+         <Certificates>
+            <CED>
+               <LastChangeDate>2016-01-08 10:22</LastChangeDate>
+               <Consignment>
+                  <Id>783133</Id>
+                  <Status>new</Status>
+                  <ConsignorExporter>
+                     <Status>pre-valid</Status>
+                     <Name>HUNAN JINJIAN IMPORT AND EXPORT CO.LTD.</Name>
+                     <Address>
+                        <Street>CHONGDE ROAD, DESHAN DEVELOPMENT ARE OF CHANGDE 41500 HUNAN</Street>
+                        <City>
+                           <PostalCode>Hunan</PostalCode>
+                           <Name>Hunan</Name>
+                        </City>
+                        <CountryISOCode>CN</CountryISOCode>
+                     </Address>
+                     <Type>exporter</Type>
+                     <ApprovalNumber>CN00013358</ApprovalNumber>
+                     <TracesId>4618704</TracesId>
+                  </ConsignorExporter>
+                  <CEDReferenceNumber>CED.GB.2016.0000409</CEDReferenceNumber>
+                  <CEDVersionNumber>1</CEDVersionNumber>
+                  <DesignatedPointOfEntry>GBFXT1</DesignatedPointOfEntry>
+                  <Consignee>
+                     <Status>deleted</Status>
+                     <Name>H.J. HEINZ SUPPLY CHAIN EUROPE B.V</Name>
+                     <Address>
+                        <Street>ARNHEMSE BOVENWEG 160-178</Street>
+                        <City>
+                           <PostalCode>3708</PostalCode>
+                           <Name>Zeist</Name>
+                        </City>
+                        <CountryISOCode>NL</CountryISOCode>
+                     </Address>
+                     <Type>importer</Type>
+                     <ApprovalNumber>NL00081192</ApprovalNumber>
+                     <TracesId>4701125</TracesId>
+                  </Consignee>
+                  <PersonResponsibleForLoad>
+                     <Status>valid</Status>
+                     <Name>Ceva Freight UK Ltd</Name>
+                     <Address>
+                        <Street>4th Floor, Trelawny House, The Dock, Felixstowe, Suffolk</Street>
+                        <City>
+                           <PostalCode>IP11</PostalCode>
+                           <Name>Felixstowe</Name>
+                        </City>
+                        <CountryISOCode>GB</CountryISOCode>
+                     </Address>
+                     <Type>responsible</Type>
+                     <ApprovalNumber>GB00059767</ApprovalNumber>
+                     <TracesId>3034928</TracesId>
+                  </PersonResponsibleForLoad>
+                  <Importer>
+                     <Status>deleted</Status>
+                     <Name>H.J. HEINZ SUPPLY CHAIN EUROPE B.V</Name>
+                     <Address>
+                        <Street>ARNHEMSE BOVENWEG 160-178</Street>
+                        <City>
+                           <PostalCode>3708</PostalCode>
+                           <Name>Zeist</Name>
+                        </City>
+                        <CountryISOCode>NL</CountryISOCode>
+                     </Address>
+                     <Type>importer</Type>
+                     <ApprovalNumber>NL00081192</ApprovalNumber>
+                     <TracesId>4701125</TracesId>
+                  </Importer>
+                  <CountryOfOrigin>CN</CountryOfOrigin>
+                  <CountryFromWhereConsigned>CN</CountryFromWhereConsigned>
+                  <DeliveryAddress>
+                     <Status>valid</Status>
+                     <Name>H J Heinz Co. Ltd</Name>
+                     <Address>
+                        <Street>Fourmarts Rd, Martland Park</Street>
+                        <City>
+                           <PostalCode>WN5</PostalCode>
+                           <Name>Wigan</Name>
+                        </City>
+                        <CountryISOCode>GB</CountryISOCode>
+                     </Address>
+                     <Type>etablish</Type>
+                     <ApprovalNumber>INITGB021010139</ApprovalNumber>
+                     <TracesId>2015113</TracesId>
+                  </DeliveryAddress>
+                  <ArrivalAtDpe>2016-01-01 12:00</ArrivalAtDpe>
+                  <Document>
+                     <Number>430200215004220</Number>
+                     <DateOfIssue>2015-12-01</DateOfIssue>
+                  </Document>
+                  <MeansOfTransport>
+                     <Means>ship</Means>
+                     <Identification>MORTEN MAERSK</Identification>
+                     <Document>SZX158178010</Document>
+                  </MeansOfTransport>
+                  <Temperature>chilled</Temperature>
+                  <NumberOfPackages>9000</NumberOfPackages>
+                  <CommodityComplements>
+                     <CommodityComplement>
+                        <CommodityCode>19023090</CommodityCode>
+                        <ComplementID>184524</ComplementID>
+                        <SubTotalNetWeight>16200</SubTotalNetWeight>
+                     </CommodityComplement>
+                  </CommodityComplements>
+                  <GrossWeight>20025</GrossWeight>
+                  <NetWeight>16200</NetWeight>
+                  <IdentificationOfCommodity>
+                     <IdentificationParameterSet>
+                        <IdentificationParameter>
+                           <Key>complement</Key>
+                           <Data>184524</Data>
+                        </IdentificationParameter>
+                        <IdentificationParameter>
+                           <Key>netweight</Key>
+                           <Data>16.200</Data>
+                        </IdentificationParameter>
+                        <IdentificationParameter>
+                           <Key>number_package</Key>
+                           <Data>9000</Data>
+                        </IdentificationParameter>
+                        <IdentificationParameter>
+                           <Key>type_package</Key>
+                           <Data>carton</Data>
+                        </IdentificationParameter>
+                     </IdentificationParameterSet>
+                  </IdentificationOfCommodity>
+                  <SealsContainers>
+                     <SealContainer>
+                        <SealNumber>CN2059288</SealNumber>
+                        <ContainerNumber>MWMU6319367</ContainerNumber>
+                     </SealContainer>
+                  </SealsContainers>
+                  <CommodityIntendedFor>human</CommodityIntendedFor>
+                  <ForImport/>
+                  <PlaceAndDateOfDeclaration>
+                     <FirstName>Daniel</FirstName>
+                     <LastName>Spink</LastName>
+                     <eMail>Daniel.Spink@Cevalogistics.com</eMail>
+                     <SignatureDate>2016-01-08 10:22</SignatureDate>
+                  </PlaceAndDateOfDeclaration>
+                  <LocalReferenceNumber>OD57-047129</LocalReferenceNumber>
+               </Consignment>
+            </CED>
+            <CED>
+               <LastChangeDate>2016-01-08 10:34</LastChangeDate>
+               <Consignment>
+                  <Id>783207</Id>
+                  <Status>new</Status>
+                  <ConsignorExporter>
+                     <Status>pre-valid</Status>
+                     <Name>AIPTY CO. LTD.</Name>
+                     <Address>
+                        <Street>1-1-3-4F, Naizen-Cho. Kashihara-Shi, Nara</Street>
+                        <City>
+                           <PostalCode>Nara</PostalCode>
+                           <Name>Nara</Name>
+                        </City>
+                        <CountryISOCode>JP</CountryISOCode>
+                     </Address>
+                     <Type>exporter</Type>
+                     <ApprovalNumber>JP00002760</ApprovalNumber>
+                     <TracesId>4296989</TracesId>
+                  </ConsignorExporter>
+                  <CEDReferenceNumber>CED.GB.2016.0000411</CEDReferenceNumber>
+                  <CEDVersionNumber>1</CEDVersionNumber>
+                  <DesignatedPointOfEntry>GBFXT1</DesignatedPointOfEntry>
+                  <Consignee>
+                     <Status>pre-valid</Status>
+                     <Name>Tazaki Foods Ltd</Name>
+                     <Address>
+                        <Street>Unit 4,Delta Park, Millmarsh Lane, Enfield</Street>
+                        <City>
+                           <PostalCode>EN3</PostalCode>
+                           <Name>Enfield</Name>
+                        </City>
+                        <CountryISOCode>GB</CountryISOCode>
+                     </Address>
+                     <Type>etablish</Type>
+                     <ApprovalNumber>inituk0712499002341</ApprovalNumber>
+                     <GeneralNumber>tazaki</GeneralNumber>
+                     <TracesId>2806307</TracesId>
+                  </Consignee>
+                  <PersonResponsibleForLoad>
+                     <Status>valid</Status>
+                     <Name>ELM CONSOLIDATORS LTD</Name>
+                     <Address>
+                        <Street>Unit 25 Towers Road, Globe Industrial Est, Rectory Road GRAYS ESSEX</Street>
+                        <City>
+                           <PostalCode>RM16</PostalCode>
+                           <Name>Grays</Name>
+                        </City>
+                        <CountryISOCode>GB</CountryISOCode>
+                     </Address>
+                     <Type>responsible</Type>
+                     <ApprovalNumber>INITUK0711899086</ApprovalNumber>
+                     <TracesId>2438133</TracesId>
+                  </PersonResponsibleForLoad>
+                  <Importer>
+                     <Status>pre-valid</Status>
+                     <Name>Tazaki Foods Ltd</Name>
+                     <Address>
+                        <Street>Unit 4,Delta Park, Millmarsh Lane, Enfield</Street>
+                        <City>
+                           <PostalCode>EN3</PostalCode>
+                           <Name>Enfield</Name>
+                        </City>
+                        <CountryISOCode>GB</CountryISOCode>
+                     </Address>
+                     <Type>etablish</Type>
+                     <ApprovalNumber>inituk0712499002341</ApprovalNumber>
+                     <GeneralNumber>tazaki</GeneralNumber>
+                     <TracesId>2806307</TracesId>
+                  </Importer>
+                  <CountryOfOrigin>JP</CountryOfOrigin>
+                  <CountryFromWhereConsigned>JP</CountryFromWhereConsigned>
+                  <DeliveryAddress>
+                     <Status>pre-valid</Status>
+                     <Name>Tazaki Foods Ltd</Name>
+                     <Address>
+                        <Street>Unit 4,Delta Park, Millmarsh Lane, Enfield</Street>
+                        <City>
+                           <PostalCode>EN3</PostalCode>
+                           <Name>Enfield</Name>
+                        </City>
+                        <CountryISOCode>GB</CountryISOCode>
+                     </Address>
+                     <Type>etablish</Type>
+                     <ApprovalNumber>inituk0712499002341</ApprovalNumber>
+                     <GeneralNumber>tazaki</GeneralNumber>
+                     <TracesId>2806307</TracesId>
+                  </DeliveryAddress>
+                  <ArrivalAtDpe>2016-02-04 00:00</ArrivalAtDpe>
+                  <Document>
+                     <Number>NS2661GB1004</Number>
+                     <DateOfIssue>2016-01-06</DateOfIssue>
+                  </Document>
+                  <MeansOfTransport>
+                     <Means>ship</Means>
+                     <Identification>MANHATTEN BRIDGE</Identification>
+                     <Document>ENG015120887</Document>
+                  </MeansOfTransport>
+                  <Temperature>ambient</Temperature>
+                  <NumberOfPackages>1425</NumberOfPackages>
+                  <CommodityComplements>
+                     <CommodityComplement>
+                        <CommodityCode>20059980</CommodityCode>
+                        <ComplementID>162164</ComplementID>
+                        <SubTotalNetWeight>3546</SubTotalNetWeight>
+                     </CommodityComplement>
+                  </CommodityComplements>
+                  <GrossWeight>9300</GrossWeight>
+                  <NetWeight>3546</NetWeight>
+                  <IdentificationOfCommodity>
+                     <IdentificationParameterSet>
+                        <IdentificationParameter>
+                           <Key>complement</Key>
+                           <Data>162164</Data>
+                        </IdentificationParameter>
+                        <IdentificationParameter>
+                           <Key>netweight</Key>
+                           <Data>3.546</Data>
+                        </IdentificationParameter>
+                        <IdentificationParameter>
+                           <Key>number_package</Key>
+                           <Data>1425</Data>
+                        </IdentificationParameter>
+                        <IdentificationParameter>
+                           <Key>type_package</Key>
+                           <Data>package</Data>
+                        </IdentificationParameter>
+                     </IdentificationParameterSet>
+                  </IdentificationOfCommodity>
+                  <SealsContainers>
+                     <SealContainer>
+                        <SealNumber>YMLK609443</SealNumber>
+                        <ContainerNumber>YMLU3400112</ContainerNumber>
+                     </SealContainer>
+                  </SealsContainers>
+                  <CommodityIntendedFor>human</CommodityIntendedFor>
+                  <ForImport/>
+                  <PlaceAndDateOfDeclaration>
+                     <FirstName>Mandy</FirstName>
+                     <LastName>Woodward</LastName>
+                     <eMail>elm@elmco.co.uk</eMail>
+                     <Phone>01708 899000</Phone>
+                     <Fax>01708 866553</Fax>
+                     <SignatureDate>2016-01-08 10:34</SignatureDate>
+                  </PlaceAndDateOfDeclaration>
+                  <LocalReferenceNumber>ESI42500</LocalReferenceNumber>
+               </Consignment>
+            </CED>
+            <CED>
+               <LastChangeDate>2016-01-08 22:03</LastChangeDate>
+               <Consignment>
+                  <Id>783417</Id>
+                  <Status>valid</Status>
+                  <ConsignorExporter>
+                     <Status>pre-valid</Status>
+                     <Name>ELMAS DIS TICARET A.S.</Name>
+                     <Address>
+                        <Street>MESUDIYE MAH. TURANLAR CAD. Nº41</Street>
+                        <City>
+                           <PostalCode>Aydin</PostalCode>
+                           <Name>Germencik</Name>
+                        </City>
+                        <CountryISOCode>TR</CountryISOCode>
+                     </Address>
+                     <Type>exporter</Type>
+                     <ApprovalNumber>TR00003265</ApprovalNumber>
+                     <TracesId>4156171</TracesId>
+                  </ConsignorExporter>
+                  <CEDReferenceNumber>CED.GB.2016.0000414</CEDReferenceNumber>
+                  <CEDVersionNumber>1</CEDVersionNumber>
+                  <DesignatedPointOfEntry>GBFXT1</DesignatedPointOfEntry>
+                  <Consignee>
+                     <Status>valid</Status>
+                     <Name>Petrow Food Industries Ltd</Name>
+                     <Address>
+                        <Street>Unit 1, Sheraton Business Centre, Wadsworth Close, Perivale, Middlesex</Street>
+                        <City>
+                           <PostalCode>UB6</PostalCode>
+                           <Name>Greenford</Name>
+                        </City>
+                        <CountryISOCode>GB</CountryISOCode>
+                     </Address>
+                     <Type>importer</Type>
+                     <ApprovalNumber>INITGBFXT1PETROW01</ApprovalNumber>
+                     <TracesId>3916722</TracesId>
+                  </Consignee>
+                  <PersonResponsibleForLoad>
+                     <Status>valid</Status>
+                     <Name>R Bugg (Forwarding) Ltd</Name>
+                     <Address>
+                        <Street>Unit 8, Summit Business Park, Langer Road, Felixstowe, Suffolk, IP11 2JB</Street>
+                        <City>
+                           <PostalCode>IP11</PostalCode>
+                           <Name>Felixstowe</Name>
+                        </City>
+                        <CountryISOCode>GB</CountryISOCode>
+                     </Address>
+                     <Type>responsible</Type>
+                     <ApprovalNumber>GB00003126</ApprovalNumber>
+                     <TracesId>2134683</TracesId>
+                  </PersonResponsibleForLoad>
+                  <Importer>
+                     <Status>valid</Status>
+                     <Name>Petrow Food Industries Ltd</Name>
+                     <Address>
+                        <Street>Unit 1, Sheraton Business Centre, Wadsworth Close, Perivale, Middlesex</Street>
+                        <City>
+                           <PostalCode>UB6</PostalCode>
+                           <Name>Greenford</Name>
+                        </City>
+                        <CountryISOCode>GB</CountryISOCode>
+                     </Address>
+                     <Type>importer</Type>
+                     <ApprovalNumber>INITGBFXT1PETROW01</ApprovalNumber>
+                     <TracesId>3916722</TracesId>
+                  </Importer>
+                  <CountryOfOrigin>TR</CountryOfOrigin>
+                  <CountryFromWhereConsigned>TR</CountryFromWhereConsigned>
+                  <DeliveryAddress>
+                     <Status>valid</Status>
+                     <Name>Petrow Food Industries Ltd</Name>
+                     <Address>
+                        <Street>Unit 1, Sheraton Business Centre, Wadsworth Close, Perivale, Middlesex</Street>
+                        <City>
+                           <PostalCode>UB6</PostalCode>
+                           <Name>Greenford</Name>
+                        </City>
+                        <CountryISOCode>GB</CountryISOCode>
+                     </Address>
+                     <Type>etablish</Type>
+                     <ApprovalNumber>INITGBFXT1PETROW01</ApprovalNumber>
+                     <TracesId>3916722</TracesId>
+                  </DeliveryAddress>
+                  <ArrivalAtDpe>2016-01-03 00:00</ArrivalAtDpe>
+                  <Document>
+                     <Number>15-09-004713</Number>
+                     <DateOfIssue>2015-12-17</DateOfIssue>
+                  </Document>
+                  <MeansOfTransport>
+                     <Means>ship</Means>
+                     <Identification>MSC ITEA</Identification>
+                     <Document>MSCUZI157547</Document>
+                  </MeansOfTransport>
+                  <Temperature>ambient</Temperature>
+                  <NumberOfPackages>1200</NumberOfPackages>
+                  <CommodityComplements>
+                     <CommodityComplement>
+                        <CommodityCode>08042090</CommodityCode>
+                        <ComplementID>149329</ComplementID>
+                        <SubTotalNetWeight>15000</SubTotalNetWeight>
+                     </CommodityComplement>
+                  </CommodityComplements>
+                  <GrossWeight>15840</GrossWeight>
+                  <NetWeight>15000</NetWeight>
+                  <IdentificationOfCommodity>
+                     <IdentificationParameterSet>
+                        <IdentificationParameter>
+                           <Key>complement</Key>
+                           <Data>149329</Data>
+                        </IdentificationParameter>
+                        <IdentificationParameter>
+                           <Key>netweight</Key>
+                           <Data>15.000</Data>
+                        </IdentificationParameter>
+                        <IdentificationParameter>
+                           <Key>number_package</Key>
+                           <Data>1200</Data>
+                        </IdentificationParameter>
+                        <IdentificationParameter>
+                           <Key>type_package</Key>
+                           <Data>carton</Data>
+                        </IdentificationParameter>
+                     </IdentificationParameterSet>
+                  </IdentificationOfCommodity>
+                  <SealsContainers>
+                     <SealContainer>
+                        <SealNumber>EU06780165</SealNumber>
+                        <ContainerNumber>FCIU3027406</ContainerNumber>
+                     </SealContainer>
+                  </SealsContainers>
+                  <CommodityIntendedFor>human</CommodityIntendedFor>
+                  <ForImport/>
+                  <PlaceAndDateOfDeclaration>
+                     <FirstName>Elliot</FirstName>
+                     <LastName>Hunter</LastName>
+                     <eMail>elliot@bugg.co.uk</eMail>
+                     <Phone>01394 671775</Phone>
+                     <Fax>01394 691331</Fax>
+                     <SignatureDate>2016-01-08 10:43</SignatureDate>
+                  </PlaceAndDateOfDeclaration>
+                  <LocalReferenceNumber>J135664</LocalReferenceNumber>
+               </Consignment>
+               <Decision>
+                  <DocumentaryCheck>satisfactory</DocumentaryCheck>
+                  <Acceptable>
+                     <AcceptableForFreeCirculation>HumanConsumption</AcceptableForFreeCirculation>
+                  </Acceptable>
+                  <OnwardTransportation>no</OnwardTransportation>
+                  <OfficialInspector>
+                     <Id>337353</Id>
+                     <FirstName>LAURENCE</FirstName>
+                     <LastName>Jarrold</LastName>
+                     <eMail>laurence.jarrold@suffolkcoastal.gov.uk</eMail>
+                     <Phone>0044 1394 614933</Phone>
+                     <Fax>0044 1394 673671</Fax>
+                     <SignatureDate>2016-01-08 22:03</SignatureDate>
+                  </OfficialInspector>
+               </Decision>
+            </CED>
+            <CED>
+               <LastChangeDate>2016-01-08 21:51</LastChangeDate>
+               <Consignment>
+                  <Id>783407</Id>
+                  <Status>valid</Status>
+                  <ConsignorExporter>
+                     <Status>pre-valid</Status>
+                     <Name>Kirici Kuru Meyva Ve Gida - Tekstil - Turizm Ve Tic A.S.</Name>
+                     <Address>
+                        <Street>Battalgazi Yolu Uzeri 2. km. Haniminciftigi Mevkii</Street>
+                        <City>
+                           <PostalCode>Malatya</PostalCode>
+                           <Name>Malatya</Name>
+                        </City>
+                        <CountryISOCode>TR</CountryISOCode>
+                     </Address>
+                     <Type>exporter</Type>
+                     <ApprovalNumber>TR00003539</ApprovalNumber>
+                     <TracesId>4265009</TracesId>
+                  </ConsignorExporter>
+                  <CEDReferenceNumber>CED.GB.2016.0000420</CEDReferenceNumber>
+                  <CEDVersionNumber>1</CEDVersionNumber>
+                  <DesignatedPointOfEntry>GBFXT1</DesignatedPointOfEntry>
+                  <Consignee>
+                     <Status>pre-valid</Status>
+                     <Name>Humdinger Ltd</Name>
+                     <Address>
+                        <Street>Gothenburg Way, Sutton Fields Industrial Estate, Kingston Upon Hull, E. Yorkshire</Street>
+                        <City>
+                           <PostalCode>HU7</PostalCode>
+                           <Name>Hull</Name>
+                        </City>
+                        <CountryISOCode>GB</CountryISOCode>
+                     </Address>
+                     <Type>importer</Type>
+                     <ApprovalNumber>GB00111017</ApprovalNumber>
+                     <TracesId>3848339</TracesId>
+                  </Consignee>
+                  <PersonResponsibleForLoad>
+                     <Status>valid</Status>
+                     <Name>Globex Freight Management Ltd</Name>
+                     <Address>
+                        <Street>1st Floor PD House, Parker Avenue, Felixstowe</Street>
+                        <City>
+                           <PostalCode>IP11</PostalCode>
+                           <Name>Felixstowe</Name>
+                        </City>
+                        <CountryISOCode>GB</CountryISOCode>
+                     </Address>
+                     <Type>responsible</Type>
+                     <ApprovalNumber>GB00058330</ApprovalNumber>
+                     <TracesId>3158844</TracesId>
+                  </PersonResponsibleForLoad>
+                  <Importer>
+                     <Status>pre-valid</Status>
+                     <Name>Humdinger Ltd</Name>
+                     <Address>
+                        <Street>Gothenburg Way, Sutton Fields Industrial Estate, Kingston Upon Hull, E. Yorkshire</Street>
+                        <City>
+                           <PostalCode>HU7</PostalCode>
+                           <Name>Hull</Name>
+                        </City>
+                        <CountryISOCode>GB</CountryISOCode>
+                     </Address>
+                     <Type>importer</Type>
+                     <ApprovalNumber>GB00111017</ApprovalNumber>
+                     <TracesId>3848339</TracesId>
+                  </Importer>
+                  <CountryOfOrigin>TR</CountryOfOrigin>
+                  <CountryFromWhereConsigned>TR</CountryFromWhereConsigned>
+                  <DeliveryAddress>
+                     <Status>pre-valid</Status>
+                     <Name>Humdinger Ltd</Name>
+                     <Address>
+                        <Street>Gothenburg Way, Sutton Fields Industrial Estate, Kingston Upon Hull, E. Yorkshire</Street>
+                        <City>
+                           <PostalCode>HU7</PostalCode>
+                           <Name>Hull</Name>
+                        </City>
+                        <CountryISOCode>GB</CountryISOCode>
+                     </Address>
+                     <Type>etablish</Type>
+                     <ApprovalNumber>1028754020</ApprovalNumber>
+                     <TracesId>3848339</TracesId>
+                  </DeliveryAddress>
+                  <ArrivalAtDpe>2016-01-03 00:59</ArrivalAtDpe>
+                  <Document>
+                     <Number>2352580</Number>
+                     <DateOfIssue>2015-12-16</DateOfIssue>
+                  </Document>
+                  <MeansOfTransport>
+                     <Means>ship</Means>
+                     <Identification>MSC Melissa</Identification>
+                     <Document>MSCURQ102973</Document>
+                  </MeansOfTransport>
+                  <Temperature>ambient</Temperature>
+                  <NumberOfPackages>800</NumberOfPackages>
+                  <CommodityComplements>
+                     <CommodityComplement>
+                        <CommodityCode>08131000</CommodityCode>
+                        <ComplementID>149859</ComplementID>
+                        <SubTotalNetWeight>10000</SubTotalNetWeight>
+                     </CommodityComplement>
+                  </CommodityComplements>
+                  <GrossWeight>10400</GrossWeight>
+                  <NetWeight>10000</NetWeight>
+                  <IdentificationOfCommodity>
+                     <IdentificationParameterSet>
+                        <IdentificationParameter>
+                           <Key>complement</Key>
+                           <Data>149859</Data>
+                        </IdentificationParameter>
+                        <IdentificationParameter>
+                           <Key>netweight</Key>
+                           <Data>10.000</Data>
+                        </IdentificationParameter>
+                        <IdentificationParameter>
+                           <Key>number_package</Key>
+                           <Data>800</Data>
+                        </IdentificationParameter>
+                        <IdentificationParameter>
+                           <Key>type_package</Key>
+                           <Data>carton</Data>
+                        </IdentificationParameter>
+                     </IdentificationParameterSet>
+                  </IdentificationOfCommodity>
+                  <SealsContainers>
+                     <SealContainer>
+                        <SealNumber>EU5497398</SealNumber>
+                        <ContainerNumber>IPXU3766480</ContainerNumber>
+                     </SealContainer>
+                  </SealsContainers>
+                  <CommodityIntendedFor>human</CommodityIntendedFor>
+                  <ForImport/>
+                  <PlaceAndDateOfDeclaration>
+                     <FirstName>Carl</FirstName>
+                     <LastName>Hawes</LastName>
+                     <eMail>chawes@globexfm.co.uk</eMail>
+                     <Phone>01394 676162</Phone>
+                     <Fax>01394 676147</Fax>
+                     <SignatureDate>2016-01-08 11:40</SignatureDate>
+                  </PlaceAndDateOfDeclaration>
+                  <LocalReferenceNumber>GI105657</LocalReferenceNumber>
+               </Consignment>
+               <Decision>
+                  <DocumentaryCheck>satisfactory</DocumentaryCheck>
+                  <Acceptable>
+                     <AcceptableForFreeCirculation>HumanConsumption</AcceptableForFreeCirculation>
+                  </Acceptable>
+                  <OnwardTransportation>no</OnwardTransportation>
+                  <OfficialInspector>
+                     <Id>337353</Id>
+                     <FirstName>LAURENCE</FirstName>
+                     <LastName>Jarrold</LastName>
+                     <eMail>laurence.jarrold@suffolkcoastal.gov.uk</eMail>
+                     <Phone>0044 1394 614933</Phone>
+                     <Fax>0044 1394 673671</Fax>
+                     <SignatureDate>2016-01-08 21:51</SignatureDate>
+                  </OfficialInspector>
+               </Decision>
+            </CED>
+            <CED>
+               <LastChangeDate>2016-01-08 11:45</LastChangeDate>
+               <Consignment>
+                  <Id>783496</Id>
+                  <Status>new</Status>
+                  <ConsignorExporter>
+                     <Status>pre-valid</Status>
+                     <Name>SOLEIL TARIM ÜRUNLERI SANAYI VE TIC</Name>
+                     <Address>
+                        <Street>Umurlu Mahallesi, O.S.B. Nº 8 , Efeler, 09630</Street>
+                        <City>
+                           <PostalCode>Aydin</PostalCode>
+                           <Name>Aydin</Name>
+                        </City>
+                        <CountryISOCode>TR</CountryISOCode>
+                     </Address>
+                     <Type>exporter</Type>
+                     <ApprovalNumber>TR00003810</ApprovalNumber>
+                     <TracesId>4432546</TracesId>
+                  </ConsignorExporter>
+                  <CEDReferenceNumber>CED.GB.2016.0000421</CEDReferenceNumber>
+                  <CEDVersionNumber>1</CEDVersionNumber>
+                  <DesignatedPointOfEntry>GBFXT1</DesignatedPointOfEntry>
+                  <Consignee>
+                     <Status>valid</Status>
+                     <Name>Chelmer Foods Limited</Name>
+                     <Address>
+                        <Street>220 The Countryyard Skyline, 120 Business Park, Braintree, Essex</Street>
+                        <City>
+                           <PostalCode>CM7</PostalCode>
+                           <Name>Braintree</Name>
+                        </City>
+                        <CountryISOCode>GB</CountryISOCode>
+                     </Address>
+                     <Type>importer</Type>
+                     <ApprovalNumber>INITUK01713099CHELME</ApprovalNumber>
+                     <TracesId>3950712</TracesId>
+                  </Consignee>
+                  <PersonResponsibleForLoad>
+                     <Status>valid</Status>
+                     <Name>UK Customs Solutions Limited</Name>
+                     <Address>
+                        <Street>Unit4, Suite 16B, Orwell House, Ferry Lane, Felixstowe, Suffolk</Street>
+                        <City>
+                           <PostalCode>IP11</PostalCode>
+                           <Name>Felixstowe</Name>
+                        </City>
+                        <CountryISOCode>GB</CountryISOCode>
+                     </Address>
+                     <Type>responsible</Type>
+                     <ApprovalNumber>INITGBFXT1UKCUST01</ApprovalNumber>
+                     <TracesId>4425283</TracesId>
+                  </PersonResponsibleForLoad>
+                  <Importer>
+                     <Status>valid</Status>
+                     <Name>Chelmer Foods Limited</Name>
+                     <Address>
+                        <Street>220 The Countryyard Skyline, 120 Business Park, Braintree, Essex</Street>
+                        <City>
+                           <PostalCode>CM7</PostalCode>
+                           <Name>Braintree</Name>
+                        </City>
+                        <CountryISOCode>GB</CountryISOCode>
+                     </Address>
+                     <Type>importer</Type>
+                     <ApprovalNumber>INITUK01713099CHELME</ApprovalNumber>
+                     <TracesId>3950712</TracesId>
+                  </Importer>
+                  <CountryOfOrigin>TR</CountryOfOrigin>
+                  <CountryFromWhereConsigned>TR</CountryFromWhereConsigned>
+                  <DeliveryAddress>
+                     <Status>valid</Status>
+                     <Name>Chelmer Foods Limited</Name>
+                     <Address>
+                        <Street>220 The Countryyard Skyline, 120 Business Park, Braintree, Essex</Street>
+                        <City>
+                           <PostalCode>CM7</PostalCode>
+                           <Name>Braintree</Name>
+                        </City>
+                        <CountryISOCode>GB</CountryISOCode>
+                     </Address>
+                     <Type>etablish</Type>
+                     <ApprovalNumber>INITUK0713099ACHELME</ApprovalNumber>
+                     <TracesId>3950712</TracesId>
+                  </DeliveryAddress>
+                  <ArrivalAtDpe>2016-01-06 18:00</ArrivalAtDpe>
+                  <Document>
+                     <Number>15-09-004767</Number>
+                     <DateOfIssue>2015-12-23</DateOfIssue>
+                  </Document>
+                  <MeansOfTransport>
+                     <Means>ship</Means>
+                     <Identification>SEAGO PIRAEUS</Identification>
+                     <Document>SEJ332298</Document>
+                  </MeansOfTransport>
+                  <Temperature>ambient</Temperature>
+                  <NumberOfPackages>800</NumberOfPackages>
+                  <CommodityComplements>
+                     <CommodityComplement>
+                        <CommodityCode>08042090</CommodityCode>
+                        <ComplementID>149329</ComplementID>
+                        <SubTotalNetWeight>8000</SubTotalNetWeight>
+                     </CommodityComplement>
+                  </CommodityComplements>
+                  <GrossWeight>8400</GrossWeight>
+                  <NetWeight>8000</NetWeight>
+                  <IdentificationOfCommodity>
+                     <IdentificationParameterSet>
+                        <IdentificationParameter>
+                           <Key>complement</Key>
+                           <Data>149329</Data>
+                        </IdentificationParameter>
+                        <IdentificationParameter>
+                           <Key>netweight</Key>
+                           <Data>8.000</Data>
+                        </IdentificationParameter>
+                        <IdentificationParameter>
+                           <Key>number_package</Key>
+                           <Data>800</Data>
+                        </IdentificationParameter>
+                        <IdentificationParameter>
+                           <Key>type_package</Key>
+                           <Data>carton</Data>
+                        </IdentificationParameter>
+                     </IdentificationParameterSet>
+                  </IdentificationOfCommodity>
+                  <SealsContainers>
+                     <SealContainer>
+                        <SealNumber>ML-TR1736947</SealNumber>
+                        <ContainerNumber>MSKU6574830</ContainerNumber>
+                     </SealContainer>
+                  </SealsContainers>
+                  <CommodityIntendedFor>human</CommodityIntendedFor>
+                  <ForImport/>
+                  <PlaceAndDateOfDeclaration>
+                     <FirstName>thomas</FirstName>
+                     <LastName>edwards</LastName>
+                     <eMail>tom@ukcustomssolutions.co.uk</eMail>
+                     <Phone>01394330663</Phone>
+                     <SignatureDate>2016-01-08 11:45</SignatureDate>
+                  </PlaceAndDateOfDeclaration>
+                  <LocalReferenceNumber>GS000896</LocalReferenceNumber>
+               </Consignment>
+            </CED>
+            <CED>
+               <LastChangeDate>2016-01-09 08:52</LastChangeDate>
+               <Consignment>
+                  <Id>783498</Id>
+                  <Status>valid</Status>
+                  <ConsignorExporter>
+                     <Status>pre-valid</Status>
+                     <Name>SOLEIL TARIM ÜRUNLERI SANAYI VE TIC</Name>
+                     <Address>
+                        <Street>Umurlu Mahallesi, O.S.B. Nº 8 , Efeler, 09630</Street>
+                        <City>
+                           <PostalCode>Aydin</PostalCode>
+                           <Name>Aydin</Name>
+                        </City>
+                        <CountryISOCode>TR</CountryISOCode>
+                     </Address>
+                     <Type>exporter</Type>
+                     <ApprovalNumber>TR00003810</ApprovalNumber>
+                     <TracesId>4432546</TracesId>
+                  </ConsignorExporter>
+                  <CEDReferenceNumber>CED.GB.2016.0000423</CEDReferenceNumber>
+                  <CEDVersionNumber>1</CEDVersionNumber>
+                  <DesignatedPointOfEntry>GBFXT1</DesignatedPointOfEntry>
+                  <Consignee>
+                     <Status>valid</Status>
+                     <Name>Chelmer Foods Limited</Name>
+                     <Address>
+                        <Street>220 The Countryyard Skyline, 120 Business Park, Braintree, Essex</Street>
+                        <City>
+                           <PostalCode>CM7</PostalCode>
+                           <Name>Braintree</Name>
+                        </City>
+                        <CountryISOCode>GB</CountryISOCode>
+                     </Address>
+                     <Type>importer</Type>
+                     <ApprovalNumber>INITUK01713099CHELME</ApprovalNumber>
+                     <TracesId>3950712</TracesId>
+                  </Consignee>
+                  <PersonResponsibleForLoad>
+                     <Status>valid</Status>
+                     <Name>UK Customs Solutions Limited</Name>
+                     <Address>
+                        <Street>Unit4, Suite 16B, Orwell House, Ferry Lane, Felixstowe, Suffolk</Street>
+                        <City>
+                           <PostalCode>IP11</PostalCode>
+                           <Name>Felixstowe</Name>
+                        </City>
+                        <CountryISOCode>GB</CountryISOCode>
+                     </Address>
+                     <Type>responsible</Type>
+                     <ApprovalNumber>INITGBFXT1UKCUST01</ApprovalNumber>
+                     <TracesId>4425283</TracesId>
+                  </PersonResponsibleForLoad>
+                  <Importer>
+                     <Status>valid</Status>
+                     <Name>Chelmer Foods Limited</Name>
+                     <Address>
+                        <Street>220 The Countryyard Skyline, 120 Business Park, Braintree, Essex</Street>
+                        <City>
+                           <PostalCode>CM7</PostalCode>
+                           <Name>Braintree</Name>
+                        </City>
+                        <CountryISOCode>GB</CountryISOCode>
+                     </Address>
+                     <Type>importer</Type>
+                     <ApprovalNumber>INITUK01713099CHELME</ApprovalNumber>
+                     <TracesId>3950712</TracesId>
+                  </Importer>
+                  <CountryOfOrigin>TR</CountryOfOrigin>
+                  <CountryFromWhereConsigned>TR</CountryFromWhereConsigned>
+                  <DeliveryAddress>
+                     <Status>valid</Status>
+                     <Name>Chelmer Foods Limited</Name>
+                     <Address>
+                        <Street>220 The Countryyard Skyline, 120 Business Park, Braintree, Essex</Street>
+                        <City>
+                           <PostalCode>CM7</PostalCode>
+                           <Name>Braintree</Name>
+                        </City>
+                        <CountryISOCode>GB</CountryISOCode>
+                     </Address>
+                     <Type>etablish</Type>
+                     <ApprovalNumber>INITUK0713099ACHELME</ApprovalNumber>
+                     <TracesId>3950712</TracesId>
+                  </DeliveryAddress>
+                  <ArrivalAtDpe>2016-01-06 18:00</ArrivalAtDpe>
+                  <Document>
+                     <Number>15-09-004765</Number>
+                     <DateOfIssue>2015-12-23</DateOfIssue>
+                  </Document>
+                  <MeansOfTransport>
+                     <Means>ship</Means>
+                     <Identification>SEAGO PIRAEUS</Identification>
+                     <Document>SEJ332298</Document>
+                  </MeansOfTransport>
+                  <Temperature>ambient</Temperature>
+                  <NumberOfPackages>400</NumberOfPackages>
+                  <CommodityComplements>
+                     <CommodityComplement>
+                        <CommodityCode>08042090</CommodityCode>
+                        <ComplementID>149329</ComplementID>
+                        <SubTotalNetWeight>5000</SubTotalNetWeight>
+                     </CommodityComplement>
+                  </CommodityComplements>
+                  <GrossWeight>5200</GrossWeight>
+                  <NetWeight>5000</NetWeight>
+                  <IdentificationOfCommodity>
+                     <IdentificationParameterSet>
+                        <IdentificationParameter>
+                           <Key>complement</Key>
+                           <Data>149329</Data>
+                        </IdentificationParameter>
+                        <IdentificationParameter>
+                           <Key>netweight</Key>
+                           <Data>5.000</Data>
+                        </IdentificationParameter>
+                        <IdentificationParameter>
+                           <Key>number_package</Key>
+                           <Data>400</Data>
+                        </IdentificationParameter>
+                        <IdentificationParameter>
+                           <Key>type_package</Key>
+                           <Data>carton</Data>
+                        </IdentificationParameter>
+                     </IdentificationParameterSet>
+                  </IdentificationOfCommodity>
+                  <SealsContainers>
+                     <SealContainer>
+                        <SealNumber>ML-TR1736947</SealNumber>
+                        <ContainerNumber>MSKU6574830</ContainerNumber>
+                     </SealContainer>
+                  </SealsContainers>
+                  <CommodityIntendedFor>human</CommodityIntendedFor>
+                  <ForImport/>
+                  <PlaceAndDateOfDeclaration>
+                     <FirstName>thomas</FirstName>
+                     <LastName>edwards</LastName>
+                     <eMail>tom@ukcustomssolutions.co.uk</eMail>
+                     <Phone>01394330663</Phone>
+                     <SignatureDate>2016-01-08 11:47</SignatureDate>
+                  </PlaceAndDateOfDeclaration>
+                  <LocalReferenceNumber>GS000896</LocalReferenceNumber>
+               </Consignment>
+               <Decision>
+                  <DocumentaryCheck>satisfactory</DocumentaryCheck>
+                  <Acceptable>
+                     <AcceptableForFreeCirculation>HumanConsumption</AcceptableForFreeCirculation>
+                  </Acceptable>
+                  <OnwardTransportation>no</OnwardTransportation>
+                  <OfficialInspector>
+                     <Id>337349</Id>
+                     <FirstName>Davidson</FirstName>
+                     <LastName>I K</LastName>
+                     <eMail>kay.davidson@suffolkcoastal.gov.uk</eMail>
+                     <SignatureDate>2016-01-09 08:50</SignatureDate>
+                  </OfficialInspector>
+               </Decision>
+            </CED>
+            <CED>
+               <LastChangeDate>2016-01-09 09:19</LastChangeDate>
+               <Consignment>
+                  <Id>783499</Id>
+                  <Status>valid</Status>
+                  <ConsignorExporter>
+                     <Status>pre-valid</Status>
+                     <Name>SOLEIL TARIM ÜRUNLERI SANAYI VE TIC</Name>
+                     <Address>
+                        <Street>Umurlu Mahallesi, O.S.B. Nº 8 , Efeler, 09630</Street>
+                        <City>
+                           <PostalCode>Aydin</PostalCode>
+                           <Name>Aydin</Name>
+                        </City>
+                        <CountryISOCode>TR</CountryISOCode>
+                     </Address>
+                     <Type>exporter</Type>
+                     <ApprovalNumber>TR00003810</ApprovalNumber>
+                     <TracesId>4432546</TracesId>
+                  </ConsignorExporter>
+                  <CEDReferenceNumber>CED.GB.2016.0000424</CEDReferenceNumber>
+                  <CEDVersionNumber>1</CEDVersionNumber>
+                  <DesignatedPointOfEntry>GBFXT1</DesignatedPointOfEntry>
+                  <Consignee>
+                     <Status>valid</Status>
+                     <Name>Chelmer Foods Limited</Name>
+                     <Address>
+                        <Street>220 The Countryyard Skyline, 120 Business Park, Braintree, Essex</Street>
+                        <City>
+                           <PostalCode>CM7</PostalCode>
+                           <Name>Braintree</Name>
+                        </City>
+                        <CountryISOCode>GB</CountryISOCode>
+                     </Address>
+                     <Type>importer</Type>
+                     <ApprovalNumber>INITUK01713099CHELME</ApprovalNumber>
+                     <TracesId>3950712</TracesId>
+                  </Consignee>
+                  <PersonResponsibleForLoad>
+                     <Status>valid</Status>
+                     <Name>UK Customs Solutions Limited</Name>
+                     <Address>
+                        <Street>Unit4, Suite 16B, Orwell House, Ferry Lane, Felixstowe, Suffolk</Street>
+                        <City>
+                           <PostalCode>IP11</PostalCode>
+                           <Name>Felixstowe</Name>
+                        </City>
+                        <CountryISOCode>GB</CountryISOCode>
+                     </Address>
+                     <Type>responsible</Type>
+                     <ApprovalNumber>INITGBFXT1UKCUST01</ApprovalNumber>
+                     <TracesId>4425283</TracesId>
+                  </PersonResponsibleForLoad>
+                  <Importer>
+                     <Status>valid</Status>
+                     <Name>Chelmer Foods Limited</Name>
+                     <Address>
+                        <Street>220 The Countryyard Skyline, 120 Business Park, Braintree, Essex</Street>
+                        <City>
+                           <PostalCode>CM7</PostalCode>
+                           <Name>Braintree</Name>
+                        </City>
+                        <CountryISOCode>GB</CountryISOCode>
+                     </Address>
+                     <Type>importer</Type>
+                     <ApprovalNumber>INITUK01713099CHELME</ApprovalNumber>
+                     <TracesId>3950712</TracesId>
+                  </Importer>
+                  <CountryOfOrigin>TR</CountryOfOrigin>
+                  <CountryFromWhereConsigned>TR</CountryFromWhereConsigned>
+                  <DeliveryAddress>
+                     <Status>valid</Status>
+                     <Name>Chelmer Foods Limited</Name>
+                     <Address>
+                        <Street>220 The Countryyard Skyline, 120 Business Park, Braintree, Essex</Street>
+                        <City>
+                           <PostalCode>CM7</PostalCode>
+                           <Name>Braintree</Name>
+                        </City>
+                        <CountryISOCode>GB</CountryISOCode>
+                     </Address>
+                     <Type>etablish</Type>
+                     <ApprovalNumber>INITUK0713099ACHELME</ApprovalNumber>
+                     <TracesId>3950712</TracesId>
+                  </DeliveryAddress>
+                  <ArrivalAtDpe>2016-01-06 18:00</ArrivalAtDpe>
+                  <Document>
+                     <Number>15-09-004764</Number>
+                     <DateOfIssue>2015-12-23</DateOfIssue>
+                  </Document>
+                  <MeansOfTransport>
+                     <Means>ship</Means>
+                     <Identification>SEAGO PIRAEUS</Identification>
+                     <Document>SEJ332298</Document>
+                  </MeansOfTransport>
+                  <Temperature>ambient</Temperature>
+                  <NumberOfPackages>480</NumberOfPackages>
+                  <CommodityComplements>
+                     <CommodityComplement>
+                        <CommodityCode>08042090</CommodityCode>
+                        <ComplementID>149329</ComplementID>
+                        <SubTotalNetWeight>6000</SubTotalNetWeight>
+                     </CommodityComplement>
+                  </CommodityComplements>
+                  <GrossWeight>6240</GrossWeight>
+                  <NetWeight>6000</NetWeight>
+                  <IdentificationOfCommodity>
+                     <IdentificationParameterSet>
+                        <IdentificationParameter>
+                           <Key>complement</Key>
+                           <Data>149329</Data>
+                        </IdentificationParameter>
+                        <IdentificationParameter>
+                           <Key>netweight</Key>
+                           <Data>6.000</Data>
+                        </IdentificationParameter>
+                        <IdentificationParameter>
+                           <Key>number_package</Key>
+                           <Data>480</Data>
+                        </IdentificationParameter>
+                        <IdentificationParameter>
+                           <Key>type_package</Key>
+                           <Data>carton</Data>
+                        </IdentificationParameter>
+                     </IdentificationParameterSet>
+                  </IdentificationOfCommodity>
+                  <SealsContainers>
+                     <SealContainer>
+                        <SealNumber>ML-TR1736947</SealNumber>
+                        <ContainerNumber>MSKU6574830</ContainerNumber>
+                     </SealContainer>
+                  </SealsContainers>
+                  <CommodityIntendedFor>human</CommodityIntendedFor>
+                  <ForImport/>
+                  <PlaceAndDateOfDeclaration>
+                     <FirstName>thomas</FirstName>
+                     <LastName>edwards</LastName>
+                     <eMail>tom@ukcustomssolutions.co.uk</eMail>
+                     <Phone>01394330663</Phone>
+                     <SignatureDate>2016-01-08 11:49</SignatureDate>
+                  </PlaceAndDateOfDeclaration>
+                  <LocalReferenceNumber>GS000896</LocalReferenceNumber>
+               </Consignment>
+               <Decision>
+                  <DocumentaryCheck>satisfactory</DocumentaryCheck>
+                  <Acceptable>
+                     <AcceptableForFreeCirculation>HumanConsumption</AcceptableForFreeCirculation>
+                  </Acceptable>
+                  <OnwardTransportation>no</OnwardTransportation>
+                  <OfficialInspector>
+                     <Id>337349</Id>
+                     <FirstName>Davidson</FirstName>
+                     <LastName>I K</LastName>
+                     <eMail>kay.davidson@suffolkcoastal.gov.uk</eMail>
+                     <SignatureDate>2016-01-09 09:09</SignatureDate>
+                  </OfficialInspector>
+               </Decision>
+            </CED>
+            <CED>
+               <LastChangeDate>2016-01-08 11:53</LastChangeDate>
+               <Consignment>
+                  <Id>783457</Id>
+                  <Status>new</Status>
+                  <ConsignorExporter>
+                     <Status>pre-valid</Status>
+                     <Name>AKAY SPICES PVT LTD.</Name>
+                     <Address>
+                        <Street>AKANADU MODAKUZHA PO.VENGOOR WEST</Street>
+                        <City>
+                           <PostalCode>Kerala</PostalCode>
+                           <Name>Kerala</Name>
+                        </City>
+                        <CountryISOCode>IN</CountryISOCode>
+                     </Address>
+                     <Type>exporter</Type>
+                     <ApprovalNumber>IN00005351</ApprovalNumber>
+                     <TracesId>4431805</TracesId>
+                  </ConsignorExporter>
+                  <CEDReferenceNumber>CED.GB.2016.0000425</CEDReferenceNumber>
+                  <CEDVersionNumber>1</CEDVersionNumber>
+                  <DesignatedPointOfEntry>GBFXT1</DesignatedPointOfEntry>
+                  <Consignee>
+                     <Status>new</Status>
+                     <Name>MRC Europe</Name>
+                     <Address>
+                        <Street>Flava House Harper Road Sharston Manchester</Street>
+                        <City>
+                           <PostalCode>M22</PostalCode>
+                           <Name>Manchester</Name>
+                        </City>
+                        <CountryISOCode>GB</CountryISOCode>
+                     </Address>
+                     <Type>importer</Type>
+                     <ApprovalNumber>GB00136397</ApprovalNumber>
+                     <TracesId>4701470</TracesId>
+                  </Consignee>
+                  <PersonResponsibleForLoad>
+                     <Status>valid</Status>
+                     <Name>Cardinal Maritime</Name>
+                     <Address>
+                        <Street>Leestone Road, Sharston Industrial Estate, Sharston, Manchester</Street>
+                        <City>
+                           <PostalCode>M22</PostalCode>
+                           <Name>Manchester</Name>
+                        </City>
+                        <CountryISOCode>GB</CountryISOCode>
+                     </Address>
+                     <Type>responsible</Type>
+                     <ApprovalNumber>GB00025365</ApprovalNumber>
+                     <GeneralNumber>Cardinal01</GeneralNumber>
+                     <TracesId>2581395</TracesId>
+                  </PersonResponsibleForLoad>
+                  <Importer>
+                     <Status>new</Status>
+                     <Name>MRC Europe</Name>
+                     <Address>
+                        <Street>Flava House Harper Road Sharston Manchester</Street>
+                        <City>
+                           <PostalCode>M22</PostalCode>
+                           <Name>Manchester</Name>
+                        </City>
+                        <CountryISOCode>GB</CountryISOCode>
+                     </Address>
+                     <Type>importer</Type>
+                     <ApprovalNumber>GB00136397</ApprovalNumber>
+                     <TracesId>4701470</TracesId>
+                  </Importer>
+                  <CountryOfOrigin>IN</CountryOfOrigin>
+                  <CountryFromWhereConsigned>IN</CountryFromWhereConsigned>
+                  <DeliveryAddress>
+                     <Status>valid</Status>
+                     <Name>Yearsley Cold Store</Name>
+                     <Address>
+                        <Street>Hareshill Road, Heywood OL10 2TP</Street>
+                        <City>
+                           <PostalCode>OL10</PostalCode>
+                           <Name>Heywood</Name>
+                        </City>
+                        <CountryISOCode>GB</CountryISOCode>
+                     </Address>
+                     <Type>etablish</Type>
+                     <ApprovalNumber>RO 029</ApprovalNumber>
+                     <TracesId>4636989</TracesId>
+                  </DeliveryAddress>
+                  <ArrivalAtDpe>2015-12-16 08:00</ArrivalAtDpe>
+                  <Document>
+                     <Number>AKSP055/2015-16</Number>
+                     <DateOfIssue>2015-11-04</DateOfIssue>
+                  </Document>
+                  <MeansOfTransport>
+                     <Means>ship</Means>
+                     <Identification>EVER LEARNED</Identification>
+                     <Document>COSU6041553400</Document>
+                  </MeansOfTransport>
+                  <Temperature>ambient</Temperature>
+                  <NumberOfPackages>200</NumberOfPackages>
+                  <CommodityComplements>
+                     <CommodityComplement>
+                        <CommodityCode>09041200</CommodityCode>
+                        <ComplementID>149885</ComplementID>
+                        <SubTotalNetWeight>5000</SubTotalNetWeight>
+                     </CommodityComplement>
+                  </CommodityComplements>
+                  <GrossWeight>5087</GrossWeight>
+                  <NetWeight>5000</NetWeight>
+                  <IdentificationOfCommodity>
+                     <IdentificationParameterSet>
+                        <IdentificationParameter>
+                           <Key>complement</Key>
+                           <Data>149885</Data>
+                        </IdentificationParameter>
+                        <IdentificationParameter>
+                           <Key>netweight</Key>
+                           <Data>5.000</Data>
+                        </IdentificationParameter>
+                        <IdentificationParameter>
+                           <Key>number_package</Key>
+                           <Data>200</Data>
+                        </IdentificationParameter>
+                        <IdentificationParameter>
+                           <Key>type_package</Key>
+                           <Data>carton</Data>
+                        </IdentificationParameter>
+                     </IdentificationParameterSet>
+                  </IdentificationOfCommodity>
+                  <SealsContainers>
+                     <SealContainer>
+                        <SealNumber>16648</SealNumber>
+                        <ContainerNumber>CBHU4395960</ContainerNumber>
+                     </SealContainer>
+                  </SealsContainers>
+                  <CommodityIntendedFor>further</CommodityIntendedFor>
+                  <ForImport/>
+                  <PlaceAndDateOfDeclaration>
+                     <FirstName>Scott</FirstName>
+                     <LastName>Purves</LastName>
+                     <eMail>scott@cardinal-plus.com</eMail>
+                     <Phone>0161 491 8673</Phone>
+                     <Fax>0870 133 7373</Fax>
+                     <SignatureDate>2016-01-08 11:53</SignatureDate>
+                  </PlaceAndDateOfDeclaration>
+                  <LocalReferenceNumber>2DIO6010012</LocalReferenceNumber>
+               </Consignment>
+            </CED>
+            <CED>
+               <LastChangeDate>2016-01-08 11:58</LastChangeDate>
+               <Consignment>
+                  <Id>783458</Id>
+                  <Status>new</Status>
+                  <ConsignorExporter>
+                     <Status>pre-valid</Status>
+                     <Name>AKAY SPICES PVT LTD.</Name>
+                     <Address>
+                        <Street>AKANADU MODAKUZHA PO.VENGOOR WEST</Street>
+                        <City>
+                           <PostalCode>Kerala</PostalCode>
+                           <Name>Kerala</Name>
+                        </City>
+                        <CountryISOCode>IN</CountryISOCode>
+                     </Address>
+                     <Type>exporter</Type>
+                     <ApprovalNumber>IN00005351</ApprovalNumber>
+                     <TracesId>4431805</TracesId>
+                  </ConsignorExporter>
+                  <CEDReferenceNumber>CED.GB.2016.0000426</CEDReferenceNumber>
+                  <CEDVersionNumber>1</CEDVersionNumber>
+                  <DesignatedPointOfEntry>GBFXT1</DesignatedPointOfEntry>
+                  <Consignee>
+                     <Status>new</Status>
+                     <Name>MRC Europe</Name>
+                     <Address>
+                        <Street>Flava House Harper Road Sharston Manchester</Street>
+                        <City>
+                           <PostalCode>M22</PostalCode>
+                           <Name>Manchester</Name>
+                        </City>
+                        <CountryISOCode>GB</CountryISOCode>
+                     </Address>
+                     <Type>importer</Type>
+                     <ApprovalNumber>GB00136397</ApprovalNumber>
+                     <TracesId>4701470</TracesId>
+                  </Consignee>
+                  <PersonResponsibleForLoad>
+                     <Status>valid</Status>
+                     <Name>Cardinal Maritime</Name>
+                     <Address>
+                        <Street>Leestone Road, Sharston Industrial Estate, Sharston, Manchester</Street>
+                        <City>
+                           <PostalCode>M22</PostalCode>
+                           <Name>Manchester</Name>
+                        </City>
+                        <CountryISOCode>GB</CountryISOCode>
+                     </Address>
+                     <Type>responsible</Type>
+                     <ApprovalNumber>GB00025365</ApprovalNumber>
+                     <GeneralNumber>Cardinal01</GeneralNumber>
+                     <TracesId>2581395</TracesId>
+                  </PersonResponsibleForLoad>
+                  <Importer>
+                     <Status>new</Status>
+                     <Name>MRC Europe</Name>
+                     <Address>
+                        <Street>Flava House Harper Road Sharston Manchester</Street>
+                        <City>
+                           <PostalCode>M22</PostalCode>
+                           <Name>Manchester</Name>
+                        </City>
+                        <CountryISOCode>GB</CountryISOCode>
+                     </Address>
+                     <Type>importer</Type>
+                     <ApprovalNumber>GB00136397</ApprovalNumber>
+                     <TracesId>4701470</TracesId>
+                  </Importer>
+                  <CountryOfOrigin>IN</CountryOfOrigin>
+                  <CountryFromWhereConsigned>IN</CountryFromWhereConsigned>
+                  <DeliveryAddress>
+                     <Status>valid</Status>
+                     <Name>Yearsley Cold Store</Name>
+                     <Address>
+                        <Street>Hareshill Road, Heywood OL10 2TP</Street>
+                        <City>
+                           <PostalCode>OL10</PostalCode>
+                           <Name>Heywood</Name>
+                        </City>
+                        <CountryISOCode>GB</CountryISOCode>
+                     </Address>
+                     <Type>etablish</Type>
+                     <ApprovalNumber>RO 029</ApprovalNumber>
+                     <TracesId>4636989</TracesId>
+                  </DeliveryAddress>
+                  <ArrivalAtDpe>2015-12-16 08:00</ArrivalAtDpe>
+                  <Document>
+                     <Number>AKSP055/2015-16</Number>
+                     <DateOfIssue>2015-11-04</DateOfIssue>
+                  </Document>
+                  <MeansOfTransport>
+                     <Means>ship</Means>
+                     <Identification>EVER LEARNED</Identification>
+                     <Document>COSU6041553400</Document>
+                  </MeansOfTransport>
+                  <Temperature>ambient</Temperature>
+                  <NumberOfPackages>250</NumberOfPackages>
+                  <CommodityComplements>
+                     <CommodityComplement>
+                        <CommodityCode>09041200</CommodityCode>
+                        <ComplementID>149885</ComplementID>
+                        <SubTotalNetWeight>5000</SubTotalNetWeight>
+                     </CommodityComplement>
+                  </CommodityComplements>
+                  <GrossWeight>5109</GrossWeight>
+                  <NetWeight>5000</NetWeight>
+                  <IdentificationOfCommodity>
+                     <IdentificationParameterSet>
+                        <IdentificationParameter>
+                           <Key>complement</Key>
+                           <Data>149885</Data>
+                        </IdentificationParameter>
+                        <IdentificationParameter>
+                           <Key>netweight</Key>
+                           <Data>5.000</Data>
+                        </IdentificationParameter>
+                        <IdentificationParameter>
+                           <Key>number_package</Key>
+                           <Data>250</Data>
+                        </IdentificationParameter>
+                        <IdentificationParameter>
+                           <Key>type_package</Key>
+                           <Data>carton</Data>
+                        </IdentificationParameter>
+                     </IdentificationParameterSet>
+                  </IdentificationOfCommodity>
+                  <SealsContainers>
+                     <SealContainer>
+                        <SealNumber>16648</SealNumber>
+                        <ContainerNumber>CBHU4395960</ContainerNumber>
+                     </SealContainer>
+                  </SealsContainers>
+                  <CommodityIntendedFor>further</CommodityIntendedFor>
+                  <ForImport/>
+                  <PlaceAndDateOfDeclaration>
+                     <FirstName>Scott</FirstName>
+                     <LastName>Purves</LastName>
+                     <eMail>scott@cardinal-plus.com</eMail>
+                     <Phone>0161 491 8673</Phone>
+                     <Fax>0870 133 7373</Fax>
+                     <SignatureDate>2016-01-08 11:58</SignatureDate>
+                  </PlaceAndDateOfDeclaration>
+                  <LocalReferenceNumber>2DIO6010012</LocalReferenceNumber>
+               </Consignment>
+            </CED>
+            <CED>
+               <LastChangeDate>2016-01-08 11:59</LastChangeDate>
+               <Consignment>
+                  <Id>783506</Id>
+                  <Status>new</Status>
+                  <ConsignorExporter>
+                     <Status>pre-valid</Status>
+                     <Name>ABF Twinings Beverage (Shanghai) Ltd</Name>
+                     <Address>
+                        <Street>Building T3-4, 5001 Huadong Road, Jingiao EPZ South Area, Pudong, 201201, Shanghai, China</Street>
+                        <City>
+                           <PostalCode>Shanghai</PostalCode>
+                           <Name>Shanghai</Name>
+                        </City>
+                        <CountryISOCode>CN</CountryISOCode>
+                     </Address>
+                     <Type>exporter</Type>
+                     <ApprovalNumber>CN00008853</ApprovalNumber>
+                     <TracesId>3959620</TracesId>
+                  </ConsignorExporter>
+                  <CEDReferenceNumber>CED.GB.2016.0000427</CEDReferenceNumber>
+                  <CEDVersionNumber>1</CEDVersionNumber>
+                  <DesignatedPointOfEntry>GBFXT1</DesignatedPointOfEntry>
+                  <Consignee>
+                     <Status>valid</Status>
+                     <Name>CEVA Logistics</Name>
+                     <Address>
+                        <Street>Unit 14, Wellesbourne Distribution Park, Wellesbourne, Stratford-Upon-Avon</Street>
+                        <City>
+                           <PostalCode>CV35</PostalCode>
+                           <Name>Warwick</Name>
+                        </City>
+                        <CountryISOCode>GB</CountryISOCode>
+                     </Address>
+                     <Type>importer</Type>
+                     <ApprovalNumber>GB21316</ApprovalNumber>
+                     <TracesId>3276743</TracesId>
+                  </Consignee>
+                  <PersonResponsibleForLoad>
+                     <Status>valid</Status>
+                     <Name>Freight UK</Name>
+                     <Address>
+                        <Street>23 Schneider Close, Felixstowe, Suffolk</Street>
+                        <City>
+                           <PostalCode>IP11</PostalCode>
+                           <Name>Felixstowe</Name>
+                        </City>
+                        <CountryISOCode>GB</CountryISOCode>
+                     </Address>
+                     <Type>responsible</Type>
+                     <ApprovalNumber>GB00037280</ApprovalNumber>
+                     <TracesId>2819656</TracesId>
+                  </PersonResponsibleForLoad>
+                  <Importer>
+                     <Status>valid</Status>
+                     <Name>R TWININGS CO LTD</Name>
+                     <Address>
+                        <Street>South Way Andover</Street>
+                        <City>
+                           <PostalCode>SP10</PostalCode>
+                           <Name>Andover</Name>
+                        </City>
+                        <CountryISOCode>GB</CountryISOCode>
+                     </Address>
+                     <Type>etablish</Type>
+                     <ApprovalNumber>initul14399twin201112</ApprovalNumber>
+                     <TracesId>3889005</TracesId>
+                  </Importer>
+                  <CountryOfOrigin>CN</CountryOfOrigin>
+                  <CountryFromWhereConsigned>CN</CountryFromWhereConsigned>
+                  <DeliveryAddress>
+                     <Status>valid</Status>
+                     <Name>CEVA Logistics</Name>
+                     <Address>
+                        <Street>Unit 14, Wellesbourne Distribution Park, Wellesbourne, Stratford-Upon-Avon</Street>
+                        <City>
+                           <PostalCode>CV35</PostalCode>
+                           <Name>Warwick</Name>
+                        </City>
+                        <CountryISOCode>GB</CountryISOCode>
+                     </Address>
+                     <Type>etablish</Type>
+                     <ApprovalNumber>GB21316</ApprovalNumber>
+                     <TracesId>3276743</TracesId>
+                  </DeliveryAddress>
+                  <ArrivalAtDpe>2016-01-12 21:00</ArrivalAtDpe>
+                  <Document>
+                     <Number>SHAS15233092</Number>
+                     <DateOfIssue>2015-12-13</DateOfIssue>
+                  </Document>
+                  <MeansOfTransport>
+                     <Means>ship</Means>
+                     <Identification>COSCO HOPE</Identification>
+                     <Document>SHAS15233092</Document>
+                  </MeansOfTransport>
+                  <Temperature>ambient</Temperature>
+                  <NumberOfPackages>88</NumberOfPackages>
+                  <CommodityComplements>
+                     <CommodityComplement>
+                        <CommodityCode>09021000</CommodityCode>
+                        <ComplementID>149879</ComplementID>
+                        <SubTotalNetWeight>33</SubTotalNetWeight>
+                     </CommodityComplement>
+                  </CommodityComplements>
+                  <GrossWeight>108</GrossWeight>
+                  <NetWeight>33</NetWeight>
+                  <IdentificationOfCommodity>
+                     <IdentificationParameterSet>
+                        <IdentificationParameter>
+                           <Key>complement</Key>
+                           <Data>149879</Data>
+                        </IdentificationParameter>
+                        <IdentificationParameter>
+                           <Key>netweight</Key>
+                           <Data>33</Data>
+                        </IdentificationParameter>
+                        <IdentificationParameter>
+                           <Key>number_package</Key>
+                           <Data>88</Data>
+                        </IdentificationParameter>
+                        <IdentificationParameter>
+                           <Key>type_package</Key>
+                           <Data>carton</Data>
+                        </IdentificationParameter>
+                     </IdentificationParameterSet>
+                  </IdentificationOfCommodity>
+                  <SealsContainers>
+                     <SealContainer>
+                        <SealNumber>YMLN632928</SealNumber>
+                        <ContainerNumber>YMLU8373093</ContainerNumber>
+                     </SealContainer>
+                  </SealsContainers>
+                  <CommodityIntendedFor>human</CommodityIntendedFor>
+                  <ForImport/>
+                  <PlaceAndDateOfDeclaration>
+                     <FirstName>Danny</FirstName>
+                     <LastName>Stokes</LastName>
+                     <eMail>imports@freightuk.co.uk</eMail>
+                     <Phone>01934 673533</Phone>
+                     <Fax>01394 673374</Fax>
+                     <SignatureDate>2016-01-08 11:59</SignatureDate>
+                  </PlaceAndDateOfDeclaration>
+               </Consignment>
+            </CED>
+         </Certificates>
+      </CertificatePollResult>
+   </env:Body>
+</env:Envelope>
